@@ -8,7 +8,7 @@ public class NewBehaviourScript : MonoBehaviour
     [SerializeField] private float speed = 3;
     [SerializeField] private float jumpForce = 5;
     [SerializeField] private Vector3 groundCheckOffset;
-    [SerializeField] private LayerMask groundMask;
+    
 
 
     private Vector3 input;
@@ -18,7 +18,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     private Rigidbody2D rb;
     private PlayerAnimation animations;
-    [SerializeField] private SpriteRenderer _PlayerSprite;
+    [SerializeField] private SpriteRenderer PlayerSprite;
 
     // Start is called before the first frame update
     void Start()
@@ -78,7 +78,7 @@ public class NewBehaviourScript : MonoBehaviour
 
         if (isMoving)
         {
-            _PlayerSprite.flipX = input.x > 0 ? false : true;
+            PlayerSprite.flipX = input.x > 0 ? false : true;
         }
 
         animations.IsMoving = isMoving;
@@ -86,7 +86,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void Jump()
     {
-        if (isGrounded)//(isGrounded)
+        if (true)//(isGrounded)
         {
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
             animations.Jump();
