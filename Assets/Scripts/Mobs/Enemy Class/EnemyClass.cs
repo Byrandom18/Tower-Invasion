@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyClass : MonoBehaviour
 {
-    [SerializeField] private float speed = 2;
+    [SerializeField] private int health = 100;
     private Transform player;
 
     // Start is called before the first frame update
@@ -16,6 +16,22 @@ public class EnemyClass : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position = Vector3.MoveTowards(transform.position, player.position, speed* Time.deltaTime);
+      
     }
+   
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
+    }
+
 }
+
