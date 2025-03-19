@@ -41,9 +41,38 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void CheckGround()
     {
+
         // Используем Raycast для проверки земли
         RaycastHit2D hit = Physics2D.Raycast(rb.position, Vector2.down, groundCheckDistance, groundLayer);
         isGrounded = hit.collider != null;
+
+        float rayLength = 10.6f;
+        //Debug.Log(isGrounded);
+        RaycastHit2D hit = Physics2D.Raycast(rb.position, Vector2.down, rayLength, LayerMask.GetMask("Ground"));
+
+        if (hit.collider != null)
+        {
+            isGrounded = true;
+
+        }
+        else
+        {
+            isGrounded = false;
+        }
+    }
+
+
+    private bool IsFlying()
+    {
+        if (rb.velocity.y < 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
     }
 
     private void Move()
