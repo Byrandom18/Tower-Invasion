@@ -42,8 +42,8 @@ public class NewBehaviourScript : MonoBehaviour
     // я хуй знает почему это не работает, пока что условие для прыжка просто въебал тру, поэтому можно в воздухе прыгать
     private void CheckGround()
     {
-        float rayLength = 0.6f;
-        
+        float rayLength = 10.6f;
+        //Debug.Log(isGrounded);
         RaycastHit2D hit = Physics2D.Raycast(rb.position, Vector2.down, rayLength, LayerMask.GetMask("Ground"));
 
         if (hit.collider != null)
