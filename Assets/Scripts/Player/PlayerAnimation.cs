@@ -9,7 +9,6 @@ public class PlayerAnimation : MonoBehaviour
 
     public bool IsMoving { private get; set; }
     public bool IsFlying { private get; set; }
-
     
     // Start is called before the first frame update
     private void Start()
