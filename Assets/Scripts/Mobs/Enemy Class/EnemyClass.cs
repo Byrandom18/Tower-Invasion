@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class EnemyClass : MonoBehaviour
 {
-
-    [SerializeField] private int health = 100;
-
     
     [SerializeField] private float speed = 2;
-
     private Transform player;
     public Transform playerTransform;
     public bool isChasing;
@@ -28,9 +24,6 @@ public class EnemyClass : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
-      
-
         CheckWall();
 
 
@@ -56,12 +49,12 @@ public class EnemyClass : MonoBehaviour
                 // погоня
                 if (transform.position.x > playerTransform.position.x)
                 {
-                    EnemySprite.flipX = false;
+                    EnemySprite.flipX = true;
                     transform.position += Vector3.left * speed * Time.deltaTime;
                 }
                 if (transform.position.x < playerTransform.position.x)
                 {
-                    EnemySprite.flipX = true;
+                    EnemySprite.flipX = false;
                     transform.position += Vector3.right * speed * Time.deltaTime;
                 }
 
@@ -99,22 +92,5 @@ public class EnemyClass : MonoBehaviour
         {
             Debug.Log("Стены нет рядом.");
         }
-
     }
-   
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
-        if (health <= 0)
-        {
-            Die();
-        }
-    }
-
-    void Die()
-    {
-        Destroy(gameObject);
-    }
-
 }
-

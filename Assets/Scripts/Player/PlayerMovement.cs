@@ -5,49 +5,45 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    [SerializeField] private float speed = 3f;
-    [SerializeField] private float jumpForce = 5f;
-    [SerializeField] private float groundCheckDistance = 0.6f;
-    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private float speed = 3;
+    [SerializeField] private float jumpForce = 5;
+    [SerializeField] private Vector3 groundCheckOffset;
+    
 
-    private Vector2 input;
+
+    private Vector3 input;
     private bool isMoving;
+    private bool isFlying;
     private bool isGrounded;
+
     private Rigidbody2D rb;
     private PlayerAnimation animations;
-    [SerializeField] private SpriteRenderer playerSprite;
+    [SerializeField] private SpriteRenderer PlayerSprite;
 
+    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animations = GetComponentInChildren<PlayerAnimation>();
     }
 
-    void Update()
+    private void FixedUpdate()
     {
-        // Проверка ввода для прыжка должна быть в Update, а не в FixedUpdate
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        Move();
+        CheckGround();
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
         }
+        animations.IsMoving = isMoving;
+        animations.IsFlying = IsFlying();
     }
 
-    private void FixedUpdate()
-    {
-        CheckGround();
-        Move();
-        UpdateAnimations();
-    }
-
+    // я хуй знает почему это не работает, пока что условие для прыжка просто въебал тру, поэтому можно в воздухе прыгать
     private void CheckGround()
     {
-
-        // Используем Raycast для проверки земли
-        RaycastHit2D hit = Physics2D.Raycast(rb.position, Vector2.down, groundCheckDistance, groundLayer);
-        isGrounded = hit.collider != null;
-
-        float rayLength = 10.6f;
-        //Debug.Log(isGrounded);
+        float rayLength = 0.6f;
+        
         RaycastHit2D hit = Physics2D.Raycast(rb.position, Vector2.down, rayLength, LayerMask.GetMask("Ground"));
 
         if (hit.collider != null)
@@ -72,39 +68,28 @@ public class NewBehaviourScript : MonoBehaviour
         {
             return false;
         }
-
     }
 
     private void Move()
     {
-        input = new Vector2(Input.GetAxisRaw("Horizontal"), 0);
-        rb.velocity = new Vector2(input.x * speed, rb.velocity.y);
-
-        isMoving = Mathf.Abs(input.x) > 0;
+        input = new Vector2(Input.GetAxis("Horizontal"), 0);
+        transform.position += input * speed * Time.deltaTime;
+        isMoving = input.x != 0 ? true : false;
 
         if (isMoving)
         {
-            playerSprite.flipX = input.x < 0;
+            PlayerSprite.flipX = input.x > 0 ? false : true;
         }
+
+        animations.IsMoving = isMoving;
     }
 
     private void Jump()
     {
-        rb.velocity = new Vector2(rb.velocity.x, 0); // Сбрасываем вертикальную скорость перед прыжком
-        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        animations.Jump();
-    }
-
-    private void UpdateAnimations()
-    {
-        animations.IsMoving = isMoving;
-        animations.IsFlying = rb.velocity.y != 0 && !isGrounded;
-    }
-
-    // Для отладки в редакторе
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawRay(transform.position, Vector2.down * groundCheckDistance);
+        if (true)//(isGrounded)
+        {
+            rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+            animations.Jump();
+        }
     }
 }
