@@ -86,7 +86,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void Jump()
     {
-        if (true)//(isGrounded)
+        if (isGrounded)
         {
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
             animations.Jump();

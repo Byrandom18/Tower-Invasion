@@ -7904,7 +7904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  jumpForce: 5
+  jumpForce: 8
   groundCheckOffset: {x: 0, y: 0, z: 0}
   PlayerSprite: {fileID: 1921465993}
 --- !u!50 &1921465997
@@ -9041,11 +9041,12 @@ MonoBehaviour:
   speed: 2
   playerTransform: {fileID: 1921465991}
   isChasing: 0
-  chaseDistance: 4
-  EnemySprite: {fileID: 2108062664}
+  chaseDistance: 6
+  EnemySprite: {fileID: 2108062661}
   wallLayer:
     serializedVersion: 2
     m_Bits: 8
+  jumpForce: 8
 --- !u!1 &2115491073
 GameObject:
   m_ObjectHideFlags: 0
