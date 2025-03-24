@@ -27,7 +27,7 @@ public class NewBehaviourScript : MonoBehaviour
         animations = GetComponentInChildren<PlayerAnimation>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         Move();
         CheckGround();

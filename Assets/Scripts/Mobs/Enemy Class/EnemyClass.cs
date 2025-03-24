@@ -16,7 +16,8 @@ public class EnemyClass : MonoBehaviour
     public LayerMask wallLayer; // Слой, на котором находятся стены
 
     // Прыжок
-    private bool isWallNearby = false;
+    private bool isWallLeft = false;
+    private bool isWallRight = false;
     [SerializeField] private float jumpForce = 8;
     private bool isGrounded = false;
     
@@ -25,7 +26,6 @@ public class EnemyClass : MonoBehaviour
     private bool isUnderRoof = false;
     private bool canLaunchPF = true;
     private Vector3 directionPF;
-    private bool canChangeDirectionPF = true;
     private int rndPF;
     bool rndBoolPF;
 
@@ -38,7 +38,7 @@ public class EnemyClass : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         //Debug.Log(playerTransform.position.y - transform.position.y);
 
@@ -75,7 +75,7 @@ public class EnemyClass : MonoBehaviour
                 CheckWall();
                 
                 
-                if (isWallNearby)
+                if (isWallRight || isWallLeft)
                 {
                     
                     Jump();
@@ -178,73 +178,67 @@ public class EnemyClass : MonoBehaviour
 
         if (hit.collider != null)
         {
-            isWallNearby = true;
+            isWallRight = true;
         }
         else
         {
-            direction = -transform.right;
-            hit = Physics2D.Raycast(transform.position, direction, wallCheckDistance, wallLayer);
-            
-            if (hit.collider != null)
-            {
-                isWallNearby = true;
-            }
-            else
-            {
-                isWallNearby = false;
-            }
+            isWallRight = false;
+        }
+
+        direction = -transform.right;
+        hit = Physics2D.Raycast(transform.position, direction, wallCheckDistance, wallLayer);
+
+        if (hit.collider != null)
+        {
+            isWallLeft = true;
+        }
+        else
+        {
+            isWallLeft = false;
         }
 
 
     }
 
-    private void CheckLeftWall()
-    {
-
-    }
-    private void CheckRightWall()
-    {
-
-    }
+    
 
     private void PathFind()
     {
         float distance = playerTransform.position.y - transform.position.y;
         // up
-        if (distance > 2.5)
+        if (distance > 2.5f)
         {
             if (canLaunchPF)
             {
                 canLaunchPF = false;
-                canChangeDirectionPF = true;
                 rndPF = Random.Range(0, 2);
                 rndBoolPF = rndPF == 1;
             }
             
             CheckWall();
-            if (canChangeDirectionPF && isWallNearby)
+            if (isWallRight)
             {
-                canChangeDirectionPF = false;
-                rndBoolPF = !rndBoolPF;
+                rndBoolPF = false;
             }
+            else if (isWallLeft)
+            {
+                rndBoolPF = true;
+            }
+
             if (rndBoolPF)
             {
                 directionPF = Vector3.right;
-            }
-            else
-            {
-                directionPF = Vector3.left;
-            }
-            CheckRoof();
-            
-            if (rndBoolPF)
-            {
                 EnemySprite.transform.localScale = new Vector3(1, 1, 1);
             }
             else
             {
+                directionPF = Vector3.left;
                 EnemySprite.transform.localScale = new Vector3(-1, 1, 1);
             }
+            CheckRoof();
+            
+            
+
             transform.position += directionPF * speed * Time.deltaTime;
             
 
@@ -264,36 +258,35 @@ public class EnemyClass : MonoBehaviour
             if (canLaunchPF)
             {
                 canLaunchPF = false;
-                canChangeDirectionPF = true;
                 rndPF = Random.Range(0, 2);
                 rndBoolPF = rndPF == 1;
             }
-            
+
+            CheckWall();
+            if (isWallRight)
+            {
+                rndBoolPF = false;
+            }
+            else if (isWallLeft)
+            {
+                rndBoolPF = true;
+            }
 
             if (rndBoolPF)
             {
                 directionPF = Vector3.right;
-            }
-            else
-            {
-                directionPF = Vector3.left;
-            }
-            
-            CheckWall();
-            if (rndBoolPF)
-            {
                 EnemySprite.transform.localScale = new Vector3(1, 1, 1);
             }
             else
             {
+                directionPF = Vector3.left;
                 EnemySprite.transform.localScale = new Vector3(-1, 1, 1);
             }
+            
+            
+            
             transform.position += directionPF * speed * Time.deltaTime;
-            if (canChangeDirectionPF && isWallNearby)
-            {
-                canChangeDirectionPF = false;
-                rndBoolPF = !rndBoolPF;
-            }
+            
 
             
             if ((distance) > -1f)
