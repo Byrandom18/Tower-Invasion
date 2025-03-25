@@ -9122,7 +9122,6 @@ GameObject:
   - component: {fileID: 2108062666}
   - component: {fileID: 2108062665}
   - component: {fileID: 2108062662}
-  - component: {fileID: 2108062667}
   m_Layer: 0
   m_Name: greatsword knight-Sheet_0
   m_TagString: Untagged
@@ -9273,6 +9272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   playerStats: {fileID: 1921465998}
+  health: 100
 --- !u!114 &2108062666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9293,27 +9293,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   jumpForce: 8
---- !u!95 &2108062667
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2108062660}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b6512fe53f5a3cd448b3f10e19bfbb17, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2115491073
 GameObject:
   m_ObjectHideFlags: 0
