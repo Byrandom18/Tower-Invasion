@@ -29,6 +29,8 @@ public class EnemyClass : MonoBehaviour
     private int rndPF;
     private bool rndBoolPF;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,13 +65,14 @@ public class EnemyClass : MonoBehaviour
             case 2:
                 // проверка нахождения игрока над мобом под потолком и вызов стадии поиска пути
                 CheckRoof();
-                float distance = playerTransform.position.y - transform.position.y;
+                float distanceX = playerTransform.position.x - transform.position.x;
+                float distanceY = playerTransform.position.y - transform.position.y;
                 CheckGround();
-                if (((((distance > 2.5f) && isUnderRoof) && distance < 4f) || (distance < -2.5f)) && (Mathf.Abs(transform.position.x - playerTransform.position.x) < 0.2f))
+                if (((((distanceY > 2.5f) && isUnderRoof) && distanceY < 4f) || (distanceY < -2.5f)) && (Mathf.Abs(transform.position.x - playerTransform.position.x) < 0.2f) && isGrounded)
                 {
                     state = 5;
                 }
-
+                CheckCliff();
 
                 // прыжок
                 CheckWall();
@@ -88,15 +91,30 @@ public class EnemyClass : MonoBehaviour
                 if (transform.position.x > playerTransform.position.x)
                 {
                     EnemySprite.transform.localScale = new Vector3(-1, 1, 1);
-                    //EnemySprite.flipX = true;
-                    transform.position += Vector3.left * speed * Time.deltaTime;
+                    
+                    //transform.position += Vector3.left * speed * Time.deltaTime;
                 }
                 else if (transform.position.x < playerTransform.position.x)
                 {
                     EnemySprite.transform.localScale = new Vector3(1, 1, 1);
-                    //EnemySprite.flipX = false;
-                    transform.position += Vector3.right * speed * Time.deltaTime;
+                    
+                    //transform.position += Vector3.right * speed * Time.deltaTime;
                 }
+
+                // с этой хуйней он ахуенно двигается, но ловит спайдер мен вайб при прыжке на стену
+                //Vector2 direction = (playerTransform.position - transform.position).normalized;
+                //rb.velocity = new Vector2(direction.x * speed, rb.velocity.y);
+
+                Vector2 direction = (playerTransform.position - transform.position).normalized;
+                rb.AddForce(new Vector2(direction.x * speed * 10, 0));
+
+                // Ограничение максимальной скорости
+                if (Mathf.Abs(rb.velocity.x) > speed)
+                {
+                    rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * speed, rb.velocity.y);
+                }
+
+
 
                 // завершение погони
                 if (Vector2.Distance(transform.position, playerTransform.position) > chaseDistance * 2)
@@ -163,6 +181,7 @@ public class EnemyClass : MonoBehaviour
     {
         if (isGrounded)
         {
+            rb.velocity = new Vector2(0f, rb.velocity.y);
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
             //animations.Jump();
         }
@@ -310,7 +329,25 @@ public class EnemyClass : MonoBehaviour
 
     private void CheckCliff()
     {
+        float distanceY = playerTransform.position.y - transform.position.y;
+        Vector2 originalDirection = Vector2.up; // Исходное направление (1, 0)
+        float angle = 135f; // Угол поворота
 
+        // Поворачиваем вектор на 45 градусов
+        Vector2 rotatedDirection = Quaternion.Euler(0, 0, angle) * originalDirection;
+        Vector2 rotatedDirection2 = Quaternion.Euler(0, 0, -angle) * originalDirection;
+        // Используем в Raycast
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, rotatedDirection, 2f, wallLayer);
+        RaycastHit2D hit2 = Physics2D.Raycast(transform.position, rotatedDirection2, 2f, wallLayer);
+
+        Debug.DrawRay(transform.position, rotatedDirection * 2f, Color.red);
+        Debug.DrawRay(transform.position, rotatedDirection2 * 2f, Color.red);
+        //Debug.Log(distanceY);
+        if ((distanceY > 1f) && ((hit.collider == null) || (hit2.collider == null)))
+        {
+            
+            Jump();
+        }
     }
 
 
