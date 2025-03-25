@@ -8,8 +8,8 @@ public class EnemyClass : MonoBehaviour
     [SerializeField] private float speed = 2;
     private Transform player;
     public Transform playerTransform;
-    public bool isChasing;
-    public float chaseDistance;
+    private bool isChasing;
+    [SerializeField] private float chaseDistance;
     private int state = 0;
     [SerializeField] private Transform EnemySprite;
     private float wallCheckDistance = 1f;
@@ -27,7 +27,7 @@ public class EnemyClass : MonoBehaviour
     private bool canLaunchPF = true;
     private Vector3 directionPF;
     private int rndPF;
-    bool rndBoolPF;
+    private bool rndBoolPF;
 
     // Start is called before the first frame update
     void Start()
@@ -306,4 +306,12 @@ public class EnemyClass : MonoBehaviour
         }
 
     }
+
+
+    private void CheckCliff()
+    {
+
+    }
+
+
 }
