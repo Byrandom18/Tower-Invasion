@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class EnemyClass : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class EnemyClass : MonoBehaviour
     [SerializeField] private float speed = 2;
     private Transform player;
     public Transform playerTransform;
-    private bool isChasing;
+    private bool isChasing = false;
     [SerializeField] private float chaseDistance;
     private int state = 0;
     [SerializeField] private Transform EnemySprite;
@@ -29,10 +30,21 @@ public class EnemyClass : MonoBehaviour
     private Vector3 directionPF;
     private int rndPF;
     private bool rndBoolPF;
-    //private bool cliffNearby = false;
     private bool isFarWallLeft = false;
     private bool isFarWallRight = false;
     private bool isFarDown = false;
+    private bool isTopRightExist = false;
+    private bool isTopLeftExist = false;
+    private bool changedDirPF = false;
+
+    // передвижение вне боя
+    private bool isIdle = false;
+    private bool isWalking = false;
+    private float idleDuration = 3f;
+    private float walkDuration = 4f;
+    private float walkDirection;
+    private bool isCliffLeft = false;
+    private bool isCliffRight = false;
 
 
     // Start is called before the first frame update
@@ -50,7 +62,6 @@ public class EnemyClass : MonoBehaviour
 
 
 
-
         switch (state)
         {
             //idle
@@ -59,19 +70,33 @@ public class EnemyClass : MonoBehaviour
                 {
                     state = 2;
                 }
+
+                if (!isIdle && !isChasing)
+                {
+                    StartCoroutine(IdleState());
+                }
+
                 break;
 
             //walk
             case 1:
+                if (Vector2.Distance(transform.position, playerTransform.position) < chaseDistance)
+                {
+                    state = 2;
+                }
+                if (!isWalking && !isChasing)
+                    StartCoroutine(WalkState());
+                Walk();
                 break;
 
             //chase
             case 2:
+                isChasing = true;
                 // проверка нахождения игрока над мобом под потолком и вызов стадии поиска пути
                 CheckRoof();
                 float distanceX = playerTransform.position.x - transform.position.x;
                 float distanceY = playerTransform.position.y - transform.position.y;
-                Debug.Log(distanceY);
+                //Debug.Log(distanceY);
                 CheckGround();
                 if (((((distanceY > 2.5f) && isUnderRoof) && distanceY < 4f) || (distanceY < -2.5f)) && (Mathf.Abs(transform.position.x - playerTransform.position.x) < 0.2f) && isGrounded)
                 {
@@ -131,6 +156,7 @@ public class EnemyClass : MonoBehaviour
                 if (Vector2.Distance(transform.position, playerTransform.position) > chaseDistance * 2)
                 {
                     state = 0;
+                    isChasing = false;
                 }
                 break;
 
@@ -149,6 +175,67 @@ public class EnemyClass : MonoBehaviour
 
         }
     }
+
+    IEnumerator IdleState()
+    {
+        isIdle = true;
+        yield return new WaitForSeconds(idleDuration);
+        if (!isChasing)
+        {
+            state = 1; // Переключаем на движение
+        }
+        
+        isIdle = false;
+    }
+    IEnumerator WalkState()
+    {
+        CheckWall();
+        CheckCliff();
+        isWalking = true;
+        walkDirection = Random.Range(0, 2) == 0 ? -1f : 1f; // Случайное направление
+
+        if (isWallLeft || isCliffLeft)
+        {
+            walkDirection = 1;
+        }
+        if (isWallRight || isCliffRight)
+        {
+            walkDirection = -1;
+        }
+
+        if (walkDirection < 0)
+        {
+            EnemySprite.transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else
+        {
+            EnemySprite.transform.localScale = new Vector3(1, 1, 1);
+        }
+
+        yield return new WaitForSeconds(walkDuration);
+        if (!isChasing)
+        {
+            state = 0; // Переключаем на ожидание
+        }
+        isWalking = false;
+    }
+    void Walk()
+    {
+        CheckCliff();
+        CheckWall();
+        if (walkDirection == -1 && (isWallLeft || isCliffLeft))
+        {
+            state = 0;
+            walkDirection = 0;
+        }
+        else if (walkDirection == 1 && (isWallRight || isCliffRight))
+        {
+            state = 0;
+            walkDirection = 0;
+        }
+        rb.velocity = new Vector2(walkDirection * speed/2, rb.velocity.y);
+    }
+
 
     private void CheckGround()
     {
@@ -363,23 +450,43 @@ public class EnemyClass : MonoBehaviour
 
         if (distance > 3.5f || isFarDown)
         {
+            CheckTopEmpty();
             isFarDown = true;
             CheckFarWall();
-            if (isFarWallLeft && isGrounded)
+            CheckWall();
+            CheckGround();
+            CheckRoof();
+            if (isFarWallLeft && isGrounded && !changedDirPF)
             {
                 directionPF = Vector3.left;
                 EnemySprite.transform.localScale = new Vector3(-1, 1, 1);
             }
-            if (isFarWallRight && isGrounded)
+            if (isFarWallRight && isGrounded && !changedDirPF)
             {
                 directionPF = Vector3.right;
                 EnemySprite.transform.localScale = new Vector3(1, 1, 1);
             }
+            
+            if ((isWallLeft && !isTopLeftExist) || (isWallRight && !isTopRightExist))
+            {
+                Jump();
+            }
+            else if (isWallLeft && isTopLeftExist && !changedDirPF && isGrounded)
+            {
+                directionPF = Vector3.right;
+                EnemySprite.transform.localScale = new Vector3(1, 1, 1);
+                changedDirPF = true;
+            }
+            else if (isWallLeft && isTopLeftExist && !changedDirPF && isGrounded)
+            {
+                directionPF = Vector3.left;
+                EnemySprite.transform.localScale = new Vector3(-1, 1, 1);
+                changedDirPF = true;
+            }
 
             transform.position += directionPF * speed * Time.deltaTime;
-            CheckWall();
-            CheckGround();
-            if (isWallLeft || isWallRight)
+            
+            if (changedDirPF && !isUnderRoof && ((directionPF.x == -1 && isTopLeftExist) || (directionPF.x == 1 && isTopRightExist)))
             {
                 Jump();
             }
@@ -391,6 +498,7 @@ public class EnemyClass : MonoBehaviour
                 isFarWallRight = false;
                 state = 2;
                 isFarDown = false;
+                changedDirPF = false;
             }
             else
             {
@@ -402,9 +510,12 @@ public class EnemyClass : MonoBehaviour
 
         if (((distance) > -1.5f) && ((distance) < 1.5f) && isGrounded)
         {
-            
+            isFarDown = false;
             canLaunchPF = true;
             state = 2;
+            isFarWallLeft = false;
+            isFarWallRight = false;
+            changedDirPF = false;
         }
 
     }
@@ -431,18 +542,61 @@ public class EnemyClass : MonoBehaviour
         //Debug.DrawRay(transform.position, rotatedDirection * 1.5f, Color.red);
         //Debug.DrawRay(transform.position, rotatedDirection2 * 1.5f, Color.red);
         //Debug.Log(distanceY);
-        if ((distanceY > -0.2f) && ((hit.collider == null) || (hit2.collider == null)) && distanceX > 1f)
+        if (isChasing && (distanceY > -0.2f) && ((hit.collider == null) || (hit2.collider == null)) && distanceX > 1f)
         {
             Jump();
         }
-        //if ((hit.collider == null) || (hit2.collider == null))
-        //{
-        //    cliffNearby = true;
-        //}
-        //else
-        //{
-        //    cliffNearby = false;
-        //}
+        if (hit.collider == null)
+        {
+            isCliffLeft = true;
+        }
+        else
+        {
+            isCliffLeft = false;
+        }
+        if (hit2.collider == null)
+        {
+            isCliffRight = true;
+        }
+        else
+        {
+            isCliffRight = false;
+        }
+    }
+
+    private void CheckTopEmpty()
+    {
+        Vector2 originalDirection = Vector2.up; // Исходное направление (1, 0)
+        float angle = 35f; // Угол поворота
+        float rayDistance = 2.5f;
+        // Поворачиваем вектор на 45 градусов
+        Vector2 rotatedDirection = Quaternion.Euler(0, 0, angle) * originalDirection;
+        Vector2 rotatedDirection2 = Quaternion.Euler(0, 0, -angle) * originalDirection;
+
+        // Используем в Raycast
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, rotatedDirection, rayDistance, wallLayer);
+        RaycastHit2D hit2 = Physics2D.Raycast(transform.position, rotatedDirection2, rayDistance, wallLayer);
+
+        //Debug.DrawRay(transform.position, rotatedDirection * rayDistance, Color.red);
+        //Debug.DrawRay(transform.position, rotatedDirection2 * rayDistance, Color.red);
+
+        if (hit.collider != null)
+        {
+            isTopLeftExist = true;
+        }
+        else
+        {
+            isTopLeftExist = false;
+        }
+        if (hit2.collider != null)
+        {
+            isTopRightExist = true;
+        }
+        else
+        {
+            isTopRightExist = false;
+        }
+        
     }
 
 
