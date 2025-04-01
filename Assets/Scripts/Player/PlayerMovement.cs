@@ -40,7 +40,7 @@ public class NewBehaviourScript : MonoBehaviour
         animations.IsFlying = IsFlying();
     }
 
-    // я хуй знает почему это не работает, пока что условие для прыжка просто въебал тру, поэтому можно в воздухе прыгать
+    // пїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     private void CheckGround()
     {
         float rayLength = 0.62f;
@@ -61,7 +61,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     private bool IsFlying()
     {
-        if (rb.velocity.y < 0)
+        if (rb.linearVelocity.y < 0)
         {
             return true;
         }

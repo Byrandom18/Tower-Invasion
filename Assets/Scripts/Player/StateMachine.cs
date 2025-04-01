@@ -5,43 +5,43 @@ using UnityEngine;
 
 public enum PlayerState
 {
-    Idle,    // Стоит на месте
-    Walk,    // Идет
-    Jump,    // Прыгает
-    Attack,  // Атакует
-    Roll     // Кувырок
+    Idle,    // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+    Walk,    // пїЅпїЅпїЅпїЅ
+    Jump,    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    Attack,  // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    Roll     // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 }
 
 public class PlayerFSM : MonoBehaviour
 {
-    // Текущее состояние игрока
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     private PlayerState currentState;
 
-    // Компоненты игрока
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     private Rigidbody2D rb;
     private Animator animator;
 
-    // Параметры движения
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
-    public float rollSpeed = 8f;      // Скорость кувырка
-    public float rollDuration = 0.5f; // Длительность кувырка
-    private float rollTimer;          // Таймер для отслеживания длительности
-    private float moveDirection;      // Направление движения для кувырка
+    public float rollSpeed = 8f;      // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    public float rollDuration = 0.5f; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    private float rollTimer;          // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    private float moveDirection;      // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
     void Start()
     {
-        // Получаем компоненты
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-        // Устанавливаем начальное состояние
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         ChangeState(PlayerState.Idle);
     }
 
     void Update()
     {
-        // Обработка состояний
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         switch (currentState)
         {
             case PlayerState.Idle:
@@ -66,20 +66,20 @@ public class PlayerFSM : MonoBehaviour
         }
     }
 
-    // Метод для смены состояния
+    // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     private void ChangeState(PlayerState newState)
     {
-        // Выход из предыдущего состояния
+        // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         ExitState(currentState);
 
-        // Установка нового состояния
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         currentState = newState;
 
-        // Вход в новое состояние
+        // пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         EnterState(currentState);
     }
 
-    // Методы входа в состояние
+    // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     private void EnterState(PlayerState state)
     {
         switch (state)
@@ -93,7 +93,7 @@ public class PlayerFSM : MonoBehaviour
                 break;
 
             case PlayerState.Jump:
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
                 animator.Play("Jump");
                 break;
 
@@ -105,23 +105,23 @@ public class PlayerFSM : MonoBehaviour
                 animator.Play("Roll");
                 rollTimer = rollDuration;
                 moveDirection = Input.GetAxisRaw("Horizontal") != 0 ?
-                    Input.GetAxisRaw("Horizontal") : transform.localScale.x; // Если нет ввода, используем направление взгляда
-                rb.velocity = new Vector2(moveDirection * rollSpeed, rb.velocity.y);
+                    Input.GetAxisRaw("Horizontal") : transform.localScale.x; // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+                rb.linearVelocity = new Vector2(moveDirection * rollSpeed, rb.linearVelocity.y);
                 break;
         }
     }
 
-    // Методы выхода из состояния
+    // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     private void ExitState(PlayerState state)
     {
-        // Очистка при выходе
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         if (state == PlayerState.Roll)
         {
-            rb.velocity = new Vector2(0, rb.velocity.y); // Останавливаем горизонтальное движение
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         }
     }
 
-    // Обновление состояний
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     private void UpdateIdleState()
     {
         if (Input.GetAxisRaw("Horizontal") != 0)
@@ -136,7 +136,7 @@ public class PlayerFSM : MonoBehaviour
         {
             ChangeState(PlayerState.Attack);
         }
-        else if (Input.GetKeyDown(KeyCode.LeftShift)) // Кувырок по Shift
+        else if (Input.GetKeyDown(KeyCode.LeftShift)) // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ Shift
         {
             ChangeState(PlayerState.Roll);
         }
@@ -145,7 +145,7 @@ public class PlayerFSM : MonoBehaviour
     private void UpdateWalkState()
     {
         float moveInput = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
         if (moveInput == 0)
         {
@@ -157,7 +157,7 @@ ChangeState(PlayerState.Idle);
         {
             ChangeState(PlayerState.Jump);
         }
-        else if (Input.GetKeyDown(KeyCode.LeftShift)) // Кувырок по Shift
+        else if (Input.GetKeyDown(KeyCode.LeftShift)) // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ Shift
         {
             ChangeState(PlayerState.Roll);
         }
@@ -166,9 +166,9 @@ ChangeState(PlayerState.Idle);
     private void UpdateJumpState()
     {
         float moveInput = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
-        if (rb.velocity.y == 0) // Проверка приземления
+        if (rb.linearVelocity.y == 0) // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         {
             ChangeState(PlayerState.Idle);
         }
@@ -186,17 +186,17 @@ ChangeState(PlayerState.Idle);
     {
         rollTimer -= Time.deltaTime;
 
-        // Поддерживаем скорость кувырка
-        rb.velocity = new Vector2(moveDirection * rollSpeed, rb.velocity.y);
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+        rb.linearVelocity = new Vector2(moveDirection * rollSpeed, rb.linearVelocity.y);
 
-        // Завершаем кувырок, когда таймер истекает
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         if (rollTimer <= 0)
         {
             ChangeState(PlayerState.Idle);
         }
     }
 
-    // Проверка приземления
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground") && currentState == PlayerState.Jump)

@@ -5,31 +5,31 @@ using UnityEngine;
 public class PlayerRoll : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public float rollSpeed = 5f; // Скорость кувырка
-    public float rollDuration = 0.5f; // Длительность кувырка
-    private float rollTimer; // Таймер
-    private bool isRolling = false; // Флаг кувырка
-    private Animator animator; // Для управления анимацией
-    private int originalLayer; // Сохраняем исходный слой персонажа
-    private int ignoreLayer; // Слой для неуязвимости
+    public float rollSpeed = 5f; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    public float rollDuration = 0.5f; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    private float rollTimer; // пїЅпїЅпїЅпїЅпїЅпїЅ
+    private bool isRolling = false; // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    private Animator animator; // пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    private int originalLayer; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    private int ignoreLayer; // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        originalLayer = gameObject.layer; // Сохраняем исходный слой
-        ignoreLayer = LayerMask.NameToLayer("IgnoreCollisions"); // Указываем слой неуязвимости
+        originalLayer = gameObject.layer; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
+        ignoreLayer = LayerMask.NameToLayer("IgnoreCollisions"); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     }
 
     void Update()
     {
-        // Проверка ввода для кувырка (например, клавиша "Space")
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ "Space")
         if (Input.GetKeyDown(KeyCode.LeftShift) && !isRolling)
         {
             StartRoll();
         }
 
-        // Обработка кувырка
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         if (isRolling)
         {
             rollTimer -= Time.deltaTime;
@@ -44,24 +44,24 @@ public class PlayerRoll : MonoBehaviour
     {
         isRolling = true;
         rollTimer = rollDuration;
-        animator.SetBool("isRolling", true); // Запуск анимации кувырка
+        animator.SetBool("isRolling", true); // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
-        // Делаем персонажа неуязвимым, меняя слой
+        // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
         gameObject.layer = ignoreLayer;
 
-        // Определяем направление кувырка по вводу
-        float direction = Input.GetAxisRaw("Horizontal"); // -1 (влево), 1 (вправо), 0 (нет ввода)
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+        float direction = Input.GetAxisRaw("Horizontal"); // -1 (пїЅпїЅпїЅпїЅпїЅ), 1 (пїЅпїЅпїЅпїЅпїЅпїЅ), 0 (пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ)
 
-        // Если нет ввода, используем текущее направление персонажа
+        // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         if (direction == 0)
         {
-            direction = transform.localScale.x > 0 ? 1 : -1; // Вправо, если смотрит вправо, иначе влево
+            direction = transform.localScale.x > 0 ? 1 : -1; // пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         }
 
-        // Применяем скорость в нужном направлении
-        rb.velocity = new Vector2(direction * rollSpeed, rb.velocity.y);
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+        rb.linearVelocity = new Vector2(direction * rollSpeed, rb.linearVelocity.y);
 
-        // Поворачиваем персонажа в сторону кувырка (если нужно)
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ)
         if (direction != 0)
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * direction, transform.localScale.y, transform.localScale.z);
@@ -71,10 +71,10 @@ public class PlayerRoll : MonoBehaviour
     void StopRoll()
     {
         isRolling = false;
-        animator.SetBool("isRolling", false); // Остановка анимации
-        rb.velocity = new Vector2(0, rb.velocity.y); // Останавливаем горизонтальное движение
+        animator.SetBool("isRolling", false); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+        rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
-        // Возвращаем исходный слой
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
         gameObject.layer = originalLayer;
     }
 }

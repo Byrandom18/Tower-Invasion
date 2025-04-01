@@ -14,9 +14,9 @@ public class EnemyClass : MonoBehaviour
     private int state = 0;
     [SerializeField] private Transform EnemySprite;
     private float wallCheckDistance = 1f;
-    public LayerMask wallLayer; // Слой, на котором находятся стены
+    public LayerMask wallLayer; // пїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 
-    // Прыжок
+    // пїЅпїЅпїЅпїЅпїЅпїЅ
     private bool isWallLeft = false;
     private bool isWallRight = false;
     [SerializeField] private float jumpForce = 8;
@@ -24,7 +24,7 @@ public class EnemyClass : MonoBehaviour
     private bool isJumping = false;
     
 
-    // ИИ
+    // пїЅпїЅ
     private bool isUnderRoof = false;
     private bool canLaunchPF = true;
     private Vector3 directionPF;
@@ -37,7 +37,7 @@ public class EnemyClass : MonoBehaviour
     private bool isTopLeftExist = false;
     private bool changedDirPF = false;
 
-    // передвижение вне боя
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅ
     private bool isIdle = false;
     private bool isWalking = false;
     private float idleDuration = 3f;
@@ -92,7 +92,7 @@ public class EnemyClass : MonoBehaviour
             //chase
             case 2:
                 isChasing = true;
-                // проверка нахождения игрока над мобом под потолком и вызов стадии поиска пути
+                // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
                 CheckRoof();
                 float distanceX = playerTransform.position.x - transform.position.x;
                 float distanceY = playerTransform.position.y - transform.position.y;
@@ -104,7 +104,7 @@ public class EnemyClass : MonoBehaviour
                 }
                 CheckCliff();
 
-                // прыжок
+                // пїЅпїЅпїЅпїЅпїЅпїЅ
                 CheckWall();
                 
                 
@@ -121,7 +121,7 @@ public class EnemyClass : MonoBehaviour
                 }
 
 
-                // погоня
+                // пїЅпїЅпїЅпїЅпїЅпїЅ
                 if (transform.position.x > playerTransform.position.x)
                 {
                     EnemySprite.transform.localScale = new Vector3(-1, 1, 1);
@@ -135,7 +135,7 @@ public class EnemyClass : MonoBehaviour
                     transform.position += Vector3.right * speed * Time.deltaTime;
                 }
 
-                // с этой хуйней он ахуенно двигается, но ловит спайдер мен вайб при прыжке на стену
+                // пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
                 //Vector2 direction = (playerTransform.position - transform.position).normalized;
                 //rb.velocity = new Vector2(direction.x * speed, rb.velocity.y);
 
@@ -144,7 +144,7 @@ public class EnemyClass : MonoBehaviour
                 //Vector2 direction = (playerTransform.position - transform.position).normalized;
                 //rb.AddForce(new Vector2(direction.x * speed * 10, 0));
 
-                //// Ограничение максимальной скорости
+                //// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                 //if (Mathf.Abs(rb.velocity.x) > speed)
                 //{
                 //    rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * speed, rb.velocity.y);
@@ -152,7 +152,7 @@ public class EnemyClass : MonoBehaviour
 
 
 
-                // завершение погони
+                // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
                 if (Vector2.Distance(transform.position, playerTransform.position) > chaseDistance * 2)
                 {
                     state = 0;
@@ -182,7 +182,7 @@ public class EnemyClass : MonoBehaviour
         yield return new WaitForSeconds(idleDuration);
         if (!isChasing)
         {
-            state = 1; // Переключаем на движение
+            state = 1; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         }
         
         isIdle = false;
@@ -192,7 +192,7 @@ public class EnemyClass : MonoBehaviour
         CheckWall();
         CheckCliff();
         isWalking = true;
-        walkDirection = Random.Range(0, 2) == 0 ? -1f : 1f; // Случайное направление
+        walkDirection = Random.Range(0, 2) == 0 ? -1f : 1f; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
         if (isWallLeft || isCliffLeft)
         {
@@ -215,7 +215,7 @@ public class EnemyClass : MonoBehaviour
         yield return new WaitForSeconds(walkDuration);
         if (!isChasing)
         {
-            state = 0; // Переключаем на ожидание
+            state = 0; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         }
         isWalking = false;
     }
@@ -233,19 +233,19 @@ public class EnemyClass : MonoBehaviour
             state = 0;
             walkDirection = 0;
         }
-        rb.velocity = new Vector2(walkDirection * speed/2, rb.velocity.y);
+        rb.linearVelocity = new Vector2(walkDirection * speed/2, rb.linearVelocity.y);
     }
 
 
     private void CheckGround()
     {
-        if (rb.velocity.y == 0)
+        if (rb.linearVelocity.y == 0)
         {
             isJumping = false;
         }
         Vector2 direction = -transform.up;
         float rayLength = 0.65f;
-        // Проверка наличия земли
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, rayLength, wallLayer);
         //Debug.DrawRay(rb.position, Vector2.down * rayLength, Color.red);
         if (hit.collider != null)
@@ -284,7 +284,7 @@ public class EnemyClass : MonoBehaviour
         if (isGrounded && !isJumping)
         {
             isJumping = true;
-            rb.velocity = new Vector2(0f, rb.velocity.y);
+            rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
             //animations.Jump();
         }
@@ -295,7 +295,7 @@ public class EnemyClass : MonoBehaviour
     {
         Vector2 direction = transform.right;
         
-        // Проверка наличия стены
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, wallCheckDistance, wallLayer);
 
         if (hit.collider != null)
@@ -326,7 +326,7 @@ public class EnemyClass : MonoBehaviour
     {
         Vector2 direction = transform.right;
 
-        // Проверка наличия стены
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, wallCheckDistance * 4, wallLayer);
 
         if (hit.collider != null)
@@ -529,13 +529,13 @@ public class EnemyClass : MonoBehaviour
         {
             distanceX = -distanceX;
         }
-        Vector2 originalDirection = Vector2.up; // Исходное направление (1, 0)
-        float angle = 150f; // Угол поворота
+        Vector2 originalDirection = Vector2.up; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (1, 0)
+        float angle = 150f; // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
-        // Поворачиваем вектор на 45 градусов
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ 45 пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         Vector2 rotatedDirection = Quaternion.Euler(0, 0, angle) * originalDirection;
         Vector2 rotatedDirection2 = Quaternion.Euler(0, 0, -angle) * originalDirection;
-        // Используем в Raycast
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ Raycast
         RaycastHit2D hit = Physics2D.Raycast(transform.position, rotatedDirection, 1.5f, wallLayer);
         RaycastHit2D hit2 = Physics2D.Raycast(transform.position, rotatedDirection2, 1.5f, wallLayer);
 
@@ -566,14 +566,14 @@ public class EnemyClass : MonoBehaviour
 
     private void CheckTopEmpty()
     {
-        Vector2 originalDirection = Vector2.up; // Исходное направление (1, 0)
-        float angle = 35f; // Угол поворота
+        Vector2 originalDirection = Vector2.up; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (1, 0)
+        float angle = 35f; // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         float rayDistance = 2.5f;
-        // Поворачиваем вектор на 45 градусов
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ 45 пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         Vector2 rotatedDirection = Quaternion.Euler(0, 0, angle) * originalDirection;
         Vector2 rotatedDirection2 = Quaternion.Euler(0, 0, -angle) * originalDirection;
 
-        // Используем в Raycast
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ Raycast
         RaycastHit2D hit = Physics2D.Raycast(transform.position, rotatedDirection, rayDistance, wallLayer);
         RaycastHit2D hit2 = Physics2D.Raycast(transform.position, rotatedDirection2, rayDistance, wallLayer);
 
