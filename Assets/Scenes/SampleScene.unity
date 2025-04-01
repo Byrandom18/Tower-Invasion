@@ -3095,6 +3095,8 @@ GameObject:
   - component: {fileID: 1064655118}
   - component: {fileID: 1064655121}
   - component: {fileID: 1064655120}
+  - component: {fileID: 1064655123}
+  - component: {fileID: 1064655122}
   - component: {fileID: 1064655119}
   m_Layer: 0
   m_Name: slime-Sheet_0
@@ -3253,6 +3255,41 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1064655122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064655116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f17cfdcdb89427d40882c4a6b9fc099e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  playerStats: {fileID: 0}
+  health: 100
+--- !u!114 &1064655123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064655116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f27b0c34fc71d414fb38924661944f83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  playerTransform: {fileID: 0}
+  chaseDistance: 0
+  EnemySprite: {fileID: 0}
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  jumpForce: 8
 --- !u!1 &1148217014
 GameObject:
   m_ObjectHideFlags: 0
@@ -8515,7 +8552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d051847a8bc5154c8001b71ea786500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 100
+  attackRange: 10
   attackRate: 100
   attackDamage: 1
   attackPoint: {fileID: 1444212779}
