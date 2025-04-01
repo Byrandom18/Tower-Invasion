@@ -35,7 +35,7 @@ public class PlayerAttack : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             // Предполагается, что у врага есть скрипт Enemy с методом TakeDamage
-            enemy.GetComponent<EnemyDamage>().TakeDamage(attackDamage);
+            enemy.GetComponent<EnemyDamage>().TakeDamage(attackDamage, transform.position);
         }
     }
 
