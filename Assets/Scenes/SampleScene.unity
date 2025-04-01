@@ -3283,9 +3283,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 1921465991}
   chaseDistance: 0
-  EnemySprite: {fileID: 0}
+  EnemySprite: {fileID: 1064655117}
   wallLayer:
     serializedVersion: 2
     m_Bits: 0
