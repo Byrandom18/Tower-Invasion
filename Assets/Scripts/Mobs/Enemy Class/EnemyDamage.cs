@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyDamage : MonoBehaviour
 {
     public float damage;
-    // скрипт со статами игрока
+    // СЃРєСЂРёРїС‚ СЃРѕ СЃС‚Р°С‚Р°РјРё РёРіСЂРѕРєР°
     public PlayerStats playerStats;
     [SerializeField] private int health = 100;
 
@@ -22,28 +22,34 @@ public class EnemyDamage : MonoBehaviour
     private Coroutine resetColorCoroutine;
     private SpriteRenderer spriteRenderer;
 
+    [SerializeField] private float knockbackForce = 5f;
+    [SerializeField] private float knockbackDuration = 0.2f;
+    [SerializeField] private float flashDuration = 0.1f;
+
+    private Rigidbody2D rb;
+    private bool isKnockbackActive;
+    private Vector2 knockbackDirection;
+    
+
     private void Awake()
     {
+        rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, Vector2 damageSourcePosition)
     {
-        // Отменяем предыдущую корутину сброса цвета
-        if (resetColorCoroutine != null)
-        {
-            StopCoroutine(resetColorCoroutine);
-        }
+        if (isKnockbackActive) return; // РРіРЅРѕСЂРёСЂСѓРµРј РЅРѕРІС‹Р№ СѓСЂРѕРЅ РІРѕ РІСЂРµРјСЏ РѕС‚СЃРєРѕРєР°
 
-        // Применяем урон
+        // РџСЂРёРјРµРЅСЏРµРј СѓСЂРѕРЅ
         health -= damage;
 
-        // Устанавливаем красный цвет
-        spriteRenderer.color = Color.red;
+        // Р­С„С„РµРєС‚ РІРёР·СѓР°Р»СЊРЅРѕРіРѕ СѓРґР°СЂР°
+        StartCoroutine(FlashRed());
 
-        // Запускаем новую корутину сброса цвета
-        resetColorCoroutine = StartCoroutine(ResetColor(0.1f));
+        // Р­С„С„РµРєС‚ РѕС‚СЃРєРѕРєР°
+        ApplyKnockback(damageSourcePosition);
 
         if (health <= 0)
         {
@@ -51,11 +57,32 @@ public class EnemyDamage : MonoBehaviour
         }
     }
 
-    private IEnumerator ResetColor(float delay)
+    private IEnumerator FlashRed()
     {
-        yield return new WaitForSeconds(delay);
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(flashDuration);
         spriteRenderer.color = originalColor;
-        resetColorCoroutine = null;
+    }
+
+    private void ApplyKnockback(Vector2 damageSourcePosition)
+    {
+        // Р’С‹С‡РёСЃР»СЏРµРј РЅР°РїСЂР°РІР»РµРЅРёРµ РѕС‚СЃРєРѕРєР° (РѕС‚ РёСЃС‚РѕС‡РЅРёРєР° СѓСЂРѕРЅР°)
+        knockbackDirection = (Vector2)transform.position - damageSourcePosition;
+        knockbackDirection = knockbackDirection.normalized * knockbackForce;
+
+        // РџСЂРёРјРµРЅСЏРµРј СЃРёР»Сѓ РѕС‚СЃРєРѕРєР°
+        rb.linearVelocity = Vector2.zero; // РЎР±СЂР°СЃС‹РІР°РµРј С‚РµРєСѓС‰СѓСЋ СЃРєРѕСЂРѕСЃС‚СЊ
+        rb.AddForce(knockbackDirection, ForceMode2D.Impulse);
+
+        // Р—Р°РїСѓСЃРєР°РµРј С‚Р°Р№РјРµСЂ РѕС‚СЃРєРѕРєР°
+        isKnockbackActive = true;
+        Invoke(nameof(ResetKnockback), knockbackDuration);
+    }
+
+    private void ResetKnockback()
+    {
+        isKnockbackActive = false;
+        rb.linearVelocity = Vector2.zero; // РћСЃС‚Р°РЅР°РІР»РёРІР°РµРј РјРѕР±Р° РїРѕСЃР»Рµ РѕС‚СЃРєРѕРєР°
     }
 
     void Die()
