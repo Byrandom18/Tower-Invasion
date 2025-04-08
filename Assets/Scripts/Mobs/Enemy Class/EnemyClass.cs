@@ -11,18 +11,21 @@ public class EnemyClass : MonoBehaviour
     public Transform playerTransform;
     private bool isChasing = false;
     [SerializeField] private float chaseDistance;
-    private int state = 0;
+    public int state = 0;
     [SerializeField] private Transform EnemySprite;
     private float wallCheckDistance = 1f;
     public LayerMask wallLayer; // ����, �� ������� ��������� �����
+    private bool isMoving = false;
 
+    [SerializeField] private SlimeStates mobStates;
+    [SerializeField] private SlimeAnimations animations;
     // ������
     private bool isWallLeft = false;
     private bool isWallRight = false;
     [SerializeField] private float jumpForce = 8;
     private bool isGrounded = false;
     private bool isJumping = false;
-    
+    [SerializeField] private float roofCheckDistance = 1.5f;
 
     // ��
     private bool isUnderRoof = false;
@@ -47,12 +50,17 @@ public class EnemyClass : MonoBehaviour
     private bool isCliffRight = false;
 
 
+    [SerializeField] private float attackRate = 0.5f;
+    private float nextAttackTime = 0f;
+    [SerializeField] private float attackRange = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        
+        mobStates = GetComponentInChildren<SlimeStates>();
+        animations = GetComponentInChildren<SlimeAnimations>();
     }
 
     // Update is called once per frame
@@ -60,17 +68,19 @@ public class EnemyClass : MonoBehaviour
     {
         //Debug.Log(playerTransform.position.y - transform.position.y);
 
-
+        
 
         switch (state)
         {
             //idle
             case 0:
+                isMoving = false;
+
                 if (Vector2.Distance(transform.position, playerTransform.position) < chaseDistance)
                 {
                     state = 2;
                 }
-
+                
                 if (!isIdle && !isChasing)
                 {
                     StartCoroutine(IdleState());
@@ -98,7 +108,7 @@ public class EnemyClass : MonoBehaviour
                 float distanceY = playerTransform.position.y - transform.position.y;
                 //Debug.Log(distanceY);
                 CheckGround();
-                if (((((distanceY > 2.5f) && isUnderRoof) && distanceY < 4f) || (distanceY < -2.5f)) && (Mathf.Abs(transform.position.x - playerTransform.position.x) < 0.2f) && isGrounded)
+                if (((((distanceY > 2.5f) && isUnderRoof) && distanceY < 4f) || (distanceY < -2.5f)) && (Mathf.Abs(transform.position.x - playerTransform.position.x) < 1.1f) && isGrounded)
                 {
                     state = 5;
                 }
@@ -122,19 +132,29 @@ public class EnemyClass : MonoBehaviour
 
 
                 // ������
-                if (transform.position.x > playerTransform.position.x)
+                if (transform.position.x > playerTransform.position.x && distanceX < -1f)
                 {
                     EnemySprite.transform.localScale = new Vector3(-1, 1, 1);
-                    
+                    isMoving = true;
                     transform.position += Vector3.left * speed * Time.deltaTime;
                 }
-                else if (transform.position.x < playerTransform.position.x)
+                else if (transform.position.x < playerTransform.position.x && distanceX > 1f)
                 {
                     EnemySprite.transform.localScale = new Vector3(1, 1, 1);
-                    
+                    isMoving = true;
                     transform.position += Vector3.right * speed * Time.deltaTime;
                 }
-
+                
+                if (Time.time >= nextAttackTime)
+                {
+                    if ((distanceX > -attackRange && distanceX < attackRange) && (distanceY < 1f && distanceY > -1f))
+                    {
+                        isMoving = false;
+                        rb.linearVelocityX = 0;
+                        state = 3;
+                        nextAttackTime = Time.time + 1f / attackRate;
+                    }
+                }
                 // � ���� ������ �� ������� ���������, �� ����� ������� ��� ���� ��� ������ �� �����
                 //Vector2 direction = (playerTransform.position - transform.position).normalized;
                 //rb.velocity = new Vector2(direction.x * speed, rb.velocity.y);
@@ -162,10 +182,13 @@ public class EnemyClass : MonoBehaviour
 
             //attack
             case 3:
+                animations.IsAttack = true;
+                animations.Attack();
                 break;
 
             //death
             case 4:
+                animations.Death();
                 break;
 
             //path find
@@ -173,7 +196,12 @@ public class EnemyClass : MonoBehaviour
                 PathFind();
                 break;
 
+
+
+
         }
+
+        animations.IsMoving = isMoving;
     }
 
     IEnumerator IdleState()
@@ -234,6 +262,7 @@ public class EnemyClass : MonoBehaviour
             walkDirection = 0;
         }
         rb.linearVelocity = new Vector2(walkDirection * speed/2, rb.linearVelocity.y);
+        isMoving = true;
     }
 
 
@@ -263,9 +292,9 @@ public class EnemyClass : MonoBehaviour
     private void CheckRoof()
     {
         Vector2 direction = transform.up;
-        float rayLength = 1.5f;
+        
         Vector2 size = new Vector2(2f, 1f);
-        RaycastHit2D hit = Physics2D.BoxCast(transform.position, size, 0f, direction, rayLength, wallLayer);
+        RaycastHit2D hit = Physics2D.BoxCast(transform.position, size, 0f, direction, roofCheckDistance, wallLayer);
 
         if (hit.collider != null)
         {
@@ -389,7 +418,7 @@ public class EnemyClass : MonoBehaviour
             
 
             transform.position += directionPF * speed * Time.deltaTime;
-            
+            isMoving = true;
 
             if (!isUnderRoof)
             {
@@ -435,9 +464,9 @@ public class EnemyClass : MonoBehaviour
             
             
             transform.position += directionPF * speed * Time.deltaTime;
-            
+            isMoving = true;
 
-            
+
             if ((distance) > -1f)
             {
                 
@@ -485,7 +514,9 @@ public class EnemyClass : MonoBehaviour
             }
 
             transform.position += directionPF * speed * Time.deltaTime;
-            
+            isMoving = true;
+
+
             if (changedDirPF && !isUnderRoof && ((directionPF.x == -1 && isTopLeftExist) || (directionPF.x == 1 && isTopRightExist)))
             {
                 Jump();
