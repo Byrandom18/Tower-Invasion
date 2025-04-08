@@ -109,10 +109,15 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
             bootsSlot.EquipGear(itemSprite, itemName, itemDescription);
         if (itemType == ItemType.Weapon)
             weaponSlot.EquipGear(itemSprite, itemName, itemDescription);
-        if (itemType == ItemType.Ring1)
-            ring1Slot.EquipGear(itemSprite, itemName, itemDescription);
-        if (itemType == ItemType.Ring2)
-            ring2Slot.EquipGear(itemSprite, itemName, itemDescription);
+        if (itemType == ItemType.Ring)
+        {
+            if (!ring1Slot.IsInUse())
+                ring1Slot.EquipGear(itemSprite, itemName, itemDescription);
+            else if (!ring2Slot.IsInUse())
+                ring2Slot.EquipGear(itemSprite, itemName, itemDescription);
+            else
+                Debug.Log("Оба слота для колец заняты.");
+        }
 
         EmptySlot();
     }

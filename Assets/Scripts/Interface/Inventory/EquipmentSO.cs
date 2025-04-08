@@ -9,7 +9,11 @@ using UnityEngine;
 public class EquipmentSO : ScriptableObject
 {
     public string itemName;
-    public int attack, defense, health, mana;
+    public int weaponBase, atkModifier, atkSpeedModifier, critChance,
+        shieldDamageReduction, manaCostReduction,
+        healthModifier, healthFlat,
+        atkFlat,
+        speedModifier;
 
     public void EquipItem()
     {

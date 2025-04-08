@@ -106,7 +106,12 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
     {
         inventoryManager.DeselectAllSlots();
 
-        inventoryManager.AddItem(itemName, 1, itemSprite, itemDescription, itemType);
+        string tempItemName = itemName;
+        Sprite tempSprite = itemSprite;
+        string tempDescription = itemDescription;
+        ItemType tempType = itemType;
+
+        inventoryManager.AddItem(tempItemName, 1, tempSprite, tempDescription, tempType);
 
         this.itemSprite = emptySprite;
         slotImage.sprite = this.emptySprite;
@@ -115,11 +120,17 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
         itemDescriptionName.text = "";
         itemDescriptionText.text = "";
         itemDescriptionImage.sprite = emptySprite;
+        slotInUse = false;
 
         for (int i = 0; i < equipmentSOLibrary.equipmentSO.Length; i++)
         {
-            if (equipmentSOLibrary.equipmentSO[i].itemName == this.itemName)
+            if (equipmentSOLibrary.equipmentSO[i].itemName == tempItemName)
                 equipmentSOLibrary.equipmentSO[i].UnEquipItem();
         }
+    }
+
+    public bool IsInUse()
+    {
+        return slotInUse;
     }
 }

@@ -116,6 +116,6 @@ public class InventoryManager : MonoBehaviour
 public enum ItemType
 {
     Consumable, UpgradeItem, SpecialItem, Resource,
-    Weapon, Armor, Helmet, Boots, Gloves, Ring1, Ring2
+    Weapon, Armor, Helmet, Boots, Gloves, Ring
 
 };
