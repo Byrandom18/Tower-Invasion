@@ -1,0 +1,770 @@
+fileFormatVersion: 2
+guid: 78c25300fa3a5ba4a999991aee4da6b7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1328668000469675846
+    second: Leshy3_atk2_3_img_0
+  - first:
+      213: -1078647712290529157
+    second: Leshy3_atk2_3_img_1
+  - first:
+      213: 417800504479112330
+    second: Leshy3_atk2_3_img_2
+  - first:
+      213: -5656190580746172501
+    second: Leshy3_atk2_3_img_3
+  - first:
+      213: 1526549961108228389
+    second: Leshy3_atk2_3_img_4
+  - first:
+      213: -7776717896108438990
+    second: Leshy3_atk2_3_img_5
+  - first:
+      213: -494253938663976722
+    second: Leshy3_atk2_3_img_6
+  - first:
+      213: -702799925542431859
+    second: Leshy3_atk2_3_img_7
+  - first:
+      213: -2721181762065537617
+    second: Leshy3_atk2_3_img_8
+  - first:
+      213: -7987512240521440099
+    second: Leshy3_atk2_3_img_9
+  - first:
+      213: -1401723488182257128
+    second: Leshy3_atk2_3_img_10
+  - first:
+      213: -8804122771810300625
+    second: Leshy3_atk2_3_img_11
+  - first:
+      213: -616140928455837925
+    second: Leshy3_atk2_3_img_12
+  - first:
+      213: -2472311847300594103
+    second: Leshy3_atk2_3_img_13
+  - first:
+      213: 4444832097925698590
+    second: Leshy3_atk2_3_img_14
+  - first:
+      213: -3811892250985763615
+    second: Leshy3_atk2_3_img_15
+  - first:
+      213: -1495997813476650290
+    second: Leshy3_atk2_3_img_16
+  - first:
+      213: 9099438947259190720
+    second: Leshy3_atk2_3_img_17
+  - first:
+      213: -6176533009949319589
+    second: Leshy3_atk2_3_img_18
+  - first:
+      213: 169976024939242373
+    second: Leshy3_atk2_3_img_19
+  - first:
+      213: 5247185997155293858
+    second: Leshy3_atk2_3_img_20
+  - first:
+      213: -6797963859077795501
+    second: Leshy3_atk2_3_img_21
+  - first:
+      213: 2273795046174730853
+    second: Leshy3_atk2_3_img_22
+  - first:
+      213: 6606603423928966619
+    second: Leshy3_atk2_3_img_23
+  - first:
+      213: -6753256424850226179
+    second: Leshy3_atk2_3_img_24
+  - first:
+      213: 4963497559249523715
+    second: Leshy3_atk2_3_img_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Leshy3_atk2_3_img_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 264
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64f6c60c180607210800000000000000
+      internalID: 1328668000469675846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy3_atk2_3_img_1
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 264
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b70a22fde9fd701f0800000000000000
+      internalID: -1078647712290529157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy3_atk2_3_img_2
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 264
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8cd47068535cc500800000000000000
+      internalID: 417800504479112330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy3_atk2_3_img_3
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 264
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba7c6b472ac2181b0800000000000000
+      internalID: -5656190580746172501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy3_atk2_3_img_4
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 264
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5290eb30a156f2510800000000000000
+      internalID: 1526549961108228389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy3_atk2_3_img_5
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 264
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23a880cb64c831490800000000000000
+      internalID: -7776717896108438990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy3_atk2_3_img_6
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 264
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee0981559ae0429f0800000000000000
+      internalID: -494253938663976722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy3_atk2_3_img_7
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 264
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d835fd9f0372f36f0800000000000000
+      internalID: -702799925542431859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy3_atk2_3_img_8
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 264
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa5efc6da9b6c3ad0800000000000000
+      internalID: -2721181762065537617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy3_atk2_3_img_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 132
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9492a8dfe7a62190800000000000000
+      internalID: -7987512240521440099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy3_atk2_3_img_10
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 132
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81a33950ae31c8ce0800000000000000
+      internalID: -1401723488182257128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy3_atk2_3_img_11
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 132
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2dc15b3cf871d580800000000000000
+      internalID: -8804122771810300625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy3_atk2_3_img_12
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 132
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b177fcb07170377f0800000000000000
+      internalID: -616140928455837925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy3_atk2_3_img_13
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 132
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94688a7497590bdd0800000000000000
+      internalID: -2472311847300594103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy3_atk2_3_img_14
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 132
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e149d1b4e373fad30800000000000000
+      internalID: 4444832097925698590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy3_atk2_3_img_15
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 132
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ecede9a130791bc0800000000000000
+      internalID: -3811892250985763615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy3_atk2_3_img_16
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 132
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec296fe2ae52d3be0800000000000000
+      internalID: -1495997813476650290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy3_atk2_3_img_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cd0dbaf283b74e70800000000000000
+      internalID: 9099438947259190720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy3_atk2_3_img_18
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 0
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5e1f7eb3fb884aa0800000000000000
+      internalID: -6176533009949319589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy3_atk2_3_img_19
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 0
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58326da4b40eb5200800000000000000
+      internalID: 169976024939242373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy3_atk2_3_img_20
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 0
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aa58d61ddfb1d840800000000000000
+      internalID: 5247185997155293858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy3_atk2_3_img_21
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 0
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35179b723e7c8a1a0800000000000000
+      internalID: -6797963859077795501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy3_atk2_3_img_22
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 0
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56aa9432c842e8f10800000000000000
+      internalID: 2273795046174730853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy3_atk2_3_img_23
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 0
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdd5a2f8fce5fab50800000000000000
+      internalID: 6606603423928966619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy3_atk2_3_img_24
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 0
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df38da7df0d9742a0800000000000000
+      internalID: -6753256424850226179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 8afd2bf5c030c484ba62ec845e5faded
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Leshy3_atk2_3_img_0: 1328668000469675846
+      Leshy3_atk2_3_img_1: -1078647712290529157
+      Leshy3_atk2_3_img_10: -1401723488182257128
+      Leshy3_atk2_3_img_11: -8804122771810300625
+      Leshy3_atk2_3_img_12: -616140928455837925
+      Leshy3_atk2_3_img_13: -2472311847300594103
+      Leshy3_atk2_3_img_14: 4444832097925698590
+      Leshy3_atk2_3_img_15: -3811892250985763615
+      Leshy3_atk2_3_img_16: -1495997813476650290
+      Leshy3_atk2_3_img_17: 9099438947259190720
+      Leshy3_atk2_3_img_18: -6176533009949319589
+      Leshy3_atk2_3_img_19: 169976024939242373
+      Leshy3_atk2_3_img_2: 417800504479112330
+      Leshy3_atk2_3_img_20: 5247185997155293858
+      Leshy3_atk2_3_img_21: -6797963859077795501
+      Leshy3_atk2_3_img_22: 2273795046174730853
+      Leshy3_atk2_3_img_23: 6606603423928966619
+      Leshy3_atk2_3_img_24: -6753256424850226179
+      Leshy3_atk2_3_img_3: -5656190580746172501
+      Leshy3_atk2_3_img_4: 1526549961108228389
+      Leshy3_atk2_3_img_5: -7776717896108438990
+      Leshy3_atk2_3_img_6: -494253938663976722
+      Leshy3_atk2_3_img_7: -702799925542431859
+      Leshy3_atk2_3_img_8: -2721181762065537617
+      Leshy3_atk2_3_img_9: -7987512240521440099
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

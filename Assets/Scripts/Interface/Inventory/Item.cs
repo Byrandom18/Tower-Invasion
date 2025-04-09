@@ -44,6 +44,11 @@ public class Item : MonoBehaviour
     {
         if (other.CompareTag("Player"))
             isPlayerInRange = true;
+            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+            playerHealth.AddPotion();
+            }
 
         if (itemType == ItemType.Resource ||
             itemType == ItemType.Consumable ||
@@ -62,7 +67,8 @@ public class Item : MonoBehaviour
     private void PickUp()
     {
         int leftOverItems = inventoryManager.AddItem(itemName, quantity, sprite, itemDescription, itemType);
-        if (leftOverItems <= 0)
+        
+            if (leftOverItems <= 0)
             Destroy(gameObject);
         else
             quantity = leftOverItems;
