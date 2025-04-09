@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: cd0de216eede96c4bbb6b17a2e12031d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6772980999152869863
+    second: KABA666-Sheet_0
+  - first:
+      213: 894444163120344139
+    second: KABA666-Sheet_1
+  - first:
+      213: -7270364165373854363
+    second: KABA666-Sheet_2
+  - first:
+      213: -1625593993736738661
+    second: KABA666-Sheet_3
+  - first:
+      213: -126428002214105644
+    second: KABA666-Sheet_4
+  - first:
+      213: 6784844928086346990
+    second: KABA666-Sheet_5
+  - first:
+      213: 4638014933361547633
+    second: KABA666-Sheet_6
+  - first:
+      213: 7247975767436324247
+    second: KABA666-Sheet_7
+  - first:
+      213: -9021583942342357387
+    second: KABA666-Sheet_8
+  - first:
+      213: -652643638338248180
+    second: KABA666-Sheet_9
+  - first:
+      213: 1422941135932544300
+    second: KABA666-Sheet_10
+  - first:
+      213: 3299429698082758488
+    second: KABA666-Sheet_11
+  - first:
+      213: -6821434021582331381
+    second: KABA666-Sheet_12
+  - first:
+      213: -2456926368427392881
+    second: KABA666-Sheet_13
+  - first:
+      213: 4970889584503250974
+    second: KABA666-Sheet_14
+  - first:
+      213: -5630943482992919681
+    second: KABA666-Sheet_15
+  - first:
+      213: -7061065693543189755
+    second: KABA666-Sheet_16
+  - first:
+      213: -2046056980143691726
+    second: KABA666-Sheet_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: KABA666-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 292
+        width: 68
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e12afc75567efd50800000000000000
+      internalID: 6772980999152869863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KABA666-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 292
+        width: 68
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4ca5363a34b96c00800000000000000
+      internalID: 894444163120344139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KABA666-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 292
+        width: 67
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56d7927cf4a7a1b90800000000000000
+      internalID: -7270364165373854363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KABA666-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 292
+        width: 67
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b98205e10eab079e0800000000000000
+      internalID: -1625593993736738661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KABA666-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 292
+        width: 67
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ddad5ed666de3ef0800000000000000
+      internalID: -126428002214105644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KABA666-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 164
+        width: 67
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eec82b2b38c982e50800000000000000
+      internalID: 6784844928086346990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KABA666-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 164
+        width: 67
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 179d8f5320a8d5040800000000000000
+      internalID: 4638014933361547633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KABA666-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 164
+        width: 67
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79d6eae1f8bf59460800000000000000
+      internalID: 7247975767436324247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KABA666-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 164
+        width: 72
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57ec05de335ecc280800000000000000
+      internalID: -9021583942342357387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KABA666-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 164
+        width: 77
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c022eeb911851f6f0800000000000000
+      internalID: -652643638338248180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KABA666-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 164
+        width: 77
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c25dc8f8c6d4fb310800000000000000
+      internalID: 1422941135932544300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KABA666-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 165
+        width: 77
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85fd89b44dde9cd20800000000000000
+      internalID: 3299429698082758488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KABA666-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 168
+        width: 77
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0222dc16e56551a0800000000000000
+      internalID: -6821434021582331381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KABA666-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 164
+        width: 77
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f80489a3c7e37edd0800000000000000
+      internalID: -2456926368427392881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KABA666-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 164
+        width: 67
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e10610e7db52cf440800000000000000
+      internalID: 4970889584503250974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KABA666-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 36
+        width: 68
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7bf7e97cbedad1b0800000000000000
+      internalID: -5630943482992919681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KABA666-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 37
+        width: 76
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50339a0b92e020e90800000000000000
+      internalID: -7061065693543189755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KABA666-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 41
+        width: 81
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 238a35c5402fa93e0800000000000000
+      internalID: -2046056980143691726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      KABA666-Sheet_0: 6772980999152869863
+      KABA666-Sheet_1: 894444163120344139
+      KABA666-Sheet_10: 1422941135932544300
+      KABA666-Sheet_11: 3299429698082758488
+      KABA666-Sheet_12: -6821434021582331381
+      KABA666-Sheet_13: -2456926368427392881
+      KABA666-Sheet_14: 4970889584503250974
+      KABA666-Sheet_15: -5630943482992919681
+      KABA666-Sheet_16: -7061065693543189755
+      KABA666-Sheet_17: -2046056980143691726
+      KABA666-Sheet_2: -7270364165373854363
+      KABA666-Sheet_3: -1625593993736738661
+      KABA666-Sheet_4: -126428002214105644
+      KABA666-Sheet_5: 6784844928086346990
+      KABA666-Sheet_6: 4638014933361547633
+      KABA666-Sheet_7: 7247975767436324247
+      KABA666-Sheet_8: -9021583942342357387
+      KABA666-Sheet_9: -652643638338248180
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
