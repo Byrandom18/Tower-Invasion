@@ -16,14 +16,8 @@ public class PlayerStrongAttack : MonoBehaviour
     private Animator animator;
     public Transform attackPoint;
     public LayerMask enemyLayers;
-    private PlayerBlock playerBlock; // Ссылка на скрипт блока
+    private PlayerBlock playerBlock; 
 
-    void Start()
-    {
-        animator = GetComponent<Animator>();
-        currentMana = maxMana;
-        playerBlock = GetComponent<PlayerBlock>();
-    }
 
     void Update()
     {
@@ -37,6 +31,7 @@ public class PlayerStrongAttack : MonoBehaviour
                 currentMana -= strongAttackManaCost;
                 currentMana = Mathf.Clamp(currentMana, 0f, maxMana);
                 nextAttackTime = Time.time + 1f / attackRate;
+                Debug.Log($"Мана потрачена: {strongAttackManaCost}. Текущая мана: {currentMana}");
             }
             else
             {
@@ -47,7 +42,7 @@ public class PlayerStrongAttack : MonoBehaviour
 
     void Attack()
     {
-        animator.SetTrigger("StrongAttack");
+   
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
@@ -70,14 +65,14 @@ public class PlayerStrongAttack : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
-    // Метод для восстановления маны из обычной атаки
     public void RestoreMana(float amount)
     {
         currentMana += amount;
         currentMana = Mathf.Clamp(currentMana, 0f, maxMana);
     }
 
-    // Метод для получения текущего значения маны (например, для UI)
+
+ 
     public float GetManaPercentage()
     {
         return currentMana / maxMana;

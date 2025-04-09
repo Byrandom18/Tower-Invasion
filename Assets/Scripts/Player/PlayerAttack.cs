@@ -15,6 +15,19 @@ public class PlayerAttack : MonoBehaviour
     public float manaGainPerAttack = 10f;
     private PlayerBlock playerBlock;
     private PlayerStrongAttack strongAttack;
+
+    void Start()
+    {
+       
+        playerBlock = GetComponent<PlayerBlock>();
+        strongAttack = GetComponent<PlayerStrongAttack>();
+
+        // Проверка, найден ли компонент сильной атаки
+        if (strongAttack == null)
+        {
+            Debug.LogError("PlayerStrongAttack не найден! Мана не будет восстанавливаться.");
+        }
+    }
     void Update()
     {
         // Проверка возможности атаки
@@ -38,11 +51,15 @@ public class PlayerAttack : MonoBehaviour
         {
             // Предполагается, что у врага есть скрипт Enemy с методом TakeDamage
             enemy.GetComponent<EnemyDamage>().TakeDamage(attackDamage, transform.position);
+            
+            if (strongAttack != null)
+            {
+                strongAttack.RestoreMana(manaGainPerAttack);
+                Debug.Log($"Мана восстановлена на {manaGainPerAttack}. Текущая мана: {strongAttack.GetManaPercentage() * strongAttack.maxMana}");
+            }
         }
-        if (strongAttack != null)
-        {
-            strongAttack.RestoreMana(manaGainPerAttack);
-        }
+
+      
     }
 
     // Визуализация радиуса атаки в редакторе (опционально)
