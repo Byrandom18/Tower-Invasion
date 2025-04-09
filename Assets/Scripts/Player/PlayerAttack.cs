@@ -12,19 +12,21 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private LayerMask enemyLayers;         // Слои врагов
 
     private float nextAttackTime = 0f;                      // Время до следующей атаки
-
+    public float manaGainPerAttack = 10f;
+    private PlayerBlock playerBlock;
+    private PlayerStrongAttack strongAttack;
     void Update()
     {
         // Проверка возможности атаки
-        if (Time.time >= nextAttackTime)
+        if (Time.time >= nextAttackTime && Input.GetKeyDown(KeyCode.Mouse0) &&
+                   (playerBlock == null || !playerBlock.IsBlocking()))
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0)) 
-            {
-                Attack();
-                nextAttackTime = Time.time + 1f / attackRate;
-            }
+            Attack();
+            nextAttackTime = Time.time + 1f / attackRate;
         }
     }
+        
+    
 
     void Attack()
     {
@@ -36,6 +38,10 @@ public class PlayerAttack : MonoBehaviour
         {
             // Предполагается, что у врага есть скрипт Enemy с методом TakeDamage
             enemy.GetComponent<EnemyDamage>().TakeDamage(attackDamage, transform.position);
+        }
+        if (strongAttack != null)
+        {
+            strongAttack.RestoreMana(manaGainPerAttack);
         }
     }
 
