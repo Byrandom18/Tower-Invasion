@@ -6165,7 +6165,11 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
+<<<<<<< Updated upstream
   m_AnchoredPosition: {x: 0, y: -12.500122}
+=======
+  m_AnchoredPosition: {x: 0, y: -12.5000305}
+>>>>>>> Stashed changes
   m_SizeDelta: {x: -650, y: -385}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &733798116
@@ -9740,8 +9744,8 @@ Transform:
   m_GameObject: {fileID: 1271936306}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0989, y: 0.13, z: 0}
-  m_LocalScale: {x: 2.0611107, y: 1.4942986, z: 1}
+  m_LocalPosition: {x: -0.164, y: -0.46, z: 0}
+  m_LocalScale: {x: 1.6565984, y: 1.2010285, z: 0.8037406}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1921465991}
@@ -16580,15 +16584,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1921465990}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.82, y: -3.34, z: -0.30565158}
+  m_LocalRotation: {x: -0.0027186417, y: -0.0000000011059454, z: -0.00000043213342, w: 0.9999963}
+  m_LocalPosition: {x: -5.766, y: -3.07, z: -0.307}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1271936307}
   - {fileID: 368698454}
   m_Father: {fileID: 423166368}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.312, y: 0, z: 0}
 --- !u!95 &1921465992
 Animator:
   serializedVersion: 7
@@ -16655,7 +16659,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 107815487, guid: ed5bf8b380d0bb14fb7282a1a11b1b32, type: 3}
+  m_Sprite: {fileID: -788857310694691240, guid: 9fbc9afaebef7dd4fafeaf03e04b7bae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -16700,8 +16704,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0015330315, y: 0.012140214}
-  m_Size: {x: 0.51062965, y: 1.23199}
+  m_Offset: {x: -0.110000014, y: -0.5383306}
+  m_Size: {x: 0.72, y: 1.2246249}
   m_Direction: 0
 --- !u!114 &1921465995
 MonoBehaviour:
