@@ -1,12 +1,14 @@
 using UnityEngine;
 
-public class SlimeStates : MonoBehaviour
+public class RogueStates : MonoBehaviour
 {
+    private Rigidbody2D rb;
+    private Transform player;
 
     [Header("References")]
     [SerializeField] private PlayerStats playerStats; // Перетащите игрока в инспекторе
     [SerializeField] private EnemyDamage enemyDamage; // Перетащите компонент с уроном
-    [SerializeField] private SlimeAnimations animations;
+    [SerializeField] private RogueAnimations animations;
     [SerializeField] private EnemyClass enemy;
 
     [Header("Attack Settings")]
@@ -20,12 +22,14 @@ public class SlimeStates : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         // Проверяем и получаем компоненты
         if (enemyDamage == null)
             enemyDamage = GetComponent<EnemyDamage>();
 
         if (animations == null)
-            animations = GetComponent<SlimeAnimations>();
+            animations = GetComponent<RogueAnimations>();
 
         if (enemy == null)
             enemy = GetComponent<EnemyClass>();
@@ -40,35 +44,39 @@ public class SlimeStates : MonoBehaviour
             Debug.LogError("PlayerStats reference not set!", this);
     }
 
-    
+
 
     public void AttackState()
     {
         attackDirection = transform.right * Mathf.Sign(transform.localScale.x);
-        
+
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, attackDirection, attackRange, playerLayer);
         if (hit.collider != null)
         {
+            
             playerStats.TakeDamage(damage);
         }
-        
+
     }
 
-    
-
+    public void AttackClosing()
+    {
+        Vector2 direction = (player.position - transform.position).normalized;
+        rb.AddForce(new Vector2(direction.x * 150, 0));
+    }
 
     public void ChangeState()
     {
         enemy.state = 2;
         animations.IsAttack = false;
         animations.Attack();
-        
+
     }
 
 
-    public void DeathState()
+    public void Death()
     {
-        Destroy(gameObject);
+
     }
 }

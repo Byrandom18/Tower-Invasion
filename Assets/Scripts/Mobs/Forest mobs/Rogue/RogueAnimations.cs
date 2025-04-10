@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SlimeAnimations : MonoBehaviour, IEnemyAnimations
+public class RogueAnimations : MonoBehaviour, IEnemyAnimations
 {
     private Animator animator;
 
@@ -8,7 +8,7 @@ public class SlimeAnimations : MonoBehaviour, IEnemyAnimations
     public bool IsFlying {get; set; }
     public bool IsAttack {get; set; }
     // Start is called before the first frame update
-    private void Awake()
+    private void Start()
     {
         animator = GetComponent<Animator>();
     }

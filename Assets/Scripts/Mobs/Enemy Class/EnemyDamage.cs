@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-    public float damage;
+    public float Damage;
     // скрипт со статами игрока
     public PlayerStats playerStats;
 
@@ -17,7 +17,7 @@ public class EnemyDamage : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            playerStats.TakeDamage(damage);
+            playerStats.TakeDamage(Damage);
         }
     }
 

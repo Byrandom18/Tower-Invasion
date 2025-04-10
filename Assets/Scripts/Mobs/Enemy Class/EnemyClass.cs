@@ -17,8 +17,13 @@ public class EnemyClass : MonoBehaviour
     public LayerMask wallLayer; // ����, �� ������� ��������� �����
     private bool isMoving = false;
 
-    [SerializeField] private SlimeStates mobStates;
-    [SerializeField] private SlimeAnimations animations;
+
+    // Поле для выбора реализации в инспекторе
+    public MonoBehaviour animationsScript;
+
+    // Ссылка на интерфейс
+    private IEnemyAnimations animations;
+
     // ������
     private bool isWallLeft = false;
     private bool isWallRight = false;
@@ -48,21 +53,27 @@ public class EnemyClass : MonoBehaviour
     private float walkDirection;
     private bool isCliffLeft = false;
     private bool isCliffRight = false;
-
+    
 
     [SerializeField] private float attackRate = 0.5f;
     private float nextAttackTime = 0f;
     [SerializeField] private float attackRange = 1f;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        mobStates = GetComponentInChildren<SlimeStates>();
-        animations = GetComponentInChildren<SlimeAnimations>();
+        // Проверяем, что скрипт реализует интерфейс
+        if (animationsScript is IEnemyAnimations enemyAnim)
+        {
+            animations = enemyAnim;
+        }
+        else
+        {
+            Debug.LogError("Скрипт анимаций не реализует IEnemyAnimations!", this);
+        }
     }
-
     // Update is called once per frame
     void Update()
     {
