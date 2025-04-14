@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEditor.Progress;
+using UnityEditor;
 
 public class InventoryManager : MonoBehaviour
 {

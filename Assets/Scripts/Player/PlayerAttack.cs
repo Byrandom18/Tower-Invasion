@@ -11,6 +11,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private Transform attackPoint;         // Точка начала атаки
     [SerializeField] private LayerMask enemyLayers;         // Слои врагов
 
+    private PlayerAnimation animations;
+
     private float nextAttackTime = 0f;                      // Время до следующей атаки
     public float manaGainPerAttack = 10f;
     private PlayerBlock playerBlock;
@@ -18,9 +20,10 @@ public class PlayerAttack : MonoBehaviour
 
     void Start()
     {
-       
+        animations = GetComponentInChildren<PlayerAnimation>();
         playerBlock = GetComponent<PlayerBlock>();
         strongAttack = GetComponent<PlayerStrongAttack>();
+
 
         // Проверка, найден ли компонент сильной атаки
         if (strongAttack == null)
@@ -43,6 +46,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Attack()
     {
+        animations.Attack = true;
         // Обнаружение врагов в радиусе атаки
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
@@ -61,6 +65,12 @@ public class PlayerAttack : MonoBehaviour
 
       
     }
+
+    void AttackEnd()
+    {
+        animations.Attack = false;
+    }
+
 
     // Визуализация радиуса атаки в редакторе (опционально)
     void OnDrawGizmosSelected()

@@ -9,7 +9,9 @@ public class PlayerAnimation : MonoBehaviour
 
     public bool IsMoving { private get; set; }
     public bool IsFlying { private get; set; }
-    
+    public bool Jump { private get; set; }
+    public bool Attack { private get; set; }
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -21,10 +23,9 @@ public class PlayerAnimation : MonoBehaviour
     {
         animator.SetBool("IsMoving", IsMoving);
         animator.SetBool("IsFlying", IsFlying);
+        animator.SetBool("Jump", Jump);
+        animator.SetBool("Attack", Attack);
     }
 
-    public void Jump()
-    {
-        animator.SetTrigger("Jump");
-    }
+    
 }

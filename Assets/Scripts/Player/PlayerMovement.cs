@@ -63,6 +63,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (rb.linearVelocity.y < 0)
         {
+            animations.Jump = false;
             return true;
         }
         else
@@ -90,7 +91,7 @@ public class NewBehaviourScript : MonoBehaviour
         if (isGrounded)
         {
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
-            animations.Jump();
+            animations.Jump = true;
         }
     }
 }
