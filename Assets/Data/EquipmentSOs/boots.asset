@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: boots
   m_EditorClassIdentifier: 
   itemName: boots
-  attack: 0
-  defense: 0
-  health: 0
-  mana: 0
+  rarity: 0
+  mainStat:
+    statType: 0
+    value: 1
+  additionalStats: []

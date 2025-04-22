@@ -7,7 +7,7 @@ public class PlayerStats : MonoBehaviour
     public float maxHealth = 10;
     public float health;
     public float healthModifier;
-    public float heathFlat;
+    public float healthFlat;
     public float healthBase = 100;
 
     public float atk;
@@ -26,8 +26,9 @@ public class PlayerStats : MonoBehaviour
     public float critDamage;
     public float defFlat;
 
-
     public float speedModifier;
+
+    public float atkSpeedModifier;
     public float spdModifier;
     public float baseAttackModifier;
     
@@ -42,7 +43,7 @@ public class PlayerStats : MonoBehaviour
 
     public void UpdateEquipmentStats()
     {
-        maxHealth = (healthBase * (1 + healthModifier)) + heathFlat;
+        maxHealth = (healthBase * (1 + healthModifier)) + healthFlat;
         atk = ((baseAttack + weaponBase) * (1 + atkModifier)) + atkFlat;
         maxMana = manaBase + manaFlat;
 
