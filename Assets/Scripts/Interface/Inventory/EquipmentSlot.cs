@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
 using Unity.VisualScripting;
+using static UnityEditor.Progress;
 
 public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
 {
@@ -174,5 +175,4 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
         itemDescriptionImage.sprite = emptySprite;
         isFull = false;
     }
-
 }

@@ -254,6 +254,18 @@ MonoBehaviour:
   itemDescriptionImage: {fileID: 0}
   itemDescriptionName: {fileID: 0}
   itemDescriptionText: {fileID: 0}
+  statNames:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  statValues:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   helmetSlot: {fileID: 0}
   armorSlot: {fileID: 0}
   glovesSlot: {fileID: 0}
