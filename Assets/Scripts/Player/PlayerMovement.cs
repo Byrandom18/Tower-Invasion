@@ -61,7 +61,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     private bool IsFlying()
     {
-        if (rb.linearVelocity.y < 0)
+        if (rb.linearVelocity.y < -0.1)
         {
             animations.Jump = false;
             return true;
@@ -74,8 +74,9 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void Move()
     {
-        input = new Vector2(Input.GetAxis("Horizontal"), 0);
-        transform.position += input * speed * Time.deltaTime;
+        input = new Vector2(Input.GetAxis("Horizontal"), 0f);
+        float horizontalInput = Input.GetAxis("Horizontal");
+        rb.linearVelocity = new Vector2(horizontalInput * speed, rb.linearVelocity.y);
         isMoving = input.x != 0 ? true : false;
 
         if (isMoving)

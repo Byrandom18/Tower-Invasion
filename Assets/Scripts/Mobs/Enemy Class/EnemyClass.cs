@@ -145,17 +145,22 @@ public class EnemyClass : MonoBehaviour
                 // ������
                 if (transform.position.x > playerTransform.position.x && distanceX < -1f)
                 {
-                    EnemySprite.transform.localScale = new Vector3(-1, 1, 1);
+                    EnemySprite.transform.localScale = new Vector3(-1, 1, 1); // Разворот спрайта
                     isMoving = true;
-                    transform.position += Vector3.left * speed * Time.deltaTime;
+                    rb.linearVelocity = new Vector2(-speed, rb.linearVelocity.y); // Движение влево
                 }
                 else if (transform.position.x < playerTransform.position.x && distanceX > 1f)
                 {
-                    EnemySprite.transform.localScale = new Vector3(1, 1, 1);
+                    EnemySprite.transform.localScale = new Vector3(1, 1, 1); // Разворот спрайта
                     isMoving = true;
-                    transform.position += Vector3.right * speed * Time.deltaTime;
+                    rb.linearVelocity = new Vector2(speed, rb.linearVelocity.y); // Движение вправо
                 }
-                
+                else
+                {
+                    isMoving = false;
+                    rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); // Остановка
+                }
+
                 if (Time.time >= nextAttackTime)
                 {
                     if ((distanceX > -attackRange && distanceX < attackRange) && (distanceY < 1f && distanceY > -1f))
@@ -218,6 +223,7 @@ public class EnemyClass : MonoBehaviour
     IEnumerator IdleState()
     {
         isIdle = true;
+        rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
         yield return new WaitForSeconds(idleDuration);
         if (!isChasing)
         {
@@ -428,7 +434,7 @@ public class EnemyClass : MonoBehaviour
             
             
 
-            transform.position += directionPF * speed * Time.deltaTime;
+            rb.linearVelocity = directionPF * speed;
             isMoving = true;
 
             if (!isUnderRoof)
@@ -468,13 +474,21 @@ public class EnemyClass : MonoBehaviour
             }
             else
             {
-                directionPF = Vector3.left;
+                directionPF = Vector2.left;
                 EnemySprite.transform.localScale = new Vector3(-1, 1, 1);
+            }
+
+            if (directionPF.x > 0)
+            {
+                rb.linearVelocity = new Vector2(speed, rb.linearVelocity.y);
+            }
+            else if (directionPF.x < 0)
+            {
+                rb.linearVelocity = new Vector2(-speed, rb.linearVelocity.y);
             }
             
             
-            
-            transform.position += directionPF * speed * Time.deltaTime;
+            //rb.linearVelocity = directionPF * speed;
             isMoving = true;
 
 
@@ -524,7 +538,16 @@ public class EnemyClass : MonoBehaviour
                 changedDirPF = true;
             }
 
-            transform.position += directionPF * speed * Time.deltaTime;
+            if (directionPF.x > 0)
+            {
+                rb.linearVelocity = new Vector2(speed, rb.linearVelocity.y);
+            }
+            else if (directionPF.x < 0)
+            {
+                rb.linearVelocity = new Vector2(-speed, rb.linearVelocity.y);
+            }
+
+            //rb.linearVelocity = directionPF * speed;
             isMoving = true;
 
 

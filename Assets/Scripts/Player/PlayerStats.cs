@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
+    //UI
+    public Slider healthBar;
+    public Slider manaBar;
+
+    //stats
     public float maxHealth = 10;
     public float health;
     public float healthModifier;
@@ -20,7 +26,7 @@ public class PlayerStats : MonoBehaviour
     public float maxMana;
     public float manaFlat;
     public float manaRegenModifier;
-
+    public float mana;
 
     public float critChance;
     public float critDamage;
@@ -38,7 +44,10 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        UpdateEquipmentStats();
         health = maxHealth;
+        mana = maxMana;
+        BarsUpdate();
     }
 
     public void UpdateEquipmentStats()
@@ -46,18 +55,27 @@ public class PlayerStats : MonoBehaviour
         maxHealth = (healthBase * (1 + healthModifier)) + healthFlat;
         atk = ((baseAttack + weaponBase) * (1 + atkModifier)) + atkFlat;
         maxMana = manaBase + manaFlat;
-
-
+        BarsUpdate();
     }
 
     public void TakeDamage(float damage)
     {
         
         health -= damage;
+        healthBar.value = health;
         Debug.Log(health);
         if (health <= 0)
         {
             Destroy(gameObject);
         }
+    }
+
+    // update health and mana bars
+    public void BarsUpdate()
+    {
+        healthBar.maxValue = maxHealth;
+        healthBar.value = health;
+        manaBar.maxValue = maxMana;
+        manaBar.value = mana;
     }
 }
