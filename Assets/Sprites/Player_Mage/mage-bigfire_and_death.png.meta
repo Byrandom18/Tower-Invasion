@@ -1,0 +1,515 @@
+fileFormatVersion: 2
+guid: e7cb4f6b4dcd4b1409b32af188a2d1a2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2305287491218219081
+    second: mage-bigfire_and_death_0
+  - first:
+      213: -1964393545815415522
+    second: mage-bigfire_and_death_1
+  - first:
+      213: 2860460144814392590
+    second: mage-bigfire_and_death_2
+  - first:
+      213: -359343377844009583
+    second: mage-bigfire_and_death_3
+  - first:
+      213: 7719447069294684909
+    second: mage-bigfire_and_death_4
+  - first:
+      213: -3251803727129560989
+    second: mage-bigfire_and_death_5
+  - first:
+      213: 7751855149276844651
+    second: mage-bigfire_and_death_6
+  - first:
+      213: -6652198502951642806
+    second: mage-bigfire_and_death_7
+  - first:
+      213: 5055441468852173515
+    second: mage-bigfire_and_death_8
+  - first:
+      213: -7032081848331710827
+    second: mage-bigfire_and_death_9
+  - first:
+      213: 8284494182227881724
+    second: mage-bigfire_and_death_10
+  - first:
+      213: -2686603919696405791
+    second: mage-bigfire_and_death_11
+  - first:
+      213: 4388263404605614986
+    second: mage-bigfire_and_death_12
+  - first:
+      213: 2800232151232065020
+    second: mage-bigfire_and_death_13
+  - first:
+      213: 1697478392620970048
+    second: mage-bigfire_and_death_14
+  - first:
+      213: -5952004030182684236
+    second: mage-bigfire_and_death_15
+  - first:
+      213: 5131390971533708615
+    second: mage-bigfire_and_death_16
+  - first:
+      213: 2688291574634303
+    second: mage-bigfire_and_death_17
+  - first:
+      213: -3848914532554652113
+    second: mage-bigfire_and_death_18
+  - first:
+      213: -482524881401459406
+    second: mage-bigfire_and_death_19
+  - first:
+      213: 5434491640774958279
+    second: mage-bigfire_and_death_20
+  - first:
+      213: -4515811620493904528
+    second: mage-bigfire_and_death_21
+  - first:
+      213: -8947967479624946115
+    second: mage-bigfire_and_death_22
+  - first:
+      213: 4848434519707484484
+    second: mage-bigfire_and_death_23
+  - first:
+      213: -8301612321862771730
+    second: mage-bigfire_and_death_24
+  - first:
+      213: 3843710479531952462
+    second: mage-bigfire_and_death_25
+  - first:
+      213: -7924098940389328353
+    second: mage-bigfire_and_death_26
+  - first:
+      213: 3712246058607953136
+    second: mage-bigfire_and_death_27
+  - first:
+      213: -7578138042209608061
+    second: mage-bigfire_and_death_28
+  - first:
+      213: -1954762512851285962
+    second: mage-bigfire_and_death_29
+  - first:
+      213: -8214859762598428184
+    second: mage-bigfire_and_death_30
+  - first:
+      213: -5610442175943055955
+    second: mage-bigfire_and_death_31
+  - first:
+      213: -2118569901195350529
+    second: mage-bigfire_and_death_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: mage-bigfire_and_death_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bf59cc9d39f100e0800000000000000
+      internalID: -2305287491218219081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage-bigfire_and_death_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e152a965a721db4e0800000000000000
+      internalID: -1964393545815415522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage-bigfire_and_death_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0503d9a85562b720800000000000000
+      internalID: 2860460144814392590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage-bigfire_and_death_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 195083b0a1b530bf0800000000000000
+      internalID: -359343377844009583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage-bigfire_and_death_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dea6dbbc53cf02b60800000000000000
+      internalID: 7719447069294684909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage-bigfire_and_death_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 368b62d2db54fd2d0800000000000000
+      internalID: -3251803727129560989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage-bigfire_and_death_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b62ddeaef2f149b60800000000000000
+      internalID: 7751855149276844651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage-bigfire_and_death_7
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a499e28d4b4aea3a0800000000000000
+      internalID: -6652198502951642806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage-bigfire_and_death_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bca76b52b39882640800000000000000
+      internalID: 5055441468852173515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage-bigfire_and_death_9
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59e47b601d6096e90800000000000000
+      internalID: -7032081848331710827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage-bigfire_and_death_10
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfeab7bc09f68f270800000000000000
+      internalID: 8284494182227881724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage-bigfire_and_death_11
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ead25228f347bad0800000000000000
+      internalID: -2686603919696405791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage-bigfire_and_death_12
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8b2d54015e36ec30800000000000000
+      internalID: 4388263404605614986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c5b5da8f5a80496489926a17860a7788
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      mage-bigfire_and_death_0: -2305287491218219081
+      mage-bigfire_and_death_1: -1964393545815415522
+      mage-bigfire_and_death_10: 8284494182227881724
+      mage-bigfire_and_death_11: -2686603919696405791
+      mage-bigfire_and_death_12: 4388263404605614986
+      mage-bigfire_and_death_2: 2860460144814392590
+      mage-bigfire_and_death_3: -359343377844009583
+      mage-bigfire_and_death_4: 7719447069294684909
+      mage-bigfire_and_death_5: -3251803727129560989
+      mage-bigfire_and_death_6: 7751855149276844651
+      mage-bigfire_and_death_7: -6652198502951642806
+      mage-bigfire_and_death_8: 5055441468852173515
+      mage-bigfire_and_death_9: -7032081848331710827
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
