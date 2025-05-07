@@ -7,18 +7,27 @@ public class EnemyDamage : MonoBehaviour
     public float Damage;
     // скрипт со статами игрока
     public PlayerStats playerStats;
-
-    public int health = 100;
-
- 
+    public Transform player;
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public float health = 100;
+
+
+    public ParticleSystem DamageParticles;
+    public float particleSpeed = 3f;
+
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.tag == "Player")
+        if (other.CompareTag("Player"))
         {
-            playerStats.TakeDamage(Damage);
+            PlayerStats player = other.GetComponent<PlayerStats>();
+            if (player != null)
+            {
+                player.TakeDamage(Damage);
+            }
         }
+        
     }
 
 
@@ -48,6 +57,9 @@ public class EnemyDamage : MonoBehaviour
 
         // Применяем урон
         health -= damage;
+
+        //particles
+        ParticlesLaunch();
 
         // Эффект визуального удара
         StartCoroutine(FlashRed());
@@ -88,6 +100,22 @@ public class EnemyDamage : MonoBehaviour
         isKnockbackActive = false;
         rb.linearVelocity = Vector2.zero; // Останавливаем моба после отскока
     }
+
+    private void ParticlesLaunch()
+    {
+        // Направление от игрока к врагу (и разворачиваем его)
+        Vector3 directionToPlayer = (player.position - transform.position).normalized;
+        Vector3 oppositeDirection = -directionToPlayer; // Направление "от игрока"
+
+        // Настраиваем ParticleSystem
+        var main = DamageParticles.main;
+        //main.startSpeed = particleSpeed;
+        main.startRotation = Mathf.Atan2(oppositeDirection.y, oppositeDirection.x); // Угол в радианах
+
+        // Запускаем частицы
+        DamageParticles.Play();
+    }
+
 
     void Die()
     {

@@ -63,7 +63,7 @@ public class PlayerStats : MonoBehaviour
         
         health -= damage;
         healthBar.value = health;
-        Debug.Log(health);
+        //Debug.Log(health);
         if (health <= 0)
         {
             Destroy(gameObject);
