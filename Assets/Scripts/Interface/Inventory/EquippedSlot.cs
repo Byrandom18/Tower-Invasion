@@ -1,45 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TMPro;
+﻿using UnityEngine.EventSystems;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using TMPro;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class EquippedSlot : MonoBehaviour, IPointerClickHandler
 {
+    public ItemData item { get; private set; }
+    public bool isFull;
+    public bool slotInUse;
+
+    [Header("EquipmentSlot")]
     [SerializeField]
-    private Image slotImage;
-
-    [SerializeField]
-    private ItemType itemType = new ItemType();
-
-    private Sprite itemSprite;
-    private string itemName;
-    private string itemDescription;
-
-    private bool slotInUse;
-
-    [SerializeField]
+    private Image itemImage;
     public GameObject selectedShader;
-    [SerializeField]
-    public bool thisItemSelected;
-    [SerializeField]
-    public Sprite emptySprite;
-
+    
+    [Header("EquipmentDescription")]
     public Image itemDescriptionImage;
     public TMP_Text itemDescriptionName;
     public TMP_Text itemDescriptionText;
 
+    public Sprite emptySprite;
+    public bool thisItemSelected;
+
     private InventoryManager inventoryManager;
-    private EquipmentSOLibrary equipmentSOLibrary;
+    private EquipmentManager equipmentManager;
 
     private void Start()
     {
         inventoryManager = GameObject.Find("Canvas").GetComponent<InventoryManager>();
-        equipmentSOLibrary = GameObject.Find("Canvas").GetComponent<EquipmentSOLibrary>();
+        equipmentManager = ScriptableObject.CreateInstance<EquipmentManager>();
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -58,75 +48,81 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
     {
         if (thisItemSelected && slotInUse)
         {
-            UnEquipGear();
+            UnEquip();
         }
         else
         {
             inventoryManager.DeselectAllSlots();
-            selectedShader.SetActive(true);
             thisItemSelected = true;
+            selectedShader.SetActive(true);
 
-            itemDescriptionName.text = itemName;
-            itemDescriptionText.text = itemDescription;
-            itemDescriptionImage.sprite = itemSprite;
-
-            if (itemDescriptionImage.sprite == null)
-                itemDescriptionImage.sprite = emptySprite;
+            ToShowDescription();
         }
     }
 
     private void OnRightClick()
     {
-        UnEquipGear();
+        UnEquip();
     }
 
-    public void EquipGear(Sprite itemSprite, string itemName, string itemDescription)
+    public void Equip(ItemData itemToEquip)
     {
         if (slotInUse)
         {
-            UnEquipGear();
+            UnEquip();
         }
 
-        this.itemSprite = itemSprite;
-        slotImage.sprite = this.itemSprite;
-
-        this.itemName = itemName;
-        this.itemDescription = itemDescription;
-
-        for (int i = 0; i < equipmentSOLibrary.equipmentSO.Length; i++)
-        {
-            if (equipmentSOLibrary.equipmentSO[i].itemName == this.itemName)
-                equipmentSOLibrary.equipmentSO[i].EquipItem();
-        }
-
+        item = itemToEquip;
+        itemImage.sprite = item.Icon;
         slotInUse = true;
+
+        ToShowDescription();
+
+        if (itemToEquip.equipmentData != null)
+        {
+            equipmentManager.ApplyEquipmentEffects(itemToEquip.equipmentData);
+        }
     }
 
-    public void UnEquipGear()
+    public void UnEquip()
     {
-        inventoryManager.DeselectAllSlots();
+        if (!slotInUse)
+            return;
+        if (item != null && item.equipmentData != null)
+            equipmentManager.RemoveEquipmentEffects(item.equipmentData);
+        
+        inventoryManager.AddItem(item, 1);
+        item = null;
+        EmptySlot();
+        slotInUse = false;
+        
+    }
 
-        string tempItemName = itemName;
-        Sprite tempSprite = itemSprite;
-        string tempDescription = itemDescription;
-        ItemType tempType = itemType;
+    private void ToShowDescription()
+    {
+        if (item != null)
+        {
+            itemDescriptionImage.sprite = item.Icon;
+            itemDescriptionName.text = item.ItemName;
+            itemDescriptionText.text = item.Description;
+            if (itemDescriptionImage.sprite == null)
+                itemDescriptionImage.sprite = emptySprite;
+        }
+        else
+        {
+            itemDescriptionImage.sprite = emptySprite;
+            itemDescriptionName.text = "";
+            itemDescriptionText.text = "";
+        }
+    }
 
-        inventoryManager.AddItem(tempItemName, 1, tempSprite, tempDescription, tempType);
-
-        this.itemSprite = emptySprite;
-        slotImage.sprite = this.emptySprite;
-        this.itemName = "";
-        this.itemDescription = "";
+    private void EmptySlot()
+    {
+        item = null;
+        itemImage.sprite = emptySprite;
         itemDescriptionName.text = "";
         itemDescriptionText.text = "";
         itemDescriptionImage.sprite = emptySprite;
-        slotInUse = false;
-
-        for (int i = 0; i < equipmentSOLibrary.equipmentSO.Length; i++)
-        {
-            if (equipmentSOLibrary.equipmentSO[i].itemName == tempItemName)
-                equipmentSOLibrary.equipmentSO[i].UnEquipItem();
-        }
     }
 
     public bool IsInUse()
@@ -134,3 +130,4 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
         return slotInUse;
     }
 }
+
