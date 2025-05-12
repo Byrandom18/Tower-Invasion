@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -35,8 +36,11 @@ public class PlayerAttack : MonoBehaviour
     {
         // Проверка возможности атаки
         if (Time.time >= nextAttackTime && Input.GetKeyDown(KeyCode.Mouse0) &&
-                   (playerBlock == null || !playerBlock.IsBlocking()))
+        (playerBlock == null || !playerBlock.IsBlocking()))
         {
+            if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+                return; // Игнорировать клик, если курсор над UI
+
             Attack();
             nextAttackTime = Time.time + 1f / attackRate;
         }
