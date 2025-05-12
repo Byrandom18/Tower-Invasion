@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class InventoryManager : MonoBehaviour
 {
     public GameObject InventoryEquipPanel;
-    public GameObject InventoryPanel;
+    public GameObject InventoryPanel; 
     public GameObject EquipmentPanel;
     public GameObject TabPanel;
 
@@ -18,11 +18,15 @@ public class InventoryManager : MonoBehaviour
 
     public GameObject itemPickupPrefab;
 
-    private bool isInventoryOpen = false;
+    public bool isInventoryOpen = false;
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
+        {
+            ToggleInventory();
+        }
+        if (isInventoryOpen && Input.GetKeyDown(KeyCode.Escape))
         {
             ToggleInventory();
         }
