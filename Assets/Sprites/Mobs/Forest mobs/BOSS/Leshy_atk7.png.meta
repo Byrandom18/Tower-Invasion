@@ -136,7 +136,7 @@ TextureImporter:
         width: 300
         height: 160
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -158,7 +158,7 @@ TextureImporter:
         width: 300
         height: 160
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -180,7 +180,7 @@ TextureImporter:
         width: 300
         height: 160
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -197,12 +197,12 @@ TextureImporter:
       name: Leshy_atk7_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 900
+        y: 160
         width: 300
         height: 160
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -219,12 +219,12 @@ TextureImporter:
       name: Leshy_atk7_4
       rect:
         serializedVersion: 2
-        x: 300
+        x: 0
         y: 0
         width: 300
         height: 160
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -241,12 +241,12 @@ TextureImporter:
       name: Leshy_atk7_5
       rect:
         serializedVersion: 2
-        x: 600
+        x: 300
         y: 0
         width: 300
         height: 160
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -263,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: acf31545428f703428525ccdc82eb733
+    spriteID: 6134199fbed1107468a03504abc48167
     internalID: 0
     vertices: []
     indices: 

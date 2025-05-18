@@ -509,8 +509,8 @@ TextureImporter:
       name: Leshy_atk6_15
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 1400
+        y: 160
         width: 200
         height: 160
       alignment: 0
@@ -531,7 +531,7 @@ TextureImporter:
       name: Leshy_atk6_16
       rect:
         serializedVersion: 2
-        x: 200
+        x: 0
         y: 0
         width: 200
         height: 160
@@ -553,7 +553,7 @@ TextureImporter:
       name: Leshy_atk6_17
       rect:
         serializedVersion: 2
-        x: 400
+        x: 200
         y: 0
         width: 200
         height: 160
@@ -575,7 +575,7 @@ TextureImporter:
       name: Leshy_atk6_18
       rect:
         serializedVersion: 2
-        x: 600
+        x: 400
         y: 0
         width: 200
         height: 160
@@ -597,7 +597,7 @@ TextureImporter:
       name: Leshy_atk6_19
       rect:
         serializedVersion: 2
-        x: 800
+        x: 600
         y: 0
         width: 200
         height: 160
@@ -619,7 +619,7 @@ TextureImporter:
       name: Leshy_atk6_20
       rect:
         serializedVersion: 2
-        x: 1000
+        x: 800
         y: 0
         width: 200
         height: 160
@@ -641,7 +641,7 @@ TextureImporter:
       name: Leshy_atk6_21
       rect:
         serializedVersion: 2
-        x: 1200
+        x: 1000
         y: 0
         width: 200
         height: 160
@@ -663,7 +663,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9c91ff994513cd044a2baf384640b59d
+    spriteID: c1f27a1f57e150440b8da505e15dfaf9
     internalID: 0
     vertices: []
     indices: 

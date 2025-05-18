@@ -350,8 +350,8 @@ TextureImporter:
       name: Leshy_atk8_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 1200
+        y: 160
         width: 300
         height: 160
       alignment: 0
@@ -372,7 +372,7 @@ TextureImporter:
       name: Leshy_atk8_10
       rect:
         serializedVersion: 2
-        x: 300
+        x: 0
         y: 0
         width: 300
         height: 160
@@ -394,7 +394,7 @@ TextureImporter:
       name: Leshy_atk8_11
       rect:
         serializedVersion: 2
-        x: 600
+        x: 300
         y: 0
         width: 300
         height: 160
@@ -416,7 +416,7 @@ TextureImporter:
       name: Leshy_atk8_12
       rect:
         serializedVersion: 2
-        x: 900
+        x: 600
         y: 0
         width: 300
         height: 160
@@ -438,7 +438,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 40c86af35daf5764e994b64ef496f565
+    spriteID: 6722a1d1f5e9a474c8d3d5a58fd7eba3
     internalID: 0
     vertices: []
     indices: 
