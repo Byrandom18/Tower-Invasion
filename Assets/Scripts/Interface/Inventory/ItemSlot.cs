@@ -3,7 +3,6 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using static UnityEditor.Progress;
-using UnityEngine.UIElements;
 
 public class ItemSlot : MonoBehaviour, IPointerClickHandler
 {
@@ -13,7 +12,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     [Header("Item Slot")]
     [SerializeField]
-    private UnityEngine.UI.Image itemImage; 
+    private Image itemImage; 
 
     [SerializeField]
     private TMP_Text quantityText;
@@ -21,7 +20,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public GameObject selectedShader;
 
     [Header("Item Description")]
-    public UnityEngine.UI.Image itemDescriptionImage;  
+    public Image itemDescriptionImage;  
     public TMP_Text itemDescriptionName;
     public TMP_Text itemDescriptionText;
 

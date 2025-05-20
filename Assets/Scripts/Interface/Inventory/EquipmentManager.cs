@@ -56,31 +56,4 @@ public class EquipmentManager : ScriptableObject
             case StatType.SpdModifier: stats.spdModifier += value; break;
         }
     }
-
-    //public bool TryAddAdditionalStat(StatType newType, float value)
-    //{
-    //    if (additionalStats.Count >= GetMaxAdditionalStats()) return false;
-    //    if (mainStat.statType == newType || additionalStats.Exists(s => s.statType == newType))
-    //        return false;
-
-    //    additionalStats.Add(new EquipmentStat(newType, value));
-    //    return true;
-    //}
-
-    //public int GetMaxAdditionalStats()
-    //{
-    //    return rarity switch
-    //    {
-    //        RarityType.Common => 1,
-    //        RarityType.Rare => 2,
-    //        RarityType.Epic => 3,
-    //        RarityType.Legendary => 4,
-    //        _ => 0
-    //    };
-    //}
-
-    //public void UpgradeItem()
-    //{
-    //    int maxStats = GetMaxAdditionalStats();
-    //}
 }

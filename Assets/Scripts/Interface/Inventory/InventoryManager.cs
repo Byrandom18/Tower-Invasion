@@ -10,11 +10,14 @@ public class InventoryManager : MonoBehaviour
     public GameObject InventoryEquipPanel;
     public GameObject InventoryPanel; 
     public GameObject EquipmentPanel;
+    public GameObject UpgradeItemPanel;
     public GameObject TabPanel;
 
     public List<ItemSlot> itemSlots = new List<ItemSlot>();
     public List<EquipmentSlot> equipmentSlots = new List<EquipmentSlot>();
     public List<EquippedSlot> equippedSlots = new List<EquippedSlot>();
+
+    public ItemData selectedItem;
 
     public GameObject itemPickupPrefab;
 
@@ -44,6 +47,28 @@ public class InventoryManager : MonoBehaviour
             Time.timeScale = 1;
             DeselectAllSlots();
         }
+    }
+    public void OnUpgradeButtonClick()
+    {
+        if (selectedItem != null)
+            OpenUpgradePanel(selectedItem);
+        else
+            Debug.LogWarning("Предмет для улучшения не выбран.");
+    }
+    public void OpenUpgradePanel(ItemData selectedItem)
+    {
+        UpgradeItemPanel.SetActive(true);
+
+        var upgradeEquipment = UpgradeItemPanel.GetComponent<UpgradeEquipment>();
+        if (upgradeEquipment != null)
+        {
+            upgradeEquipment.SetItemToUpgrade(selectedItem, itemSlots);
+        }
+    }
+    public void CloseUpgradePanel()
+    {
+        if (UpgradeItemPanel != null)
+            UpgradeItemPanel.SetActive(false);
     }
 
     public int AddItem(ItemData itemToAdd, int amount)

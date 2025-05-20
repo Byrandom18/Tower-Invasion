@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769354efef04ea9409ff1e81a4cdd510, type: 3}
+  m_Name: Gem
+  m_EditorClassIdentifier: 
+  itemName: Gem
+  description: 
+  icon: {fileID: -8707133783163546048, guid: fb08e3d3c2bfec24f8ffe06507aeb34e, type: 3}
+  itemType: 3
+  isStackable: 1
+  maxStack: 99
+  equipmentData:
+    equipmentType: 0
+    rarity: 0
+    level: 0
+    mainStat:
+      statType: 0
+      value: 0
+    additionalStats: []
+    upgradeRequirements: []
+  consumableData:
+    effectType: 0
+    value: 0
+    duration: 0

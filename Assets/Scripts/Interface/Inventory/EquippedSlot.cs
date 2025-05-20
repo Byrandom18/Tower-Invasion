@@ -60,6 +60,7 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
         }
         else
         {
+            inventoryManager.selectedItem = item;
             inventoryManager.DeselectAllSlots();
             thisItemSelected = true;
             selectedShader.SetActive(true);
@@ -191,6 +192,7 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
         additionalStatDesc2.text = "";
         additionalStatDesc3.text = "";
         additionalStatDesc4.text = "";
+        inventoryManager.DeselectAllSlots();
     }
 
     public bool IsInUse()
