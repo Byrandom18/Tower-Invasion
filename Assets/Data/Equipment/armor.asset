@@ -21,7 +21,7 @@ MonoBehaviour:
   equipmentData:
     equipmentType: 1
     rarity: 0
-    level: 0
+    level: 3
     mainStat:
       statType: 6
       value: 10

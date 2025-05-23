@@ -59,7 +59,7 @@ public class InventoryManager : MonoBehaviour
     {
         UpgradeItemPanel.SetActive(true);
 
-        var upgradeEquipment = UpgradeItemPanel.GetComponent<UpgradeEquipment>();
+        var upgradeEquipment = UpgradeItemPanel.GetComponent<UpgradeEquipmentPanel>();
         if (upgradeEquipment != null)
         {
             upgradeEquipment.SetItemToUpgrade(selectedItem, itemSlots);

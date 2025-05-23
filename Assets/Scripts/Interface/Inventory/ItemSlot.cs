@@ -138,7 +138,23 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    private void EmptySlot()
+    public void UpdateSlotUI()
+    {
+        if (item != null && quantity > 0)
+        {
+            itemImage.sprite = item.Icon;
+            quantityText.text = quantity.ToString();
+            quantityText.enabled = item.IsStackable;
+        }
+        else
+        {
+            itemImage.sprite = emptySprite;
+            quantityText.text = "";
+            quantityText.enabled = false;
+        }
+    }
+
+    public void EmptySlot()
     {
         item = null;
         quantity = 0;

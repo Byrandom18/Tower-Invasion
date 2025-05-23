@@ -21,10 +21,12 @@ MonoBehaviour:
   equipmentData:
     equipmentType: 2
     rarity: 0
+    level: 0
     mainStat:
       statType: 3
       value: 10
     additionalStats: []
+    upgradeRequirements: []
   consumableData:
     effectType: 0
     value: 0
