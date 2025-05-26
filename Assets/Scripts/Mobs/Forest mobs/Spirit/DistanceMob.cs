@@ -11,13 +11,13 @@ public class DistanceMob : MonoBehaviour
     public Transform playerTransform;
     public int state = 0;
     [SerializeField] private Transform EnemySprite;
-    private bool isMoving = false;
+    //private bool isMoving = false;
 
     //public MonoBehaviour animationsScript;
     private SpiritAnimations animations;
 
     [SerializeField] private float attackCooldown = 4;
-    private float nextAttackTime = 0f;
+    //private float nextAttackTime = 0f;
     [SerializeField] private float attackRange = 1f;
 
     //private bool isIdle = false;
@@ -56,7 +56,7 @@ public class DistanceMob : MonoBehaviour
         {
             //idle
             case 0:
-                isMoving = false;
+                //isMoving = false;
 
                 if (Vector2.Distance(transform.position, playerTransform.position) < chaseDistance)
                 {
@@ -71,18 +71,18 @@ public class DistanceMob : MonoBehaviour
                 if (transform.position.x > playerTransform.position.x && distanceX < -attackRange)
                 {
                     EnemySprite.transform.localScale = new Vector3(-1, 1, 1); // Разворот спрайта
-                    isMoving = true;
+                    //isMoving = true;
                     rb.linearVelocity = new Vector2(-speed, rb.linearVelocity.y); // Движение влево
                 }
                 else if (transform.position.x < playerTransform.position.x && distanceX > attackRange)
                 {
                     EnemySprite.transform.localScale = new Vector3(1, 1, 1); // Разворот спрайта
-                    isMoving = true;
+                    //isMoving = true;
                     rb.linearVelocity = new Vector2(speed, rb.linearVelocity.y); // Движение вправо
                 }
                 else
                 {
-                    isMoving = false;
+                    //isMoving = false;
                     rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); // Остановка
                 }
 
@@ -112,7 +112,7 @@ public class DistanceMob : MonoBehaviour
                 {
                     EnemySprite.transform.localScale = new Vector3(1, 1, 1); // Разворот спрайта
                 }
-                isMoving = false;
+                //isMoving = false;
                 rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); // Остановка
                 animations.IsAttack = true;
                 animations.Attack();
@@ -120,7 +120,7 @@ public class DistanceMob : MonoBehaviour
             //death
             case 3:
                 animations.Death();
-                isMoving = false;
+                //isMoving = false;
                 rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); // Остановка
                 break;
         }
