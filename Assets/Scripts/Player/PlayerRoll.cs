@@ -1,35 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerRoll : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public float rollSpeed = 5f; // �������� �������
-    public float rollDuration = 0.5f; // ������������ �������
-    private float rollTimer; // ������
-    private bool isRolling = false; // ���� �������
-    private Animator animator; // ��� ���������� ���������
-    private int originalLayer; // ��������� �������� ���� ���������
-    private int ignoreLayer; // ���� ��� ������������
+    private SpriteRenderer spriteRenderer; // Для управления flipX
+    public float rollSpeed = 5f; // Скорость кувырка
+    public float rollDuration = 0.5f; // Длительность кувырка
+    private float rollTimer; // Таймер
+    private bool isRolling = false; // Флаг кувырка
+    private Animator animator; // Для управления анимацией
+    private int originalLayer; // Сохраняем исходный слой персонажа
+    private int ignoreLayer; // Слой для неуязвимости
+    private float rollDirection; // Направление кувырка
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-        originalLayer = gameObject.layer; // ��������� �������� ����
-        ignoreLayer = LayerMask.NameToLayer("IgnoreCollisions"); // ��������� ���� ������������
+        originalLayer = gameObject.layer; // Сохраняем исходный слой
+        ignoreLayer = LayerMask.NameToLayer("IgnoreCollisions"); // Указываем слой неуязвимости
     }
 
     void Update()
     {
-        // �������� ����� ��� ������� (��������, ������� "Space")
+        // Проверка ввода для кувырка 
         if (Input.GetKeyDown(KeyCode.LeftShift) && !isRolling)
         {
             StartRoll();
         }
 
-        // ��������� �������
+        // Обновляем таймер кувырка
         if (isRolling)
         {
             rollTimer -= Time.deltaTime;
@@ -40,42 +41,47 @@ public class PlayerRoll : MonoBehaviour
         }
     }
 
+    void FixedUpdate()
+    {
+        // Применяем скорость кувырка в FixedUpdate для стабильной физики
+        if (isRolling)
+        {
+            rb.linearVelocity = new Vector2(rollDirection * rollSpeed, rb.linearVelocity.y);
+        }
+    }
+
     void StartRoll()
     {
         isRolling = true;
         rollTimer = rollDuration;
-        animator.SetBool("isRolling", true); // ������ �������� �������
+        animator.SetBool("isRolling", true); // Запуск анимации кувырка
 
-        // ������ ��������� ����������, ����� ����
+        // Делаем персонажа неуязвимым, меняя слой
         gameObject.layer = ignoreLayer;
 
-        // ���������� ����������� ������� �� �����
-        float direction = Input.GetAxisRaw("Horizontal"); // -1 (�����), 1 (������), 0 (��� �����)
+        // Определяем направление кувырка по вводу
+        rollDirection = Input.GetAxisRaw("Horizontal"); // -1 (влево), 1 (вправо), 0 (нет ввода)
 
-        // ���� ��� �����, ���������� ������� ����������� ���������
-        if (direction == 0)
+        // Если нет ввода, используем текущее направление персонажа на основе flipX
+        if (rollDirection == 0)
         {
-            direction = transform.localScale.x > 0 ? 1 : -1; // ������, ���� ������� ������, ����� �����
+            rollDirection = spriteRenderer.flipX ? -1 : 1; // Влево (-1) если flipX = true, иначе вправо (1)
         }
 
-        // ��������� �������� � ������ �����������
-        rb.linearVelocity = new Vector2(direction * rollSpeed, rb.linearVelocity.y);
-
-        // ������������ ��������� � ������� ������� (���� �����)
-        if (direction != 0)
+        // Поворачиваем спрайт в сторону кувырка, если ввод изменил направление
+        if (rollDirection != 0)
         {
-            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * direction, transform.localScale.y, transform.localScale.z);
+            spriteRenderer.flipX = rollDirection < 0; // flipX = true для влево, false для вправо
         }
     }
 
     void StopRoll()
     {
         isRolling = false;
-        animator.SetBool("isRolling", false); // ��������� ��������
-        rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); // ������������� �������������� ��������
+        animator.SetBool("isRolling", false); // Остановка анимации
+        rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); // Останавливаем горизонтальное движение
 
-        // ���������� �������� ����
+        // Возвращаем исходный слой
         gameObject.layer = originalLayer;
     }
 }
-

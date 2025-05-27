@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerBlock : MonoBehaviour
 {
     private bool isBlocking = false;
-    public float blockDamageReduction = 0.5f; // ”меньшение урона на 50%
+    public float blockDamageReduction = 1f; // ”меньшение урона на 50%
     private Animator animator;
     private PlayerHealth playerHealth; // —сылка на здоровье
 
@@ -15,11 +15,11 @@ public class PlayerBlock : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.B))
         {
             StartBlocking();
         }
-        else if (Input.GetKeyUp(KeyCode.Space))
+        else if (Input.GetKeyUp(KeyCode.B))
         {
             StopBlocking();
         }
