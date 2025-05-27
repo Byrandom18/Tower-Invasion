@@ -21,38 +21,9 @@ public class EquipmentData
     [Header("Требуемые для улучшения ресурсы")]
     public List<UpgradeRequirement> upgradeRequirements = new List<UpgradeRequirement>();
 
-    public void GenerateStats()
+    public bool Upgrade()
     {
-        mainStat = GenerateMainStat(equipmentType, level);
-        additionalStats = GenerateAdditionalStats(rarity);
-    }
-
-    public static EquipmentStat GenerateMainStat(EquipmentType type, int level)
-    {
-        StatType statType;
-        switch (type)
-        {
-            case EquipmentType.Weapon:
-                statType = StatType.WeaponBase;
-                break;
-            case EquipmentType.Boots:
-                statType = StatType.SpeedModifier;
-                break;
-            case EquipmentType.Helmet:
-                statType = (UnityEngine.Random.value < 0.5f) ? StatType.CritChance : StatType.CritDamage;
-                break;
-            default:
-                StatType[] pool = { StatType.HealthModifier, StatType.AtkModifier, StatType.DefFlat };
-                statType = pool[UnityEngine.Random.Range(0, pool.Length)];
-                break;
-        }
-        float value = EquipmentStat.mainStatValues[statType][Mathf.Clamp(level - 1, 0, 4)];
-        return new EquipmentStat {  statType = statType, value = value };
-    }
-
-    public static List<EquipmentStat> GenerateAdditionalStats(RarityType rarity)
-    {
-        int count = rarity switch
+        int maxLevel = rarity switch
         {
             RarityType.Common => 1,
             RarityType.Rare => 2,
@@ -61,24 +32,30 @@ public class EquipmentData
             _ => 1
         };
 
-        var possibleStats = new List<StatType>(EquipmentStat.additionalStatValues.Keys);
-        var selected = new HashSet<StatType>();
-        var result = new List<EquipmentStat>();
+        if (level >= maxLevel)
+            return false;
 
-        for (int i = 0; i < count; i++)
+        level++;
+
+        if (mainStat != null)
+            mainStat.SetDefaultValue(level);
+
+        if (additionalStats.Count < 4)
         {
-            var available = possibleStats.FindAll(s => !selected.Contains(s));
-            if (available.Count == 0) break;
+            var possibleStats = new List<StatType>(EquipmentStat.additionalStatValues.Keys);
+            var usedStats = new HashSet<StatType>(additionalStats.ConvertAll(s => s.statType));
+            if (mainStat != null) usedStats.Add(mainStat.statType);
 
-            var statType = available[UnityEngine.Random.Range(0, available.Count)];
-            selected.Add(statType);
-
-            result.Add(new EquipmentStat
+            var available = possibleStats.FindAll(s => !usedStats.Contains(s));
+            if (available.Count > 0)
             {
-                statType = statType,
-                value = EquipmentStat.additionalStatValues[statType]
-            });
+                var statType = available[UnityEngine.Random.Range(0, available.Count)];
+                var newStat = new EquipmentStat { statType = statType };
+                newStat.SetDefaultValue();
+                additionalStats.Add(newStat);
+            }
         }
-        return result;
+
+        return true;
     }
 }

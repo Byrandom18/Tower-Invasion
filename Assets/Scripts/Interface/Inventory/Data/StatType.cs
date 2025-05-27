@@ -54,4 +54,21 @@ public class EquipmentStat
         { StatType.SpdModifier,         12},
         { StatType.BaseAttackModifier,  12}
     };
+
+    public void SetDefaultValue(int level = 1)
+    {
+        if (mainStatValues.ContainsKey(statType))
+        {
+            int index = Math.Clamp(level, 0, mainStatValues[statType].Length - 1);
+            value = mainStatValues[statType][index];
+        }
+        else if (additionalStatValues.ContainsKey(statType))
+        {
+            value = additionalStatValues[statType];
+        }
+        else
+        {
+            value = 0;
+        }
+    }
 }
