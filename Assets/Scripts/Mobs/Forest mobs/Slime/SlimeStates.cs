@@ -13,6 +13,8 @@ public class SlimeStates : MonoBehaviour
     [SerializeField] private float attackRange = 2f;
     [SerializeField] private LayerMask playerLayer;
 
+    private DropSystem dropSystem;
+    [SerializeField] private int rarity = 0;
 
     private float damage;
     private Vector2 attackDirection;
@@ -69,6 +71,11 @@ public class SlimeStates : MonoBehaviour
 
     public void DeathState()
     {
-        Destroy(gameObject);
+        int randomValue = Random.Range(0, 101);
+        if (randomValue < rarity)
+        {
+            dropSystem.SpawnPrefab(1);
+            dropSystem.SpawnRandomCollectiblePrefab();
+        }
     }
 }

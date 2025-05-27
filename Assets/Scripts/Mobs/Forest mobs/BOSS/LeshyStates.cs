@@ -36,11 +36,11 @@ public class LeshyStates : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        
-        
+        playerStats = player.GetComponent<PlayerStats>();
+        enemyDamage = GetComponent<EnemyDamage>();
         animations = GetComponentInChildren<LeshyAnimations>();
         
-        
+        damage = enemyDamage.Damage;
     }
 
 
@@ -158,17 +158,30 @@ public class LeshyStates : MonoBehaviour
 
     private void AtkFast()
     {
+        Vector2 attackStartPoint = transform.position + Vector3.down * 0.5f;
         attackDirection = transform.right * Mathf.Sign(transform.localScale.x);
 
+        //Debug.DrawRay(attackStartPoint, attackDirection * attackRange, Color.red, 1f); // Визуализация в Game View
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, attackDirection, attackRange, playerLayer);
+        RaycastHit2D hit = Physics2D.Raycast(
+            attackStartPoint,
+            attackDirection,
+            attackRange,
+            playerLayer
+        );
+
         if (hit.collider != null)
         {
-            playerStats.TakeDamage(damage);
+            if (hit.collider.CompareTag("Player")) // Дополнительная проверка
+            {
+                playerStats.TakeDamage(damage);
+                
+            }
         }
+        
     }
 
-
+    
 
 
 }
