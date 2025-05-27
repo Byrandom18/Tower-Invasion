@@ -131,7 +131,7 @@ public class LeshyStates : MonoBehaviour
         
         isPreparating = true;
         yield return new WaitForSeconds(preparationDuration);
-
+        isMoving = false;
         int randomValue = Random.Range(2, 8);
         rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
         state = randomValue;

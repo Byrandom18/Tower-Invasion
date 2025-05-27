@@ -39,7 +39,8 @@ public class LeshyAnimations : MonoBehaviour
 
     public void Punch()
     {
-        animator.SetTrigger("Punch");
+        //animator.SetTrigger("Punch");
+        animator.SetInteger("Attack", 1);
     }
 
     public void Summon()
@@ -50,5 +51,11 @@ public class LeshyAnimations : MonoBehaviour
     public void Death()
     {
         animator.SetTrigger("Death");
+    }
+
+
+    public void ResetAttack()
+    {
+        animator.SetInteger("Attack", 0);
     }
 }
