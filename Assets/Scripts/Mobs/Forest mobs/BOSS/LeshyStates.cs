@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Android.Gradle.Manifest;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -34,7 +35,8 @@ public class LeshyStates : MonoBehaviour
     public GameObject projectilePrefab;
     public float projectileSpeed = 8f;
     public float projectileLifetime = 5f;
-
+    [SerializeField] private DropSystem dropSystem; // Перетащите в инспекторе
+    [SerializeField] private int rarity = 0;
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -42,16 +44,21 @@ public class LeshyStates : MonoBehaviour
         playerStats = player.GetComponent<PlayerStats>();
         enemyDamage = GetComponent<EnemyDamage>();
         animations = GetComponentInChildren<LeshyAnimations>();
-        
+        dropSystem = GetComponent<DropSystem>();
         damage = enemyDamage.Damage;
     }
 
 
     private void Update()
     {
+        if (enemyDamage.health <= 0)
+        {
+            animations.Death();
+        }
         animations.IsMoving = isMoving;
         switch (state)
         {
+            
             //idle
             case 0:
                 if (!isIdle)
@@ -217,5 +224,30 @@ public class LeshyStates : MonoBehaviour
         }
     }
 
+    public void DeathState()
+    {
+        int randomValue = Random.Range(0, 101);
+        if (randomValue < rarity)
+        {
+            dropSystem.SpawnPrefab();
 
+        }
+        randomValue = Random.Range(0, 101);
+        if (randomValue * 2 < rarity)
+        {
+            dropSystem.SpawnRandomCollectiblePrefab();
+            if (randomValue < rarity)
+            {
+                dropSystem.SpawnRandomCollectiblePrefab();
+                if (randomValue / 2 < rarity)
+                {
+                    dropSystem.SpawnRandomCollectiblePrefab();
+                    if (randomValue / 4 < rarity)
+                    {
+                        dropSystem.SpawnRandomCollectiblePrefab();
+                    }
+                }
+            }
+        }
+    }
 }
