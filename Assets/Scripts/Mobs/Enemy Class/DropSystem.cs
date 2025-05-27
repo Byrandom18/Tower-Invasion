@@ -8,17 +8,17 @@ public class DropSystem : MonoBehaviour
     public List<GameObject> collectiblesPrefabs = new List<GameObject>();
 
     // Метод для спавна случайного префаба
-    public void SpawnRandomPrefab()
-    {
-        if (prefabs.Count == 0)
-        {
-            Debug.LogWarning("Список префабов пуст!");
-            return;
-        }
+    //public void SpawnRandomPrefab()
+    //{
+    //    if (prefabs.Count == 0)
+    //    {
+    //        Debug.LogWarning("Список префабов пуст!");
+    //        return;
+    //    }
 
-        int randomIndex = Random.Range(0, prefabs.Count);
-        Instantiate(prefabs[randomIndex], transform.position, Quaternion.identity);
-    }
+    //    int randomIndex = Random.Range(0, prefabs.Count);
+    //    Instantiate(prefabs[randomIndex], transform.position, Quaternion.identity);
+    //}
 
     public void SpawnRandomCollectiblePrefab()
     {
@@ -27,21 +27,22 @@ public class DropSystem : MonoBehaviour
             Debug.LogWarning("Список префабов пуст!");
             return;
         }
-
+        
         int randomIndex = Random.Range(0, collectiblesPrefabs.Count);
         Instantiate(collectiblesPrefabs[randomIndex], transform.position, Quaternion.identity);
     }
 
     // Метод для спавна префаба по индексу
-    public void SpawnPrefab(int index)
+    public void SpawnPrefab()
     {
-        if (index < 0 || index >= prefabs.Count)
+        if (prefabs.Count == 0)
         {
-            Debug.LogError("Неверный индекс префаба!");
+            Debug.LogError("Список префабов пуст!");
             return;
         }
-
-        Instantiate(prefabs[index], transform.position, Quaternion.identity);
+        
+        int randomIndex = Random.Range(0, collectiblesPrefabs.Count);
+        Instantiate(prefabs[randomIndex], transform.position, Quaternion.identity);
     }
 
 

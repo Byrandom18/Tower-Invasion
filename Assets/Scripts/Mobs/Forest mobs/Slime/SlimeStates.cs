@@ -13,7 +13,7 @@ public class SlimeStates : MonoBehaviour
     [SerializeField] private float attackRange = 2f;
     [SerializeField] private LayerMask playerLayer;
 
-    private DropSystem dropSystem;
+    [SerializeField] private DropSystem dropSystem; // Перетащите в инспекторе
     [SerializeField] private int rarity = 0;
 
     private float damage;
@@ -40,6 +40,8 @@ public class SlimeStates : MonoBehaviour
 
         if (playerStats == null)
             Debug.LogError("PlayerStats reference not set!", this);
+
+        dropSystem = GetComponent<DropSystem>();
     }
 
     
@@ -74,8 +76,25 @@ public class SlimeStates : MonoBehaviour
         int randomValue = Random.Range(0, 101);
         if (randomValue < rarity)
         {
-            dropSystem.SpawnPrefab(1);
+            dropSystem.SpawnPrefab();
+            
+        }
+        randomValue = Random.Range(0, 101);
+        if (randomValue * 2 < rarity)
+        {
             dropSystem.SpawnRandomCollectiblePrefab();
+            if (randomValue < rarity)
+            {
+                dropSystem.SpawnRandomCollectiblePrefab();
+                if (randomValue / 2 < rarity)
+                {
+                    dropSystem.SpawnRandomCollectiblePrefab();
+                    if (randomValue / 4 < rarity)
+                    {
+                        dropSystem.SpawnRandomCollectiblePrefab();
+                    }
+                }
+            }
         }
     }
 }

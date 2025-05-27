@@ -32,7 +32,8 @@ public class MushroomStates : MonoBehaviour
     //private bool isChasing = false;
     //private bool alive = true;
     [SerializeField] private ParticleSystem explosiveParticles;
-
+    [SerializeField] private DropSystem dropSystem; // Перетащите в инспекторе
+    [SerializeField] private int rarity = 0;
     private float damage = 0;
 
     void Awake()
@@ -42,7 +43,7 @@ public class MushroomStates : MonoBehaviour
 
         enemyDamage = GetComponent<EnemyDamage>();
         animations = GetComponentInChildren<MushroomAnimations>();
-
+        dropSystem = GetComponent<DropSystem>();
         damage = enemyDamage.Damage;
     }
 
@@ -147,4 +148,32 @@ public class MushroomStates : MonoBehaviour
         animations.Attack();
 
     }
+
+    public void DeathState()
+    {
+        int randomValue = Random.Range(0, 101);
+        if (randomValue < rarity)
+        {
+            dropSystem.SpawnPrefab();
+
+        }
+        randomValue = Random.Range(0, 101);
+        if (randomValue * 2 < rarity)
+        {
+            dropSystem.SpawnRandomCollectiblePrefab();
+            if (randomValue < rarity)
+            {
+                dropSystem.SpawnRandomCollectiblePrefab();
+                if (randomValue / 2 < rarity)
+                {
+                    dropSystem.SpawnRandomCollectiblePrefab();
+                    if (randomValue / 4 < rarity)
+                    {
+                        dropSystem.SpawnRandomCollectiblePrefab();
+                    }
+                }
+            }
+        }
+    }
+
 }
