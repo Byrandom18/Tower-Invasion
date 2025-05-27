@@ -9,6 +9,7 @@ public class EnemyDamage : MonoBehaviour
     public PlayerStats playerStats;
     public Transform player;
 
+    [SerializeField] private bool isBoss = false;
 
     public float health = 100;
 
@@ -53,7 +54,7 @@ public class EnemyDamage : MonoBehaviour
 
     public void TakeDamage(int damage, Vector2 damageSourcePosition)
     {
-        if (isKnockbackActive) return; // Игнорируем новый урон во время отскока
+        if (isKnockbackActive && !isBoss) return; // Игнорируем новый урон во время отскока
 
         // Применяем урон
         health -= damage;
@@ -65,7 +66,11 @@ public class EnemyDamage : MonoBehaviour
         StartCoroutine(FlashRed());
 
         // Эффект отскока
-        ApplyKnockback(damageSourcePosition);
+        if (!isBoss)
+        {
+            ApplyKnockback(damageSourcePosition);
+        }
+            
 
         if (health <= 0)
         {

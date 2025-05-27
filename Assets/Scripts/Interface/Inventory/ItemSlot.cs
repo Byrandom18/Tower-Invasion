@@ -1,80 +1,38 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using UnityEngine.EventSystems;
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
-using System;
-using Unity.VisualScripting;
+using static UnityEditor.Progress;
 
 public class ItemSlot : MonoBehaviour, IPointerClickHandler
 {
-    //===ITEMDATA===
-    public string itemName;
+    public ItemData item { get; private set; }
     public int quantity;
-    public Sprite itemSprite;
     public bool isFull;
-    public string itemDescription;
-    public ItemType itemType;
 
+    [Header("Item Slot")]
     [SerializeField]
-    private int maxNumberOfItems;
+    private Image itemImage; 
 
-    //===ITEM SLOT===
     [SerializeField]
     private TMP_Text quantityText;
 
-    [SerializeField]
-    private Image itemImage;
+    public GameObject selectedShader;
 
-    //===ITEM Description===
-    public Image itemDescriptionImage;
+    [Header("Item Description")]
+    public Image itemDescriptionImage;  
     public TMP_Text itemDescriptionName;
     public TMP_Text itemDescriptionText;
 
-    public GameObject selectedShader;
-    public bool thisItemSelected;
-
     public Sprite emptySprite;
 
-    private InventoryManager inventoryManager;
+    public bool thisItemSelected;
 
-    //===DROP ITEM===
-    public GameObject dropPrefab;
-    public Transform playerTransform; 
+    private InventoryManager inventoryManager;
 
     private void Start()
     {
         inventoryManager = GameObject.Find("Canvas").GetComponent<InventoryManager>();
-    }
-
-    public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription, ItemType itemType)
-    {
-        if (isFull)
-            return quantity;
-
-        this.itemType = itemType;
-        this.itemName = itemName;
-        this.itemSprite = itemSprite;
-        itemImage.sprite = itemSprite;
-        this.itemDescription = itemDescription;
-
-        this.quantity += quantity;
-        if (this.quantity >= maxNumberOfItems)
-        {
-            quantityText.text = maxNumberOfItems.ToString();
-            quantityText.enabled = true;
-            isFull = true;
-
-            int extraItems = this.quantity - maxNumberOfItems;
-            this.quantity = maxNumberOfItems;
-            return extraItems;
-        }
-
-        quantityText.text = this.quantity.ToString();
-        quantityText.enabled = true;
-
-        return 0;
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -89,16 +47,15 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    public void OnLeftClick()
+    private void OnLeftClick()
     {
         if (thisItemSelected)
         {
-            bool usable = inventoryManager.UseItem(itemName);
-            if (usable)
+            if (item.IsConsumable())
             {
-                this.quantity -= 1;
-                quantityText.text = this.quantity.ToString();
-                if (this.quantity <= 0)
+                quantity--;
+                quantityText.text = quantity.ToString();
+                if (quantity <= 0)
                 {
                     EmptySlot();
                 }
@@ -107,65 +64,106 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         else
         {
             inventoryManager.DeselectAllSlots();
-            selectedShader.SetActive(true);
             thisItemSelected = true;
+            selectedShader.SetActive(true);
 
-            itemDescriptionName.text = itemName;
-            itemDescriptionText.text = itemDescription;
-            itemDescriptionImage.sprite = itemSprite;
+            ToShowDescription();
+        }
+    }
 
+    private void OnRightClick()
+    {
+        if (inventoryManager != null)
+        {
+            inventoryManager.DropItem(item, quantity);
+            EmptySlot();
+        }
+        else
+        {
+            Debug.LogError("InventoryManager is not assigned or found.");
+        }
+    }
+
+    public int AddItem(ItemData itemToAdd, int amount)
+    {
+        if (isFull)
+            return amount;
+
+        if (item == null)
+        {
+            item = itemToAdd;
+            itemImage.sprite = item.Icon;
+            quantity = 0;
+        }
+
+        if (!item.IsStackable)
+            return amount;
+
+        quantity += amount;
+
+        if (quantity > item.MaxStack)
+        {
+            int extraItems = quantity - item.MaxStack;
+            quantity = item.MaxStack;
+            isFull = true;
+            quantityText.text = quantity.ToString();
+            quantityText.enabled = true;
+            return extraItems;
+        }
+
+        quantityText.text = quantity.ToString();
+        quantityText.enabled = true;
+
+        if (quantity == item.MaxStack)
+            isFull = true;
+
+        return 0;
+    }
+
+    private void ToShowDescription()
+    {
+        if (item != null)
+        {
+            itemDescriptionImage.sprite = item.Icon;
+            itemDescriptionName.text = item.ItemName;
+            itemDescriptionText.text = item.Description;
             if (itemDescriptionImage.sprite == null)
                 itemDescriptionImage.sprite = emptySprite;
         }
-
-    }
-
-    public void OnRightClick()
-    {
-        GameObject itemToDrop = new GameObject(itemName);
-        Item newItem = itemToDrop.AddComponent<Item>();
-        newItem.quantity = 1;
-        newItem.itemName = itemName;
-        newItem.sprite = itemSprite;
-        newItem.itemType = itemType;
-        newItem.itemDescription = itemDescription;
-
-        SpriteRenderer sr = itemToDrop.AddComponent<SpriteRenderer>();
-        sr.sprite = itemSprite;
-
-        itemToDrop.AddComponent<CircleCollider2D>().isTrigger = true;
-
-        float dropDistance = 1f;
-        Vector2 dropPosition = (Vector2)playerTransform.position + (Vector2)playerTransform.right * dropDistance;
-
-        itemToDrop.transform.position = (Vector2)playerTransform.position + (Vector2)playerTransform.right * dropDistance;//GameObject.Find("Player").transform.position + new Vector3(.10f, 0, 0);
-        itemToDrop.transform.localScale = new Vector3(.3f, .3f, .3f); //Уменьшение предмета
-
-        this.quantity -= 1;
-        quantityText.text = this.quantity.ToString();
-        if (this.quantity <= 0)
+        else
         {
-            EmptySlot();
+            itemDescriptionImage.sprite = emptySprite;
+            itemDescriptionName.text = "";
+            itemDescriptionText.text = "";
         }
     }
 
-    private void EmptySlot()
+    public void UpdateSlotUI()
     {
-        quantityText.enabled = false;
-        itemImage.sprite = emptySprite;
+        if (item != null && quantity > 0)
+        {
+            itemImage.sprite = item.Icon;
+            quantityText.text = quantity.ToString();
+            quantityText.enabled = item.IsStackable;
+        }
+        else
+        {
+            itemImage.sprite = emptySprite;
+            quantityText.text = "";
+            quantityText.enabled = false;
+        }
+    }
 
-        itemName = "";
-        itemSprite = null;
-        itemDescription = "";
-        itemType = default;
+    public void EmptySlot()
+    {
+        item = null;
         quantity = 0;
+        quantityText.enabled = false;
 
         itemImage.sprite = emptySprite;
-
         itemDescriptionName.text = "";
         itemDescriptionText.text = "";
         itemDescriptionImage.sprite = emptySprite;
         isFull = false;
     }
-
 }

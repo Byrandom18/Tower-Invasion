@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6190392356212855028}
   - component: {fileID: 2425820604347230376}
   - component: {fileID: 2486003673889321087}
-  - component: {fileID: 8381379032160329752}
+  - component: {fileID: 3102373518805131231}
   m_Layer: 5
   m_Name: ItemSlot
   m_TagString: Untagged
@@ -80,7 +80,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8381379032160329752
+--- !u!114 &3102373518805131231
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,23 +92,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63117817b0e310c4cae9590d80a28084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
   quantity: 0
-  itemSprite: {fileID: 0}
   isFull: 0
-  itemDescription: 
-  itemType: 0
-  maxNumberOfItems: 99
-  quantityText: {fileID: 6447153427107424323}
   itemImage: {fileID: 7310127612282050796}
+  quantityText: {fileID: 6447153427107424323}
+  selectedShader: {fileID: 7028243380540435608}
   itemDescriptionImage: {fileID: 0}
   itemDescriptionName: {fileID: 0}
   itemDescriptionText: {fileID: 0}
-  selectedShader: {fileID: 7028243380540435608}
-  thisItemSelected: 0
   emptySprite: {fileID: -8527568592950175283, guid: f0f71c096cf34b14e81d2b65d76126ab, type: 3}
-  dropPrefab: {fileID: 6256907329487788621, guid: 84b5b7838d14be240aa50eb4753ef734, type: 3}
-  playerTransform: {fileID: 0}
+  thisItemSelected: 0
 --- !u!1 &3768798583250427811
 GameObject:
   m_ObjectHideFlags: 0

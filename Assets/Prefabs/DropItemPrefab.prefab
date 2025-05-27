@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 494413850558310804}
   - component: {fileID: 8080862726921042862}
   - component: {fileID: 2232329977146776843}
-  - component: {fileID: 4240014951788399645}
+  - component: {fileID: 4811885080403858865}
   m_Layer: 0
   m_Name: DropItemPrefab
   m_TagString: Untagged
@@ -125,7 +125,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4240014951788399645
+--- !u!114 &4811885080403858865
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,11 +134,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6256907329487788621}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3119a909f0c450c46b5cecd02b92f327, type: 3}
+  m_Script: {fileID: 11500000, guid: 564c52db4e19e68469f57cda89400acb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
-  quantity: 0
-  sprite: {fileID: 0}
-  itemDescription: 
-  itemType: 4
+  item: {fileID: 0}
+  amount: 1

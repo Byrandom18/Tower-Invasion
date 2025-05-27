@@ -5,9 +5,18 @@ public class PauseMenu : MonoBehaviour
 {
     public bool PauseGame;
     public GameObject PauseGameMenu;
+    public InventoryManager inventoryManager;
+
+    private void Start()
+    {
+        inventoryManager = GetComponent<InventoryManager>();
+    }
 
     private void Update()
     {
+        if (inventoryManager != null && inventoryManager.isInventoryOpen)
+            return;
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (PauseGame)

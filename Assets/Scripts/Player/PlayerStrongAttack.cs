@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerStrongAttack : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class PlayerStrongAttack : MonoBehaviour
         if (Time.time >= nextAttackTime && Input.GetKeyDown(KeyCode.Mouse1) &&
             (playerBlock == null || !playerBlock.IsBlocking()))
         {
+            if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+                return;
             if (currentMana >= strongAttackManaCost)
             {
                 Attack();

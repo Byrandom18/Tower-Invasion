@@ -1,27 +1,35 @@
-п»їusing System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
     public GameObject InventoryEquipPanel;
-    public GameObject InventoryPanel;
+    public GameObject InventoryPanel; 
     public GameObject EquipmentPanel;
+    public GameObject UpgradeItemPanel;
     public GameObject TabPanel;
 
-    public ItemSlot[] itemSlot;
-    public EquipmentSlot[] equipmentSlot;
-    public EquippedSlot[] equippedSlot;
+    public List<ItemSlot> itemSlots = new List<ItemSlot>();
+    public List<EquipmentSlot> equipmentSlots = new List<EquipmentSlot>();
+    public List<EquippedSlot> equippedSlots = new List<EquippedSlot>();
 
-    public ItemSO[] itemSOs;
+    public ItemData selectedItem;
 
-    private bool isInventoryOpen = false;
+    public GameObject itemPickupPrefab;
+
+    public bool isInventoryOpen = false;
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
+        {
+            ToggleInventory();
+        }
+        if (isInventoryOpen && Input.GetKeyDown(KeyCode.Escape))
         {
             ToggleInventory();
         }
@@ -36,85 +44,124 @@ public class InventoryManager : MonoBehaviour
 
         if (!isInventoryOpen)
         {
-            //HideItemDescription();
             Time.timeScale = 1;
             DeselectAllSlots();
         }
     }
-
-    public bool UseItem(string itemName)
+    public void OnUpgradeButtonClick()
     {
-        for (int i = 0; i < itemSOs.Length; i++)
+        if (selectedItem != null)
+            OpenUpgradePanel(selectedItem);
+        else
+            Debug.LogWarning("Предмет для улучшения не выбран.");
+    }
+    public void OpenUpgradePanel(ItemData selectedItem)
+    {
+        UpgradeItemPanel.SetActive(true);
+
+        var upgradeEquipment = UpgradeItemPanel.GetComponent<UpgradeEquipmentPanel>();
+        if (upgradeEquipment != null)
         {
-            if (itemSOs[i].itemName == itemName)
-            {
-                bool usable = itemSOs[i].UseItem();
-                return usable;
-            }
+            upgradeEquipment.SetItemToUpgrade(selectedItem, itemSlots);
         }
-        return false;
+    }
+    public void CloseUpgradePanel()
+    {
+        if (UpgradeItemPanel != null)
+            UpgradeItemPanel.SetActive(false);
     }
 
-    public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription, ItemType itemType)
+    public int AddItem(ItemData itemToAdd, int amount)
     {
-        if (itemType == ItemType.Consumable || itemType == ItemType.Resource
-            || itemType == ItemType.UpgradeItem || itemType == ItemType.SpecialItem)
+        if (itemToAdd == null)
+            return amount;
+        if (itemToAdd.IsEquippable())
         {
-            for (int i = 0; i < itemSlot.Length; i++)
+            for (int i = 0; i < equipmentSlots.Count; i++)
             {
-                if (itemSlot[i].isFull == false && itemSlot[i].itemName == itemName || itemSlot[i].quantity == 0)
+                if (!equipmentSlots[i].isFull && (equipmentSlots[i].item == null || equipmentSlots[i].item == itemToAdd))
                 {
-                    int leftOverItems = itemSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription, itemType);
-                    if (leftOverItems > 0)
-                        leftOverItems = AddItem(itemName, leftOverItems, itemSprite, itemDescription, itemType);
+                    int leftOverItems = equipmentSlots[i].AddItem(itemToAdd, amount);
 
-                    return leftOverItems;
+                    if (leftOverItems > 0)
+                        return AddItem(itemToAdd, leftOverItems);
+
+                    return 0;
                 }
             }
-            return quantity;
+            return amount;
         }
         else
         {
-            for (int i = 0; i < equipmentSlot.Length; i++)
+            for (int i = 0; i < itemSlots.Count; i++)
             {
-                if (equipmentSlot[i].isFull == false && equipmentSlot[i].itemName == itemName || equipmentSlot[i].quantity == 0)
+                if (itemSlots[i].isFull == false && itemSlots[i].item == itemToAdd || itemSlots[i].quantity == 0)
                 {
-                    int leftOverItems = equipmentSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription, itemType);
-                    if (leftOverItems > 0)
-                        leftOverItems = AddItem(itemName, leftOverItems, itemSprite, itemDescription, itemType);
+                    int leftOverItems = itemSlots[i].AddItem(itemToAdd, amount);
 
-                    return leftOverItems;
+                    if (leftOverItems > 0)
+                        return AddItem(itemToAdd, leftOverItems);
+
+                    return 0;
                 }
             }
-            return quantity;
+            return amount;
+        }
+    }
+
+    public void DropItem(ItemData itemToDrop,  int amount)
+    {
+        if (itemToDrop == null || amount <= 0)
+        {
+            Debug.LogWarning("Невозможно выбросить предмет: некорректные данные.");
+            return;
+        }
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player == null)
+        {
+            Debug.LogWarning("Игрок не найден.");
+            return;
+        }
+
+        Vector2 dropPosition = (Vector2)player.transform.position + Vector2.right;
+
+        GameObject droppedItem = Instantiate(itemPickupPrefab, dropPosition, Quaternion.identity);
+       
+
+        ItemPickup pickup = droppedItem.GetComponent<ItemPickup>();
+
+        if (pickup != null)
+        {
+            pickup.item = itemToDrop;
+            pickup.amount = amount;
+            pickup.name = itemToDrop.ItemName;
+            pickup.GetComponent<SpriteRenderer>().sprite = itemToDrop.Icon;
+        }
+        else
+        {
+            Debug.LogWarning("У префаба отсутствует компонент ItemPickup.");
         }
     }
 
     public void DeselectAllSlots()
     {
-        for (int i = 0; i < itemSlot.Length; i++)
+        for (int i = 0; i < itemSlots.Count; i++)
         {
-            itemSlot[i].selectedShader.SetActive(false);
-            itemSlot[i].thisItemSelected = false;
+            itemSlots[i].selectedShader.SetActive(false);
+            itemSlots[i].thisItemSelected = false;
         }
 
-        for (int i = 0; i < equipmentSlot.Length; i++)
+        for (int i = 0; i < equipmentSlots.Count; i++)
         {
-            equipmentSlot[i].selectedShader.SetActive(false);
-            equipmentSlot[i].thisItemSelected = false;
+            equipmentSlots[i].selectedShader.SetActive(false);
+            equipmentSlots[i].thisItemSelected = false;
         }
 
-        for (int i = 0; i < equippedSlot.Length; i++)
+        for (int i = 0; i < equippedSlots.Count; i++)
         {
-            equippedSlot[i].selectedShader.SetActive(false);
-            equippedSlot[i].thisItemSelected = false;
+            equippedSlots[i].selectedShader.SetActive(false);
+            equippedSlots[i].thisItemSelected = false;
         }
     }
 }
-
-public enum ItemType
-{
-    Consumable, UpgradeItem, SpecialItem, Resource,
-    Weapon, Armor, Helmet, Boots, Gloves, Ring
-
-};

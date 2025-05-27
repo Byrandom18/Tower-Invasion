@@ -1,66 +1,45 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using UnityEngine.EventSystems;
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
-using System;
-using Unity.VisualScripting;
 using static UnityEditor.Progress;
 
 public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
 {
-    //===ITEMDATA===
-    public string itemName;
+    public ItemData item { get; private set; }
     public int quantity;
-    public Sprite itemSprite;
     public bool isFull;
-    public string itemDescription;
-    public ItemType itemType;
 
-    //===ITEM SLOT===
+    [Header("EquipmentSlot")]
     [SerializeField]
     private Image itemImage;
     public GameObject selectedShader;
-    public bool thisItemSelected;
-    public Sprite emptySprite;
 
-    //===ITEM Description===
+    [Header("EquipmentDescription")]
     public Image itemDescriptionImage;
     public TMP_Text itemDescriptionName;
     public TMP_Text itemDescriptionText;
+    public TMP_Text rarityText;
+    public TMP_Text mainStatDesc;
+    public TMP_Text additionalStatDesc1;
+    public TMP_Text additionalStatDesc2;
+    public TMP_Text additionalStatDesc3;
+    public TMP_Text additionalStatDesc4;
 
-    //===EQUIPPED SLOTS===
+    [Header("EquippedSlots")]
     [SerializeField]
-    private EquippedSlot helmetSlot, armorSlot, glovesSlot, bootsSlot, weaponSlot, ring1Slot, ring2Slot;
+    private EquippedSlot helmetSlot, armorSlot, glovesSlot,
+        bootsSlot, weaponSlot, ring1Slot, ring2Slot;
+
+    public Sprite emptySprite;
+
+    public bool thisItemSelected;
 
     private InventoryManager inventoryManager;
-
-    //===DROP ITEM===
-    public GameObject dropPrefab;
-    public Transform playerTransform;
 
     private void Start()
     {
         inventoryManager = GameObject.Find("Canvas").GetComponent<InventoryManager>();
-    }
-
-    public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription, ItemType itemType)
-    {
-        if (isFull)
-            return quantity;
-
-        this.itemType = itemType;
-
-        this.itemName = itemName;
-        this.itemSprite = itemSprite;
-        itemImage.sprite = itemSprite;
-        this.itemDescription = itemDescription;
-
-        this.quantity = 1;
-        isFull = true;
-
-        return 0;
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -75,7 +54,7 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    public void OnLeftClick()
+    private void OnLeftClick()
     {
         if (thisItemSelected)
         {
@@ -84,95 +63,154 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
         }
         else
         {
+            inventoryManager.selectedItem = item;
             inventoryManager.DeselectAllSlots();
-            selectedShader.SetActive(true);
             thisItemSelected = true;
+            selectedShader.SetActive(true);
 
-            itemDescriptionName.text = itemName;
-            itemDescriptionText.text = itemDescription;
-            itemDescriptionImage.sprite = itemSprite;
-
-            if (itemDescriptionImage.sprite == null)
-                itemDescriptionImage.sprite = emptySprite;
+            ToShowDescription();
         }
+    }
 
+    private void OnRightClick()
+    {
+        if (inventoryManager != null)
+        {
+            inventoryManager.DropItem(item, quantity);
+            EmptySlot();
+        }
+        else
+        {
+            Debug.LogError("InventoryManager is not assigned or found.");
+        }
+    }
+
+    public int AddItem(ItemData itemToAdd, int amount)
+    {
+        if (isFull)
+            return amount;
+
+        item = itemToAdd;
+        itemImage.sprite = item.Icon;
+
+        quantity = 1;
+        isFull = true;
+
+        return 0;
     }
 
     private void EquipGear()
     {
-        if (itemType == ItemType.Helmet)
-            helmetSlot.EquipGear(itemSprite, itemName, itemDescription);
-        if (itemType == ItemType.Armor)
-            armorSlot.EquipGear(itemSprite, itemName, itemDescription);
-        if (itemType == ItemType.Gloves)
-            glovesSlot.EquipGear(itemSprite, itemName, itemDescription);
-        if (itemType == ItemType.Boots)
-            bootsSlot.EquipGear(itemSprite, itemName, itemDescription);
-        if (itemType == ItemType.Weapon)
-            weaponSlot.EquipGear(itemSprite, itemName, itemDescription);
-        if (itemType == ItemType.Ring)
+        if (item == null || !item.IsEquippable())
+            Debug.Log("лИБО Item == null либо не экипировка тип"); ;
+
+        if (item.equipmentData.equipmentType == EquipmentType.Helmet)
+            helmetSlot.Equip(item);
+        if (item.equipmentData.equipmentType == EquipmentType.Armor)
+            armorSlot.Equip(item);
+        if (item.equipmentData.equipmentType == EquipmentType.Gloves)
+            glovesSlot.Equip(item);
+        if (item.equipmentData.equipmentType == EquipmentType.Boots)
+            bootsSlot.Equip(item);
+        if (item.equipmentData.equipmentType == EquipmentType.Weapon)
+            weaponSlot.Equip(item);
+        if (item.equipmentData.equipmentType == EquipmentType.Ring)
         {
             if (!ring1Slot.IsInUse())
-                ring1Slot.EquipGear(itemSprite, itemName, itemDescription);
+                ring1Slot.Equip(item);
             else if (!ring2Slot.IsInUse())
-                ring2Slot.EquipGear(itemSprite, itemName, itemDescription);
+                ring2Slot.Equip(item);
             else
                 Debug.Log("Оба слота для колец заняты.");
         }
-
         EmptySlot();
     }
-
-    public void OnRightClick()
+    private void ToShowDescription()
     {
-        if (quantity <= 0) 
-            return;
-
-        // Сохраняем данные предмета перед очисткой
-        string droppedItemName = itemName;
-        Sprite droppedItemSprite = itemSprite;
-        string droppedItemDescription = itemDescription;
-        ItemType droppedItemType = itemType;
-
-        GameObject itemToDrop = new GameObject(itemName);
-        Item newItem = itemToDrop.AddComponent<Item>();
-        newItem.quantity = 1;
-        newItem.itemName = itemName;
-        newItem.sprite = itemSprite;
-        newItem.itemType = itemType;
-        newItem.itemDescription = itemDescription;
-
-        SpriteRenderer sr = itemToDrop.AddComponent<SpriteRenderer>();
-        sr.sprite = itemSprite;
-
-        itemToDrop.AddComponent<CircleCollider2D>().isTrigger = true;
-
-        float dropDistance = 1f;
-        Vector2 dropPosition = (Vector2)playerTransform.position + (Vector2)playerTransform.right * dropDistance;
-
-        itemToDrop.transform.position = (Vector2)playerTransform.position + (Vector2)playerTransform.right * dropDistance;
-        itemToDrop.transform.localScale = new Vector3(.3f, .3f, .3f); //Уменьшение предмета
-
-        this.quantity -= 1;
-        if (this.quantity <= 0)
+        if (item != null)
         {
-            EmptySlot();
+            itemDescriptionImage.sprite = item.Icon;
+            itemDescriptionName.text = item.ItemName;
+            itemDescriptionText.text = item.Description;
+
+            if (itemDescriptionImage.sprite == null)
+                itemDescriptionImage.sprite = emptySprite;
+
+            if (item.IsEquippable() && item.equipmentData != null)
+            {
+                rarityText.text = item.equipmentData.rarity.ToString();
+                // Основной стат
+                if (item.equipmentData.mainStat != null)
+                {
+                    mainStatDesc.text = $"{item.equipmentData.mainStat.statType, -20}\t{item.equipmentData.mainStat.value, 10}";
+                }
+                else
+                {
+                    mainStatDesc.text = "";
+                }
+                // Дополнительные статы
+                if (item.equipmentData.additionalStats != null && item.equipmentData.additionalStats.Count > 0)
+                {
+                    additionalStatDesc1.text = item.equipmentData.additionalStats.Count > 0
+                        ? $"{item.equipmentData.additionalStats[0].statType, -20}\t{item.equipmentData.additionalStats[0].value, 10}"
+                        : "";
+                    additionalStatDesc2.text = item.equipmentData.additionalStats.Count > 1
+                        ? $"{item.equipmentData.additionalStats[1].statType, -20}\t{item.equipmentData.additionalStats[1].value, 10}"
+                        : "";
+                    additionalStatDesc3.text = item.equipmentData.additionalStats.Count > 2
+                        ? $"{item.equipmentData.additionalStats[2].statType,-20}\t{item.equipmentData.additionalStats[2].value,10}"
+                        : "";
+                    additionalStatDesc4.text = item.equipmentData.additionalStats.Count > 3
+                        ? $"{item.equipmentData.additionalStats[3].statType,-20}\t{item.equipmentData.additionalStats[3].value,10}"
+                        : "";
+                }
+                else
+                {
+                    additionalStatDesc1.text = "";
+                    additionalStatDesc2.text = "";
+                    additionalStatDesc3.text = "";
+                    additionalStatDesc4.text = "";
+                }
+            }
+            else
+            {
+                mainStatDesc.text = "";
+                additionalStatDesc1.text = "";
+                additionalStatDesc2.text = "";
+                additionalStatDesc3.text = "";
+                additionalStatDesc4.text = "";
+            }
+        }
+        else
+        {
+            itemDescriptionImage.sprite = emptySprite;
+            itemDescriptionName.text = "";
+            itemDescriptionText.text = "";
+            rarityText.text = "";
+            mainStatDesc.text = "";
+            additionalStatDesc1.text = "";
+            additionalStatDesc2.text = "";
+            additionalStatDesc3.text = "";
+            additionalStatDesc4.text = "";
         }
     }
 
     private void EmptySlot()
     {
-        itemName = "";
-        itemSprite = null;
-        itemDescription = "";
-        itemType = default;
+        item = null;
         quantity = 0;
 
         itemImage.sprite = emptySprite;
-
         itemDescriptionName.text = "";
         itemDescriptionText.text = "";
         itemDescriptionImage.sprite = emptySprite;
+        rarityText.text = "";
+        mainStatDesc.text = "";
+        additionalStatDesc1.text = "";
+        additionalStatDesc2.text = "";
+        additionalStatDesc3.text = "";
+        additionalStatDesc4.text = "";
         isFull = false;
+        inventoryManager.DeselectAllSlots();
     }
 }
