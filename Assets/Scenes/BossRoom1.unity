@@ -6296,6 +6296,14 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2193702707745109595, guid: 9ebe011d4396a234b8232632f27130d4, type: 3}
+      propertyPath: m_Size.x
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193702707745109595, guid: 9ebe011d4396a234b8232632f27130d4, type: 3}
+      propertyPath: m_Size.y
+      value: 3.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3770461031158405666, guid: 9ebe011d4396a234b8232632f27130d4, type: 3}
       propertyPath: m_Name
       value: Leshy
@@ -6556,6 +6564,12 @@ MonoBehaviour:
   state: 0
   EnemySprite: {fileID: 1565728220}
   preparationDuration: 2
+  attackRange: 2
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  playerStats: {fileID: 0}
+  enemyDamage: {fileID: 0}
 --- !u!114 &1570745606 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6881600939332998637, guid: 86e4cad511915674fa2ae751b72e946b, type: 3}

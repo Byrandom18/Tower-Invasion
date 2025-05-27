@@ -25,6 +25,12 @@ public class LeshyStates : MonoBehaviour
     private float idleDuration = 1f;
     private bool isPreparating = false;
     [SerializeField] private float preparationDuration = 3f;
+    private Vector2 attackDirection;
+    [SerializeField] private float attackRange = 2f;
+    [SerializeField] private LayerMask playerLayer;
+    [SerializeField] private PlayerStats playerStats; // Перетащите игрока в инспекторе
+    [SerializeField] private EnemyDamage enemyDamage; // Перетащите компонент с уроном
+    private float damage;
 
     void Awake()
     {
@@ -150,7 +156,17 @@ public class LeshyStates : MonoBehaviour
         }
     }
 
+    private void AtkFast()
+    {
+        attackDirection = transform.right * Mathf.Sign(transform.localScale.x);
 
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, attackDirection, attackRange, playerLayer);
+        if (hit.collider != null)
+        {
+            playerStats.TakeDamage(damage);
+        }
+    }
 
 
 

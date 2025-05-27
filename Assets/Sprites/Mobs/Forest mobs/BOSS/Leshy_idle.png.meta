@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: 95a43ddd0f0fee941a73c0125023232f
+guid: 593d154a43e710e40a512387ac514851
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1669726522713323835
-    second: Leshy3_idle_0
+      213: -1356065562455621732
+    second: Leshy_idle_0
   - first:
-      213: 8615857105736051479
-    second: Leshy3_idle_1
+      213: -8456815321919145502
+    second: Leshy_idle_1
   - first:
-      213: -2419216175920347538
-    second: Leshy3_idle_2
+      213: -2068657872237817053
+    second: Leshy_idle_2
   - first:
-      213: -6156284948120880496
-    second: Leshy3_idle_3
+      213: -8980193391165202852
+    second: Leshy_idle_3
   - first:
-      213: 9064778842471105345
-    second: Leshy3_idle_4
+      213: -4660121573699711736
+    second: Leshy_idle_4
   - first:
-      213: 7690646095215159704
-    second: Leshy3_idle_5
+      213: 2722085407216875133
+    second: Leshy_idle_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -111,17 +111,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Leshy3_idle_0
+      name: Leshy_idle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 132
-        height: 132
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b3930620d6f0c2710800000000000000
-      internalID: 1669726522713323835
+      spriteID: c9f31b14e894e2de0800000000000000
+      internalID: -1356065562455621732
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Leshy3_idle_1
+      name: Leshy_idle_1
       rect:
         serializedVersion: 2
-        x: 132
+        x: 275
         y: 0
-        width: 132
-        height: 132
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +165,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 71b2cee836ca19770800000000000000
-      internalID: 8615857105736051479
+      spriteID: 2e9bde5554b53aa80800000000000000
+      internalID: -8456815321919145502
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Leshy3_idle_2
+      name: Leshy_idle_2
       rect:
         serializedVersion: 2
-        x: 264
+        x: 550
         y: 0
-        width: 132
-        height: 132
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e66836f94b73d6ed0800000000000000
-      internalID: -2419216175920347538
+      spriteID: 323137b10a6aa43e0800000000000000
+      internalID: -2068657872237817053
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Leshy3_idle_3
+      name: Leshy_idle_3
       rect:
         serializedVersion: 2
-        x: 396
+        x: 825
         y: 0
-        width: 132
-        height: 132
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,20 +209,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 09abb23057b709aa0800000000000000
-      internalID: -6156284948120880496
+      spriteID: c5e994990b1ff5380800000000000000
+      internalID: -8980193391165202852
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Leshy3_idle_4
+      name: Leshy_idle_4
       rect:
         serializedVersion: 2
-        x: 528
+        x: 1100
         y: 0
-        width: 132
-        height: 132
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,20 +231,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 14387f874509ccd70800000000000000
-      internalID: 9064778842471105345
+      spriteID: 80d8e7d7e1ce35fb0800000000000000
+      internalID: -4660121573699711736
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Leshy3_idle_5
+      name: Leshy_idle_5
       rect:
         serializedVersion: 2
-        x: 660
+        x: 1375
         y: 0
-        width: 132
-        height: 132
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,8 +253,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8996b8670e9aaba60800000000000000
-      internalID: 7690646095215159704
+      spriteID: d76bf61714ac6c520800000000000000
+      internalID: 2722085407216875133
       vertices: []
       indices: 
       edges: []
@@ -250,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5fbc12183f1b3ee40b017d3f8cfdf68a
+    spriteID: dc0be5378415da64bad1c28a8904ff79
     internalID: 0
     vertices: []
     indices: 
@@ -260,12 +273,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Leshy3_idle_0: 1669726522713323835
-      Leshy3_idle_1: 8615857105736051479
-      Leshy3_idle_2: -2419216175920347538
-      Leshy3_idle_3: -6156284948120880496
-      Leshy3_idle_4: 9064778842471105345
-      Leshy3_idle_5: 7690646095215159704
+      Leshy_idle_0: -1356065562455621732
+      Leshy_idle_1: -8456815321919145502
+      Leshy_idle_2: -2068657872237817053
+      Leshy_idle_3: -8980193391165202852
+      Leshy_idle_4: -4660121573699711736
+      Leshy_idle_5: 2722085407216875133
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
