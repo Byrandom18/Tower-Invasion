@@ -140,8 +140,14 @@ public class UpgradeEquipmentPanel : MonoBehaviour
         }
 
         // Улучшение предмета
-        equipment.level++;
-        //equipment.GenerateStats(); // Пересчитать статы, если реализовано
+        if (equipment.Upgrade())
+        {
+            // Можно добавить звук/эффект успешного улучшения
+        }
+        else
+        {
+            Debug.LogWarning("Достигнут максимальный уровень улучшения для этой редкости.");
+        }
 
         SetItemToUpgrade(inventoryManager.selectedItem, inventoryManager.itemSlots);
     }

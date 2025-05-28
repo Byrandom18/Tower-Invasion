@@ -192,9 +192,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 264
-        width: 132
-        height: 132
+        y: 480
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,10 +213,10 @@ TextureImporter:
       name: Leshy_atk2_1
       rect:
         serializedVersion: 2
-        x: 132
-        y: 264
-        width: 132
-        height: 132
+        x: 275
+        y: 480
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,10 +235,10 @@ TextureImporter:
       name: Leshy_atk2_2
       rect:
         serializedVersion: 2
-        x: 264
-        y: 264
-        width: 132
-        height: 132
+        x: 550
+        y: 480
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,10 +257,10 @@ TextureImporter:
       name: Leshy_atk2_3
       rect:
         serializedVersion: 2
-        x: 396
-        y: 264
-        width: 132
-        height: 132
+        x: 825
+        y: 480
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,10 +279,10 @@ TextureImporter:
       name: Leshy_atk2_4
       rect:
         serializedVersion: 2
-        x: 528
-        y: 264
-        width: 132
-        height: 132
+        x: 1100
+        y: 480
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -301,10 +301,10 @@ TextureImporter:
       name: Leshy_atk2_5
       rect:
         serializedVersion: 2
-        x: 660
-        y: 264
-        width: 132
-        height: 132
+        x: 1375
+        y: 480
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -323,10 +323,10 @@ TextureImporter:
       name: Leshy_atk2_6
       rect:
         serializedVersion: 2
-        x: 792
-        y: 264
-        width: 132
-        height: 132
+        x: 1650
+        y: 480
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -345,10 +345,10 @@ TextureImporter:
       name: Leshy_atk2_7
       rect:
         serializedVersion: 2
-        x: 924
-        y: 264
-        width: 132
-        height: 132
+        x: 0
+        y: 320
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -367,10 +367,10 @@ TextureImporter:
       name: Leshy_atk2_8
       rect:
         serializedVersion: 2
-        x: 1056
-        y: 264
-        width: 132
-        height: 132
+        x: 275
+        y: 320
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -389,10 +389,10 @@ TextureImporter:
       name: Leshy_atk2_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 132
-        width: 132
-        height: 132
+        x: 550
+        y: 320
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -411,10 +411,10 @@ TextureImporter:
       name: Leshy_atk2_10
       rect:
         serializedVersion: 2
-        x: 132
-        y: 132
-        width: 132
-        height: 132
+        x: 825
+        y: 320
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -433,10 +433,10 @@ TextureImporter:
       name: Leshy_atk2_11
       rect:
         serializedVersion: 2
-        x: 264
-        y: 132
-        width: 132
-        height: 132
+        x: 1100
+        y: 320
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -455,10 +455,10 @@ TextureImporter:
       name: Leshy_atk2_12
       rect:
         serializedVersion: 2
-        x: 396
-        y: 132
-        width: 132
-        height: 132
+        x: 1375
+        y: 320
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -477,10 +477,10 @@ TextureImporter:
       name: Leshy_atk2_13
       rect:
         serializedVersion: 2
-        x: 528
-        y: 132
-        width: 132
-        height: 132
+        x: 1650
+        y: 320
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -499,10 +499,10 @@ TextureImporter:
       name: Leshy_atk2_14
       rect:
         serializedVersion: 2
-        x: 660
-        y: 132
-        width: 132
-        height: 132
+        x: 0
+        y: 160
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -521,10 +521,10 @@ TextureImporter:
       name: Leshy_atk2_15
       rect:
         serializedVersion: 2
-        x: 792
-        y: 132
-        width: 132
-        height: 132
+        x: 275
+        y: 160
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -543,10 +543,10 @@ TextureImporter:
       name: Leshy_atk2_16
       rect:
         serializedVersion: 2
-        x: 924
-        y: 132
-        width: 132
-        height: 132
+        x: 550
+        y: 160
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -565,10 +565,10 @@ TextureImporter:
       name: Leshy_atk2_17
       rect:
         serializedVersion: 2
-        x: 1056
-        y: 132
-        width: 132
-        height: 132
+        x: 825
+        y: 160
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -587,10 +587,10 @@ TextureImporter:
       name: Leshy_atk2_18
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 132
-        height: 132
+        x: 1100
+        y: 160
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -609,10 +609,10 @@ TextureImporter:
       name: Leshy_atk2_19
       rect:
         serializedVersion: 2
-        x: 132
-        y: 0
-        width: 132
-        height: 132
+        x: 1375
+        y: 160
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -631,10 +631,10 @@ TextureImporter:
       name: Leshy_atk2_20
       rect:
         serializedVersion: 2
-        x: 264
-        y: 0
-        width: 132
-        height: 132
+        x: 1650
+        y: 160
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -653,10 +653,10 @@ TextureImporter:
       name: Leshy_atk2_21
       rect:
         serializedVersion: 2
-        x: 396
+        x: 0
         y: 0
-        width: 132
-        height: 132
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -675,10 +675,10 @@ TextureImporter:
       name: Leshy_atk2_22
       rect:
         serializedVersion: 2
-        x: 528
+        x: 275
         y: 0
-        width: 132
-        height: 132
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -697,10 +697,10 @@ TextureImporter:
       name: Leshy_atk2_23
       rect:
         serializedVersion: 2
-        x: 660
+        x: 550
         y: 0
-        width: 132
-        height: 132
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -719,10 +719,10 @@ TextureImporter:
       name: Leshy_atk2_24
       rect:
         serializedVersion: 2
-        x: 792
+        x: 825
         y: 0
-        width: 132
-        height: 132
+        width: 275
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -741,7 +741,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 0e2d633f62ee5ca47b4bb1828b0214bd
+    spriteID: 748b3fbe070112d439fad5d4cd2cec20
     internalID: 0
     vertices: []
     indices: 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Android.Gradle.Manifest;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -37,6 +38,8 @@ public class DistanceMob : MonoBehaviour
 
     private float damage = 0;
 
+    [SerializeField] private DropSystem dropSystem; // Перетащите в инспекторе
+    [SerializeField] private int rarity = 0;
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -44,7 +47,7 @@ public class DistanceMob : MonoBehaviour
 
         enemyDamage = GetComponent<EnemyDamage>();
         animations = GetComponentInChildren<SpiritAnimations>();
-
+        dropSystem = GetComponent<DropSystem>();
         damage = enemyDamage.Damage;
     }
 
@@ -174,6 +177,33 @@ public class DistanceMob : MonoBehaviour
         canAttack = false;
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true;
+    }
+
+    public void DeathState()
+    {
+        int randomValue = Random.Range(0, 101);
+        if (randomValue < rarity)
+        {
+            dropSystem.SpawnPrefab();
+
+        }
+        randomValue = Random.Range(0, 101);
+        if (randomValue * 2 < rarity)
+        {
+            dropSystem.SpawnRandomCollectiblePrefab();
+            if (randomValue < rarity)
+            {
+                dropSystem.SpawnRandomCollectiblePrefab();
+                if (randomValue / 2 < rarity)
+                {
+                    dropSystem.SpawnRandomCollectiblePrefab();
+                    if (randomValue / 4 < rarity)
+                    {
+                        dropSystem.SpawnRandomCollectiblePrefab();
+                    }
+                }
+            }
+        }
     }
 
 }

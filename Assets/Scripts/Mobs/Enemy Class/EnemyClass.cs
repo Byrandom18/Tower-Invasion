@@ -54,6 +54,7 @@ public class EnemyClass : MonoBehaviour
     private bool isCliffLeft = false;
     private bool isCliffRight = false;
     
+    private EnemyDamage enemyDamage;
 
     [SerializeField] private float attackRate = 0.5f;
     private float nextAttackTime = 0f;
@@ -64,6 +65,7 @@ public class EnemyClass : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        enemyDamage = GetComponent<EnemyDamage>();
         // Проверяем, что скрипт реализует интерфейс
         if (animationsScript is IEnemyAnimations enemyAnim)
         {
@@ -78,7 +80,10 @@ public class EnemyClass : MonoBehaviour
     void Update()
     {
         //Debug.Log(playerTransform.position.y - transform.position.y);
-
+        if (enemyDamage.health <= 0)
+        {
+            state = 4;
+        }
         
 
         switch (state)
@@ -204,6 +209,7 @@ public class EnemyClass : MonoBehaviour
 
             //death
             case 4:
+                rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
                 animations.Death();
                 break;
 

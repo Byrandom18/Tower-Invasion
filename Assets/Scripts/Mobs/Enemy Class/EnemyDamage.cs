@@ -15,6 +15,7 @@ public class EnemyDamage : MonoBehaviour
     public float health = 100;
 
 
+
     public ParticleSystem DamageParticles;
     public float particleSpeed = 3f;
 
@@ -92,10 +93,10 @@ public class EnemyDamage : MonoBehaviour
         }
             
 
-        if (health <= 0)
-        {
-            Die();
-        }
+        //if (health <= 0)
+        //{
+        //    Die();
+        //}
     }
 
     private IEnumerator FlashRed()
