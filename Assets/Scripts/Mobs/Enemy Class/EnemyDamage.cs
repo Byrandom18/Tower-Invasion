@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class EnemyDamage : MonoBehaviour
 {
@@ -51,9 +52,28 @@ public class EnemyDamage : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
     }
-
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Проверяем, столкнулись ли мы с игроком
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // Получаем компонент PlayerBlock
+            PlayerBlock playerBlock = collision.gameObject.GetComponent<PlayerBlock>();
+            if (playerBlock != null)
+            {
+                // Вызываем TakeDamage в PlayerBlock, передавая урон и позицию врага
+                playerBlock.TakeDamage(Damage, transform.position);
+                Debug.Log($"Враг наносит {Damage} урона игроку");
+            }
+            else
+            {
+                Debug.LogWarning("PlayerBlock не найден на объекте игрока!");
+            }
+        }
+    }
     public void TakeDamage(int damage, Vector2 damageSourcePosition)
     {
+   
         if (isKnockbackActive && !isBoss) return; // Игнорируем новый урон во время отскока
 
         // Применяем урон
@@ -100,10 +120,12 @@ public class EnemyDamage : MonoBehaviour
         Invoke(nameof(ResetKnockback), knockbackDuration);
     }
 
+
     private void ResetKnockback()
     {
         isKnockbackActive = false;
         rb.linearVelocity = Vector2.zero; // Останавливаем моба после отскока
+
     }
 
     private void ParticlesLaunch()

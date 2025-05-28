@@ -21,7 +21,17 @@ public class PlayerRoll : MonoBehaviour
         originalLayer = gameObject.layer; // Сохраняем исходный слой
         ignoreLayer = LayerMask.NameToLayer("IgnoreCollisions"); // Указываем слой неуязвимости
     }
+    void StartBlocking()
+    {
+        isRolling = true;
+        animator.SetBool("IsRolling", true);
+    }
 
+    void StopBlocking()
+    {
+        isRolling = false;
+        animator.SetBool("IsRolling", false);
+    }
     void Update()
     {
         // Проверка ввода для кувырка 

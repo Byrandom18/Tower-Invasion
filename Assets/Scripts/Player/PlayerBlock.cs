@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerBlock : MonoBehaviour
 {
     private bool isBlocking = false;
-    public float blockDamageReduction = 1f; // Уменьшение урона на 50%
+    public float blockDamageReduction = 0.5f; // Уменьшение урона на 50% при блоке
     private Animator animator;
     private PlayerHealth playerHealth; // Ссылка на здоровье
 
@@ -11,6 +11,16 @@ public class PlayerBlock : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         playerHealth = GetComponent<PlayerHealth>();
+
+        // Проверка на наличие компонентов
+        if (animator == null)
+        {
+            Debug.LogError("Animator не найден на объекте " + gameObject.name);
+        }
+        if (playerHealth == null)
+        {
+            Debug.LogError("PlayerHealth не найден на объекте " + gameObject.name);
+        }
     }
 
     void Update()
@@ -29,22 +39,31 @@ public class PlayerBlock : MonoBehaviour
     {
         isBlocking = true;
         animator.SetBool("IsBlocking", true);
+        Debug.Log("Блок активирован");
     }
 
     void StopBlocking()
     {
         isBlocking = false;
         animator.SetBool("IsBlocking", false);
+        Debug.Log("Блок деактивирован");
     }
 
-    // Обновленный метод с учетом позиции атакующего
+    // Метод для обработки урона с учетом блока
     public void TakeDamage(float damage, Vector2 attackerPosition)
     {
-        if (playerHealth == null || !playerHealth.IsAlive()) return;
+        if (playerHealth == null || !playerHealth.IsAlive())
+        {
+            Debug.LogWarning("Игрок мертв или PlayerHealth отсутствует");
+            return;
+        }
 
-        // Уменьшаем урон при блоке
+        // Уменьшаем урон, если блок активен
         float finalDamage = isBlocking ? damage * blockDamageReduction : damage;
-        playerHealth.TakeDamage(finalDamage, attackerPosition); // Передаем урон и позицию
+        Debug.Log($"Получен урон: {damage}, Блок: {isBlocking}, Итоговый урон: {finalDamage}");
+
+        // Передаем итоговый урон в PlayerHealth
+        playerHealth.TakeDamage(finalDamage, attackerPosition);
     }
 
     public bool IsBlocking()
