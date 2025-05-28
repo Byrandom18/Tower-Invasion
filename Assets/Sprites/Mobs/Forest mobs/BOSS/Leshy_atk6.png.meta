@@ -135,10 +135,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -181,7 +181,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 320
-        width: 200
+        width: 275
         height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -201,9 +201,9 @@ TextureImporter:
       name: Leshy_atk6_1
       rect:
         serializedVersion: 2
-        x: 200
+        x: 275
         y: 320
-        width: 200
+        width: 275
         height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -223,9 +223,9 @@ TextureImporter:
       name: Leshy_atk6_2
       rect:
         serializedVersion: 2
-        x: 400
+        x: 550
         y: 320
-        width: 200
+        width: 275
         height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -245,9 +245,9 @@ TextureImporter:
       name: Leshy_atk6_3
       rect:
         serializedVersion: 2
-        x: 600
+        x: 825
         y: 320
-        width: 200
+        width: 275
         height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -267,9 +267,9 @@ TextureImporter:
       name: Leshy_atk6_4
       rect:
         serializedVersion: 2
-        x: 800
+        x: 1100
         y: 320
-        width: 200
+        width: 275
         height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -289,9 +289,9 @@ TextureImporter:
       name: Leshy_atk6_5
       rect:
         serializedVersion: 2
-        x: 1000
+        x: 1375
         y: 320
-        width: 200
+        width: 275
         height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -311,9 +311,9 @@ TextureImporter:
       name: Leshy_atk6_6
       rect:
         serializedVersion: 2
-        x: 1200
+        x: 1650
         y: 320
-        width: 200
+        width: 275
         height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -333,9 +333,9 @@ TextureImporter:
       name: Leshy_atk6_7
       rect:
         serializedVersion: 2
-        x: 1400
+        x: 1925
         y: 320
-        width: 200
+        width: 275
         height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -357,7 +357,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 160
-        width: 200
+        width: 275
         height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -377,9 +377,9 @@ TextureImporter:
       name: Leshy_atk6_9
       rect:
         serializedVersion: 2
-        x: 200
+        x: 275
         y: 160
-        width: 200
+        width: 275
         height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -399,9 +399,9 @@ TextureImporter:
       name: Leshy_atk6_10
       rect:
         serializedVersion: 2
-        x: 400
+        x: 550
         y: 160
-        width: 200
+        width: 275
         height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -421,9 +421,9 @@ TextureImporter:
       name: Leshy_atk6_11
       rect:
         serializedVersion: 2
-        x: 600
+        x: 825
         y: 160
-        width: 200
+        width: 275
         height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -443,9 +443,9 @@ TextureImporter:
       name: Leshy_atk6_12
       rect:
         serializedVersion: 2
-        x: 800
+        x: 1100
         y: 160
-        width: 200
+        width: 275
         height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -465,9 +465,9 @@ TextureImporter:
       name: Leshy_atk6_13
       rect:
         serializedVersion: 2
-        x: 1000
+        x: 1375
         y: 160
-        width: 200
+        width: 275
         height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -487,9 +487,9 @@ TextureImporter:
       name: Leshy_atk6_14
       rect:
         serializedVersion: 2
-        x: 1200
+        x: 1650
         y: 160
-        width: 200
+        width: 275
         height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -509,9 +509,9 @@ TextureImporter:
       name: Leshy_atk6_15
       rect:
         serializedVersion: 2
-        x: 1400
+        x: 1925
         y: 160
-        width: 200
+        width: 275
         height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -533,7 +533,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 200
+        width: 275
         height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -553,9 +553,9 @@ TextureImporter:
       name: Leshy_atk6_17
       rect:
         serializedVersion: 2
-        x: 200
+        x: 275
         y: 0
-        width: 200
+        width: 275
         height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -575,9 +575,9 @@ TextureImporter:
       name: Leshy_atk6_18
       rect:
         serializedVersion: 2
-        x: 400
+        x: 550
         y: 0
-        width: 200
+        width: 275
         height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -597,9 +597,9 @@ TextureImporter:
       name: Leshy_atk6_19
       rect:
         serializedVersion: 2
-        x: 600
+        x: 825
         y: 0
-        width: 200
+        width: 275
         height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -619,9 +619,9 @@ TextureImporter:
       name: Leshy_atk6_20
       rect:
         serializedVersion: 2
-        x: 800
+        x: 1100
         y: 0
-        width: 200
+        width: 275
         height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -641,9 +641,9 @@ TextureImporter:
       name: Leshy_atk6_21
       rect:
         serializedVersion: 2
-        x: 1000
+        x: 1375
         y: 0
-        width: 200
+        width: 275
         height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -663,7 +663,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c1f27a1f57e150440b8da505e15dfaf9
+    spriteID: 13648253717b5c44591292d4153d3ecd
     internalID: 0
     vertices: []
     indices: 

@@ -19,22 +19,22 @@ public class LeshyAnimations : MonoBehaviour
 
     public void Slam()
     {
-        animator.SetTrigger("Slam");
+        animator.SetInteger("Attack", 5);
     }
 
     public void Bomb()
     {
-        animator.SetTrigger("Bomb");
+        animator.SetInteger("Attack", 6);
     }
 
     public void Spikes()
     {
-        animator.SetTrigger("Spikes");
+        animator.SetInteger("Attack", 4);
     }
 
     public void Spam()
     {
-        animator.SetTrigger("Spam");
+        animator.SetInteger("Attack", 2);
     }
 
     public void Punch()
@@ -45,7 +45,7 @@ public class LeshyAnimations : MonoBehaviour
 
     public void Summon()
     {
-        animator.SetTrigger("Summon");
+        animator.SetInteger("Attack", 3);
     }
 
     public void Death()

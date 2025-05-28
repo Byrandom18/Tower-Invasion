@@ -1,0 +1,1149 @@
+fileFormatVersion: 2
+guid: e352990fb500493478b2711f95723d60
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6375173841155766506
+    second: Leshy_death2_0
+  - first:
+      213: -5018190913909266106
+    second: Leshy_death2_1
+  - first:
+      213: -2596578415612602710
+    second: Leshy_death2_2
+  - first:
+      213: 1209404297661399295
+    second: Leshy_death2_3
+  - first:
+      213: -7166828556607582195
+    second: Leshy_death2_4
+  - first:
+      213: 4877597631304250601
+    second: Leshy_death2_5
+  - first:
+      213: -5739534139371474005
+    second: Leshy_death2_6
+  - first:
+      213: 8259280811629186200
+    second: Leshy_death2_7
+  - first:
+      213: 7475235533599171305
+    second: Leshy_death2_8
+  - first:
+      213: 4991718414899204784
+    second: Leshy_death2_9
+  - first:
+      213: 207712733167415842
+    second: Leshy_death2_10
+  - first:
+      213: 4964829203332874184
+    second: Leshy_death2_11
+  - first:
+      213: 3062495214051586041
+    second: Leshy_death2_12
+  - first:
+      213: -4015602014916723048
+    second: Leshy_death2_13
+  - first:
+      213: 1558115140184238040
+    second: Leshy_death2_14
+  - first:
+      213: -6828082653024264905
+    second: Leshy_death2_15
+  - first:
+      213: -2812463201937864248
+    second: Leshy_death2_16
+  - first:
+      213: -3873201830325358728
+    second: Leshy_death2_17
+  - first:
+      213: 5890752812141710971
+    second: Leshy_death2_18
+  - first:
+      213: 768180154007709230
+    second: Leshy_death2_19
+  - first:
+      213: 4270935832537176583
+    second: Leshy_death2_20
+  - first:
+      213: 8828519541563268675
+    second: Leshy_death2_21
+  - first:
+      213: 153311281350775737
+    second: Leshy_death2_22
+  - first:
+      213: -3305399900515890557
+    second: Leshy_death2_23
+  - first:
+      213: -4582797264606082229
+    second: Leshy_death2_24
+  - first:
+      213: -8391672429937134630
+    second: Leshy_death2_25
+  - first:
+      213: -3637836917127264928
+    second: Leshy_death2_26
+  - first:
+      213: 1128256435502576560
+    second: Leshy_death2_27
+  - first:
+      213: 8032966331949767628
+    second: Leshy_death2_28
+  - first:
+      213: -651316898968179723
+    second: Leshy_death2_29
+  - first:
+      213: -7635554791098993804
+    second: Leshy_death2_30
+  - first:
+      213: -940156453670179617
+    second: Leshy_death2_31
+  - first:
+      213: 5874839021354008219
+    second: Leshy_death2_32
+  - first:
+      213: 4444730524362746227
+    second: Leshy_death2_33
+  - first:
+      213: -9029567990743875276
+    second: Leshy_death2_34
+  - first:
+      213: 4729276911298628551
+    second: Leshy_death2_35
+  - first:
+      213: 7657359458706771141
+    second: Leshy_death2_36
+  - first:
+      213: -4027093346441224303
+    second: Leshy_death2_37
+  - first:
+      213: -7914938136673864219
+    second: Leshy_death2_38
+  - first:
+      213: 4024138216752649703
+    second: Leshy_death2_39
+  - first:
+      213: -770407870363007259
+    second: Leshy_death2_40
+  - first:
+      213: 4371778006084089036
+    second: Leshy_death2_41
+  - first:
+      213: -438344890197957896
+    second: Leshy_death2_42
+  - first:
+      213: -8051552970433347103
+    second: Leshy_death2_43
+  - first:
+      213: 8938231920632845756
+    second: Leshy_death2_44
+  - first:
+      213: 7579362008913031629
+    second: Leshy_death2_45
+  - first:
+      213: -2477678220377662240
+    second: Leshy_death2_46
+  - first:
+      213: -207244841076282925
+    second: Leshy_death2_47
+  - first:
+      213: 61570405041615806
+    second: Leshy_death2_48
+  - first:
+      213: 7742557190723670559
+    second: Leshy_death2_49
+  - first:
+      213: 5050200433200445524
+    second: Leshy_death2_50
+  - first:
+      213: 837275331480730209
+    second: Leshy_death2_51
+  - first:
+      213: -8224230210016795001
+    second: Leshy_death2_52
+  - first:
+      213: 3587161285555039561
+    second: Leshy_death2_53
+  - first:
+      213: -8447978373191071695
+    second: Leshy_death2_54
+  - first:
+      213: 6736781080706268366
+    second: Leshy_death2_55
+  - first:
+      213: -6911067002952920803
+    second: Leshy_death2_56
+  - first:
+      213: -46560709349828862
+    second: Leshy_death2_57
+  - first:
+      213: -8543124749149005580
+    second: Leshy_death2_58
+  - first:
+      213: -1233563364644959109
+    second: Leshy_death2_59
+  - first:
+      213: -8330554322723324957
+    second: Leshy_death2_60
+  - first:
+      213: -8716795174521287341
+    second: Leshy_death2_61
+  - first:
+      213: 614072282440460528
+    second: Leshy_death2_62
+  - first:
+      213: 1696751582244622015
+    second: Leshy_death2_63
+  - first:
+      213: 239805620409897072
+    second: Leshy_death2_64
+  - first:
+      213: 1135463033176985463
+    second: Leshy_death2_65
+  - first:
+      213: -7429177576610113362
+    second: Leshy_death2_66
+  - first:
+      213: -420889727214207998
+    second: Leshy_death2_67
+  - first:
+      213: 5037444116449252511
+    second: Leshy_death2_68
+  - first:
+      213: -6176317782071168686
+    second: Leshy_death2_69
+  - first:
+      213: -7111845240159328503
+    second: Leshy_death2_70
+  - first:
+      213: -8706586003546086253
+    second: Leshy_death2_71
+  - first:
+      213: 4840931250979254065
+    second: Leshy_death2_72
+  - first:
+      213: 567381497730735793
+    second: Leshy_death2_73
+  - first:
+      213: -303538807427774381
+    second: Leshy_death2_74
+  - first:
+      213: -8064781629002927271
+    second: Leshy_death2_75
+  - first:
+      213: 4713345106297404503
+    second: Leshy_death2_76
+  - first:
+      213: -8087406809322083531
+    second: Leshy_death2_77
+  - first:
+      213: -4594372938678663836
+    second: Leshy_death2_78
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Leshy_death2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae8b377d4da297850800000000000000
+      internalID: 6375173841155766506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_1
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 480
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 649685983fdcb5ab0800000000000000
+      internalID: -5018190913909266106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_2
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 480
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa6d6f130b917fbd0800000000000000
+      internalID: -2596578415612602710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_3
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 480
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff040ff0dcaa8c010800000000000000
+      internalID: 1209404297661399295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_4
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 480
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d009745366f4a8c90800000000000000
+      internalID: -7166828556607582195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_5
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 480
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e43d2bf335b0b340800000000000000
+      internalID: 4877597631304250601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_6
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 480
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba3398e0c141950b0800000000000000
+      internalID: -5739534139371474005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_7
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 480
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89c8b5d732cde9270800000000000000
+      internalID: 8259280811629186200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_8
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 480
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e26e80cc1f5db760800000000000000
+      internalID: 7475235533599171305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b2d7da7375264540800000000000000
+      internalID: 4991718414899204784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_10
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 320
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 222f4cb51a1f1e200800000000000000
+      internalID: 207712733167415842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_11
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 320
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cf342b0bdd96e440800000000000000
+      internalID: 4964829203332874184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_12
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 320
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ffe0efdb2b208a20800000000000000
+      internalID: 3062495214051586041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_13
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 320
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89ebb853e37b548c0800000000000000
+      internalID: -4015602014916723048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_14
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 320
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d7e6d9f6798f9510800000000000000
+      internalID: 1558115140184238040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_15
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 320
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73d5b79f007cd31a0800000000000000
+      internalID: -6828082653024264905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_16
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 320
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c9c2a07e9f18f8d0800000000000000
+      internalID: -2812463201937864248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_17
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 320
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87f6018d47f9f3ac0800000000000000
+      internalID: -3873201830325358728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7e075bd87820c150800000000000000
+      internalID: 5890752812141710971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_19
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 160
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e266223b7cf19aa00800000000000000
+      internalID: 768180154007709230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_20
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 160
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70a9dd4e289654b30800000000000000
+      internalID: 4270935832537176583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_21
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 160
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34e197f5fb3358a70800000000000000
+      internalID: 8828519541563268675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_22
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 160
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b319f05ccba02200800000000000000
+      internalID: 153311281350775737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_23
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 160
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38a8321ad4cd022d0800000000000000
+      internalID: -3305399900515890557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_24
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 160
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4bc5852b22a660c0800000000000000
+      internalID: -4582797264606082229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_25
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 160
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad3782ec26aca8b80800000000000000
+      internalID: -8391672429937134630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_26
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 160
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 065c3d3199ec38dc0800000000000000
+      internalID: -3637836917127264928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b3fda5104f58af00800000000000000
+      internalID: 1128256435502576560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_28
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccbd9848154da7f60800000000000000
+      internalID: 8032966331949767628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_29
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fbeac03bbe06f6f0800000000000000
+      internalID: -651316898968179723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_30
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47333855f5f090690800000000000000
+      internalID: -7635554791098993804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_31
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdca2b1cfa4e3f2f0800000000000000
+      internalID: -940156453670179617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_32
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9eb864b6fe978150800000000000000
+      internalID: 5874839021354008219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leshy_death2_33
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 200
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3792afadcdadead30800000000000000
+      internalID: 4444730524362746227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 7408913e6739e8a40b6fcd3686a5f387
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Leshy_death2_0: 6375173841155766506
+      Leshy_death2_1: -5018190913909266106
+      Leshy_death2_10: 207712733167415842
+      Leshy_death2_11: 4964829203332874184
+      Leshy_death2_12: 3062495214051586041
+      Leshy_death2_13: -4015602014916723048
+      Leshy_death2_14: 1558115140184238040
+      Leshy_death2_15: -6828082653024264905
+      Leshy_death2_16: -2812463201937864248
+      Leshy_death2_17: -3873201830325358728
+      Leshy_death2_18: 5890752812141710971
+      Leshy_death2_19: 768180154007709230
+      Leshy_death2_2: -2596578415612602710
+      Leshy_death2_20: 4270935832537176583
+      Leshy_death2_21: 8828519541563268675
+      Leshy_death2_22: 153311281350775737
+      Leshy_death2_23: -3305399900515890557
+      Leshy_death2_24: -4582797264606082229
+      Leshy_death2_25: -8391672429937134630
+      Leshy_death2_26: -3637836917127264928
+      Leshy_death2_27: 1128256435502576560
+      Leshy_death2_28: 8032966331949767628
+      Leshy_death2_29: -651316898968179723
+      Leshy_death2_3: 1209404297661399295
+      Leshy_death2_30: -7635554791098993804
+      Leshy_death2_31: -940156453670179617
+      Leshy_death2_32: 5874839021354008219
+      Leshy_death2_33: 4444730524362746227
+      Leshy_death2_4: -7166828556607582195
+      Leshy_death2_5: 4877597631304250601
+      Leshy_death2_6: -5739534139371474005
+      Leshy_death2_7: 8259280811629186200
+      Leshy_death2_8: 7475235533599171305
+      Leshy_death2_9: 4991718414899204784
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

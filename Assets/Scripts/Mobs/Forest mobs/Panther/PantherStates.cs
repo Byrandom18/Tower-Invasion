@@ -1,3 +1,4 @@
+using Unity.Android.Gradle.Manifest;
 using UnityEngine;
 
 public class PantherStates : MonoBehaviour
@@ -14,7 +15,8 @@ public class PantherStates : MonoBehaviour
     [Header("Attack Settings")]
     [SerializeField] private float attackRange = 2f;
     [SerializeField] private LayerMask playerLayer;
-
+    [SerializeField] private DropSystem dropSystem; // Перетащите в инспекторе
+    [SerializeField] private int rarity = 0;
 
     private float damage;
     private Vector2 attackDirection;
@@ -39,7 +41,7 @@ public class PantherStates : MonoBehaviour
             Debug.LogError("EnemyDamage component not found!", this);
         else
             damage = enemyDamage.Damage;
-
+        dropSystem = GetComponent<DropSystem>();
         if (playerStats == null)
             Debug.LogError("PlayerStats reference not set!", this);
     }
@@ -72,6 +74,28 @@ public class PantherStates : MonoBehaviour
 
     public void DeathState()
     {
-        Destroy(gameObject);
+        int randomValue = Random.Range(0, 101);
+        if (randomValue < rarity)
+        {
+            dropSystem.SpawnPrefab();
+
+        }
+        randomValue = Random.Range(0, 101);
+        if (randomValue * 2 < rarity)
+        {
+            dropSystem.SpawnRandomCollectiblePrefab();
+            if (randomValue < rarity)
+            {
+                dropSystem.SpawnRandomCollectiblePrefab();
+                if (randomValue / 2 < rarity)
+                {
+                    dropSystem.SpawnRandomCollectiblePrefab();
+                    if (randomValue / 4 < rarity)
+                    {
+                        dropSystem.SpawnRandomCollectiblePrefab();
+                    }
+                }
+            }
+        }
     }
 }

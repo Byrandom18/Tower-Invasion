@@ -15,7 +15,8 @@ public class RogueStates : MonoBehaviour
     [SerializeField] private float attackRange = 2f;
     [SerializeField] private LayerMask playerLayer;
 
-
+    [SerializeField] private DropSystem dropSystem; // Перетащите в инспекторе
+    [SerializeField] private int rarity = 0;
     private float damage;
     private Vector2 attackDirection;
 
@@ -27,7 +28,7 @@ public class RogueStates : MonoBehaviour
         // Проверяем и получаем компоненты
         if (enemyDamage == null)
             enemyDamage = GetComponent<EnemyDamage>();
-
+        dropSystem = GetComponent<DropSystem>();
         if (animations == null)
             animations = GetComponent<RogueAnimations>();
 
@@ -75,8 +76,30 @@ public class RogueStates : MonoBehaviour
     }
 
 
-    public void Death()
+    public void DeathState()
     {
+        int randomValue = Random.Range(0, 101);
+        if (randomValue < rarity)
+        {
+            dropSystem.SpawnPrefab();
 
+        }
+        randomValue = Random.Range(0, 101);
+        if (randomValue * 2 < rarity)
+        {
+            dropSystem.SpawnRandomCollectiblePrefab();
+            if (randomValue < rarity)
+            {
+                dropSystem.SpawnRandomCollectiblePrefab();
+                if (randomValue / 2 < rarity)
+                {
+                    dropSystem.SpawnRandomCollectiblePrefab();
+                    if (randomValue / 4 < rarity)
+                    {
+                        dropSystem.SpawnRandomCollectiblePrefab();
+                    }
+                }
+            }
+        }
     }
 }
